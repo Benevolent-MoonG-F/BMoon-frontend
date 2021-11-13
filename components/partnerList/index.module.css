@@ -1,0 +1,21 @@
+.partners{
+    position: relative;
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    list-style: none;
+    justify-content: space-evenly;
+    background-color: rgba(216, 216, 216, 0.25);
+}
+
+.partners li {
+    padding: 1.5rem 2em;
+    font-weight: 900;
+    font-size: 1.8rem;
+    border-bottom: 3px solid transparent;
+    color: rgba(255, 255, 255, 0.438);
+    cursor: pointer;
+    flex: 0 1 10em;
+    text-align: center;
+}

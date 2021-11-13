@@ -1,0 +1,12 @@
+.wrapper {
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    outline: none;
+    border: 2px solid transparent;
+    transition: all 220ms ease-in-out;
+    cursor: pointer;
+}
+.wrapper:hover {
+    background-color: transparent;
+}

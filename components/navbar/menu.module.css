@@ -1,0 +1,89 @@
+.container {
+    display: flex;
+    margin-left: 10px;
+    position: relative;
+}
+.menuBtn {
+    border: 2px solid #79FFF6;
+    padding: 8px 2em;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 650;
+    font-family: 'Jost', sans-serif;
+    text-transform: uppercase;
+
+    background-color: #142237;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    letter-spacing: 3px;
+}
+
+.menuBtn:hover {
+    color: black;
+    transition-delay: 1s;
+    /* font-weight: 680; */
+    /* background-color: #00c9ff;
+    background-image: linear-gradient(to left, transparent 0%, #6adf76 100%);  */
+    /* padding: 9px 2em; */
+    box-shadow: 0 0 5px #79FFF6,
+                0 0 20px #79FFF6,
+                0 0 40px #79FFF6,
+                0 0 160px #79FFF6;
+}
+
+.menuBtn a{
+    filter: hue-rotate(80deg);
+}
+.menuBtn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left:-20px;
+    width: 20px;
+    height: 2px;
+    transform: translateY(-50%);
+    background: #79FFF6;
+    box-shadow: 5px -8px 0 #79FFF6,
+                5px 8px 0 #79FFF6;
+    transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+    transition-delay: 0.6s, 0.5s, 0s, 0s;
+}
+
+.menuBtn:hover::before {
+    width: 60%;
+    height: 100%;
+    left: -2px;
+    box-shadow: 5px 0 0 #79FFF6,
+                5px 0 0 #79FFF6;
+    transition-delay: 0s, 0.5s, 1s, 1s;
+}
+
+
+.menuBtn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right:-20px;
+    width: 20px;
+    height: 2px;
+    transform: translateY(-50%);
+    background: #79FFF6;
+    box-shadow: -5px -8px 0 #79FFF6,
+                -5px 8px 0 #79FFF6;
+    transition: width 0.5s, right 0.5s, height 0.5s, box-shadow 0.5s;
+    transition-delay: 0.6s, 0.5s, 0s, 0s;
+}
+
+.menuBtn:hover::after {
+    width: 60%;
+    height: 100%;
+    right: -2px;
+    box-shadow: -5px 0 0 #79FFF6,
+                -5px 0 0 #79FFF6;
+    transition-delay: 0s, 0.5s, 1s, 1s;
+}
+
+.menuBtn a {
+    position: relative;
+    z-index: 1;
+}

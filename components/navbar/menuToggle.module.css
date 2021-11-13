@@ -1,0 +1,10 @@
+.btn {
+    z-index: 9;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+}
+.btn svg {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(145deg) brightness(118%) contrast(119%);
+}

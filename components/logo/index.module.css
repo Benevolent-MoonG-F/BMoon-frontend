@@ -1,0 +1,21 @@
+
+.logoWrapper{
+    display: flex;
+    align-items: center ;
+    text-decoration: none;
+
+}
+
+.logoImage {
+    width: 2.5em;
+    height: 2.5em;
+}
+.logoImage img {
+    width: 100%;
+    height: 100%auto;
+}
+.logoText{
+    font-size: 20px;
+    margin-left: 0.5em;
+    font-weight: 500;
+}
