@@ -81,6 +81,13 @@
     width: 120px;
     height: 120px;
 }
+.marbleWrapper {
+    display: flex;
+    width: 800px;
+    justify-content: space-between;
+}
+
+
 .downArrowContainer {
     display: inline;
     position: absolute;
