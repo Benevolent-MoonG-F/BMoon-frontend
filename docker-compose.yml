@@ -1,0 +1,8 @@
+version: '3.3'
+services:
+  web:
+    image: 076727285424.dkr.ecr.us-west-1.amazonaws.com/bmoon-frontend:1.0
+    ports:
+      - 3000:3000
+    
+  
