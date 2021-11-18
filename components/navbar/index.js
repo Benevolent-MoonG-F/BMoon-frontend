@@ -5,7 +5,6 @@ import { MobileNavLinks} from "./mobileNavLinks";
 import { Menu } from './menu'
 import styles from './index.module.css';
 import { DevicesSize } from "../responsive";
-import Tilt from 'react-parallax-tilt';
 import React, { useState } from "react";
 
 export function Navbar(props) {
@@ -18,7 +17,7 @@ export function Navbar(props) {
     return(
         <div className={styles.container}>
             <div className={styles.leftSection}>
-                <Tilt><Logo /> </Tilt>
+                <Logo />
             </div>
             <div className={styles.midSection}>
                 {!isTablet && <NavLinks />}

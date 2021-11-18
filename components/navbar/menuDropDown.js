@@ -1,31 +1,19 @@
 import styles from './menuDropDown.module.css'
 import Link from 'next/link'
-import { Marginer } from "../marginer";
+import { menuLinks } from './navLinkData';
 
 export function MenuDropDown(props) {
 
     return (
 
             <ul className={styles.menu}>
-                <li> 
-                    <Link href="#">
-                        <a>Connect Wallet</a>
-                    </Link>
-                </li>
-                
-                <li> 
-                    <Link href="#">
-                        <a>Whitepaper</a>
-                    </Link>
-                </li>
-                            
-                <li> 
-                    <Link href="#">
-                        <a>Developers</a>
-                    </Link>
-                </li>
-                {/* <Marginer margin="2em"/>
-                <Menu /> */}
+                { menuLinks.map(item => 
+                    <li className={styles.linkItem} key={item.title}> 
+                        <Link href={item.href}>
+                            <a className={styles.link}>{item.title}</a>
+                        </Link>
+                    </li> 
+                )}
             </ul>
 
     );

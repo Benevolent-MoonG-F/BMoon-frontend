@@ -1,34 +1,21 @@
 import styles from './navLinks.module.css'
 import React, { useState } from "react";
 import Link from 'next/link'
-import { MenuDropDown } from './menuDropDown';
+import { landingPagelinks, appLinks } from './navLinkData';
 
 export function NavLinks(props) {
+    const links = props.isAuthenticated ? appLinks : landingPagelinks;
+
     return (
         <div className={styles.navLinksContainer}>
             <ul className={styles.linksWrapper}>
-                <li className={styles.linkItem}> 
-                    <Link href="/">
-                        <a className={styles.link}>Home</a>
-                    </Link>
-                </li>
-                <li className={styles.linkItem}> 
-                    <Link href="/">
-                        <a className={styles.link}>About Us</a>
-                    </Link>
-                </li>
-                                
-                <li className={styles.linkItem}> 
-                    <Link href="/">
-                        <a className={styles.link}>Community</a>
-                    </Link>
-                </li>
-
-                <li className={styles.linkItem}> 
-                    <Link href="/">
-                        <a className={styles.link}>FAQ</a>
-                    </Link>
-                </li>
+                { links.map(item => 
+                    <li className={styles.linkItem} key={item.title}> 
+                        <Link href={item.href}>
+                            <a className={styles.link}>{item.title}</a>
+                        </Link>
+                    </li> 
+                )}
 
             </ul>
         </div>
