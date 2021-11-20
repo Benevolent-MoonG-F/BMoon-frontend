@@ -34,10 +34,10 @@
     color: #79FFF6;
 }
 
-.linkItem .link{
-    text-decoration: none;
+.linkItem a{
+    /* text-decoration: none;
     color: inherit;
-    font-size: inherit;
+    font-size: 100px; */
 }
 
 /* .linkItem .link {

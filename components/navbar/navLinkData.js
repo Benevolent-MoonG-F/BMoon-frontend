@@ -37,7 +37,7 @@ const appLinks = [
 
 const menuLinks = [
     {
-        title: 'Connect Walet',
+        title: 'Connect Wallet',
         href: '#',
     },
     {

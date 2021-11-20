@@ -11,6 +11,7 @@ import { theme } from '../../components/theme';
 import { DownArrow } from '../../components/downArrow/downArrow';
 import { PartnerList } from '../../components/partnerList';
 import Tilt from 'react-parallax-tilt';
+import Link from 'next/link'
 
 const appLink = '/app/new-game';
 
@@ -36,6 +37,7 @@ export function TopSection(props) {
                             <span style={{color: theme.yellow, marginLeft: "20px"}}>Crypto Markets</span> 
                         </h1>
                         <h4>A decentralized cryptocurrency prediction marketplace</h4>
+                       
                         <Button href={appLink}
                             btnClassName={styles.btnWrapper}
                             linkClassName={styles.btnText}

@@ -1,59 +1,26 @@
 import { useState } from "react";
 // import SwipeableViews from 'react-swipeable-views';
-import { Confirm } from "./confirm";
 import { SelectAsset } from "./selectAsset";
 import { SelectPayment } from "./selectPayment";
 import { Button} from '@mui/material';
-
+import styles from './index.module.css'
 export function MultiStepForm(props) {
 
-    const [step, setStep] = useState(
-        // NextJS will render the component on server side first and window.localStorage is only defined on client side 
-        // Need to check if browser has been rendered on client side in order to access localStorage
-        (typeof window !== "undefined" && localStorage.getItem("step")) ? Number(localStorage.getItem("step")) : 1
-    );
-    const [order, setOrder] = useState({
-        asset: null,
-        price: null,
-        payment: null,
+    const { step, order, setOrder, nextStep, prevStep, submit, className} = props;
 
-    })
-
-    const handleChange = index => e => {
-        setStep(index);
-        localStorage.setItem("step", index)
+    // Temporarily setup, need to be implemented
+    const isAuthenticated = true;
+    const connectWalet = () => {
+        alert('Connect Wallet')
     }
 
-    const nextStep = () => {
-        setStep(prev => prev +1);
-        localStorage.setItem("step", step + 1);
-    }
+    // Prepare button for form control
+    const formControl = () => {
 
-    const prevStep = () => {
-        setStep(prev => prev - 1);
-        localStorage.setItem("step", step - 1);
-    }
-
-    const submit = () => {
-
-    }
-    const content = step => {
-        switch (step){
-            case 1:
-                return <SelectAsset order={order} setOrder={setOrder}/>;
-            case 2:
-                return <SelectPayment payment={order.payment} setOrder={setOrder} />;
-            case 3:
-                return <Confirm />;
-        }
-    }
-    return (
-        <div>
-            {content(step)}
-            <h2>{order?.asset}</h2>
-            <h2>{order?.price}</h2>
-            <div>
-                { step > 1 && 
+        if (isAuthenticated) {
+            return (
+                <div className={styles.buttonContainer}>
+                { step > 0 && 
                     <Button 
                         variant="contained" 
                         color="primary"
@@ -63,7 +30,7 @@ export function MultiStepForm(props) {
                     </Button>
                 }
 
-                { step !== 3
+                { step !== 2
                     ? <Button 
                     variant="contained" 
                     color="primary"
@@ -79,6 +46,44 @@ export function MultiStepForm(props) {
                     > Submit </Button>
                 }
                 </div>
+            )
+        }
+        else return (
+            <div className={styles.connectBtn}>
+                <Button 
+                    variant="contained" 
+                    color="primary"
+                    style={{margin: '15px', width: '85%'}}
+                    onClick={connectWalet}
+                > Connect wallet
+                </Button>
             </div>
+        )
+    }
+
+    // Prepare Content
+    const content = step => {
+        switch (step){
+            case 0:
+                return (
+                    <SelectAsset order={order} setOrder={setOrder} /> 
+                );
+            default:
+                return (
+                    <SelectPayment nextStep={nextStep} order={order} setOrder={setOrder} />
+
+                );
+        }
+    }
+
+    return (
+        <div className={className}>
+
+            <div className={styles.wrapper}>
+                {/* Render content by step */}
+                {content(step)}
+                {formControl()}
+            </div>
+        </div>
     );
 }

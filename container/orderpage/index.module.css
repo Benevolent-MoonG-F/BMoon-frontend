@@ -1,15 +1,24 @@
 .wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 700px;
-    padding-top: 7rem;
-
+    height: 100%;
+    padding-top: 4rem;
 }
 
 .content {
-    padding: 25px;
-    border-radius: 15px;
-    border: 1px solid black;
-    background-color: rgba(240, 235, 235, 0.4);
+    /* background-color: lightseagreen; */
+}
+.bannerContainer {
+    display: flex;
+    /* background-color: red; */
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+.formContainer {
+    display: flex;
+    justify-content: center;
+    /* background-color: lightslategrey; */
+    padding: 1rem 3.5rem 4rem;
+}
+.stepperContainer {
+    padding: 1rem;
 }

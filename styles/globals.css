@@ -5,6 +5,8 @@ body {
   font-family: 'Play', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: #142237;
+  /* background-color: #222831; */
+  color: white;
 }
 
 a {

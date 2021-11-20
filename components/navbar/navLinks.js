@@ -10,11 +10,9 @@ export function NavLinks(props) {
         <div className={styles.navLinksContainer}>
             <ul className={styles.linksWrapper}>
                 { links.map(item => 
-                    <li className={styles.linkItem} key={item.title}> 
-                        <Link href={item.href}>
-                            <a className={styles.link}>{item.title}</a>
-                        </Link>
-                    </li> 
+                    <Link href={item.href} className={styles.linkItem} key={item.title}>
+                        <a className={styles.linkItem}>{item.title}</a>
+                    </Link>
                 )}
 
             </ul>

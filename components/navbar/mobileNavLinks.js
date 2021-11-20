@@ -18,7 +18,7 @@ export function MobileNavLinks(props) {
             <ul className={styles.linksWrapper}>
                 { links.map(item => 
                     <li className={styles.linkItem} key={item.title}> 
-                        <Link href={item.href}>
+                        <Link href={item.href} className={styles.linkItem} key={item.title}>
                             <a className={styles.link}>{item.title}</a>
                         </Link>
                     </li> 
