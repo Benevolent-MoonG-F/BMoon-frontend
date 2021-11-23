@@ -58,9 +58,10 @@ export function TopSection(props) {
                     }
 
                 </div>
-
-                {!isTablet && <PartnerList />}
                 
+                <div className={styles.partnerListContainer}>
+                    <PartnerList />
+                </div>
                 <div 
                     className={styles.downArrowContainer}
                     onClick={scrollToNextSection}

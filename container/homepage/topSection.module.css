@@ -58,6 +58,15 @@
     padding-left: 10rem;
 }
 
+.partnerListContainer {
+    position: relative;
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    justify-content: center;
+    background-color: rgba(216, 216, 216, 0.5);
+}
 .downArrowContainer {
     position: absolute;
     bottom: 100px;
