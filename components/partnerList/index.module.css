@@ -4,8 +4,8 @@
     justify-content: space-evenly;
     align-items: center;
     list-style: none;
-    width: 92vw;
-    max-width: 1300px;
+    width: 95%;
+    max-width: 1450px;
     margin: 10px;
 }
 
@@ -20,6 +20,6 @@
 
 @media only screen and (max-width: 992px) {
     .partners li {
-      flex: 0 1 10rem;
+      flex: 0 1 12rem;
     }
 }

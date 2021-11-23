@@ -8,7 +8,7 @@ const tools = [
         title: 'Chainlink',
         logo: {
             src: ChainlinkLogo,
-            width: 150,
+            width: 170,
             height: 55,
         },
     },
@@ -16,7 +16,7 @@ const tools = [
         title: 'Moralis',
         logo: {
             src: ChainlinkLogo,
-            width: 150,
+            width: 170,
             height: 55,
         },
     },
@@ -24,7 +24,7 @@ const tools = [
         title: 'Superfluid',
         logo: {
             src: ChainlinkLogo,
-            width: 150,
+            width: 170,
             height: 55,
         },
     },
@@ -32,8 +32,8 @@ const tools = [
         title: 'Polygon',
         logo: {
             src: PolygonLogo,
-            width: 160,
-            height: 45,
+            width: 170,
+            height: 50,
         },
     },
 
