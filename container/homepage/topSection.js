@@ -6,7 +6,7 @@ import { Navbar } from '../../components/navbar'
 import { Marginer } from '../../components/marginer'
 import { Button } from '../../components/button';
 import styles from './topSection.module.css';
-import LandingImg from '../../public/images/landing.png'
+import LandingImg from '../../public/images/landing-no-shadow.png'
 import { theme } from '../../components/theme';
 import { DownArrow } from '../../components/downArrow/downArrow';
 import { PartnerList } from '../../components/partnerList';
@@ -17,8 +17,8 @@ const appLink = '/app/new-game';
 
 export function TopSection(props) {
     const isMobile = useMediaQuery({ maxWidth: DevicesSize.mobile });
-
-    const imgSize = isMobile ? { w: '150', h: '180' } : { w: '330', h: '380'}
+    const isTablet = useMediaQuery({ maxWidth: '1380px' });
+    const imgSize = isMobile ? { w: '180', h: '180' } : (isTablet? {w: '250', h: '250'} : { w: '400', h: '400'})
     const marginLeft = isMobile ? "10px" : "20px";
 
     

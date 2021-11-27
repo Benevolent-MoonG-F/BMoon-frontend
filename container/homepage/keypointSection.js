@@ -37,9 +37,9 @@ export function KeypointSection(props) {
                     </div>
 
                     <div className={styles.cardWrapper}>
-                        <Tilt>
+                        {/* <Tilt> */}
                         <GlassCard />
-                        </Tilt>
+                        {/* </Tilt> */}
                         {/* <Carousel>
                         {  keypoints.map( (item, idx) => (
                                 <div key={item.key} style={{"--i": idx}}>
