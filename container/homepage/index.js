@@ -1,3 +1,4 @@
+import { Navbar } from '../../components/navbar'
 import { TopSection } from "./topSection";
 import { Marginer } from "../../components/marginer";
 import { KeypointSection } from "./keypointSection";
@@ -6,10 +7,10 @@ import { WhyUsSection } from "./whyUsSection";
 
 export function HomePage(props) {
     return (
-        <div className={styles.container}>
+        <section className={styles.container}>
             <TopSection />
-            <KeypointSection />
-            <WhyUsSection />
-        </div>
+            {/* <KeypointSection />
+            <WhyUsSection /> */}
+        </section>
     );
 }

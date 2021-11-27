@@ -9,9 +9,10 @@ export function MenuDropDown(props) {
   const { authenticate, isAuthenticated, logout } = useMoralis();
   const { walletAddress, chainId } = useMoralisDapp();
   return (
-    <ul className={styles.menu}>
+    <div className={styles.menu}>
+      
       {menuLinks.map((item, i) => (
-        <li
+        <div
           onClick={() => {
             if (item.wallet && isAuthenticated) {
               logout();
@@ -29,8 +30,8 @@ export function MenuDropDown(props) {
                 : item.title}
             </a>
           </Link>
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }

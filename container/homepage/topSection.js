@@ -16,49 +16,55 @@ import Link from 'next/link'
 const appLink = '/app/new-game';
 
 export function TopSection(props) {
-    const isTablet = useMediaQuery({ maxWidth: DevicesSize.tablet });
+    const isMobile = useMediaQuery({ maxWidth: DevicesSize.mobile });
+
+    const imgSize = isMobile ? { w: '150', h: '180' } : { w: '330', h: '380'}
+    const marginLeft = isMobile ? "10px" : "20px";
+
+    
+
     const scrollToNextSection = () => {
         scroller.scrollTo("keypointSection", { smooth: true, duration: 1300 });
     };
     return (
         <Element name="topSection">
             <div className={styles.container}>
-                <Navbar/>
-
                 <div className={styles.wrapper}>
 
                     <div className={styles.leftContent}>
                         <h1> 
                             <span style={{color: theme.green}}>Bring Your</span>
-                            <span style={{color: theme.yellow, marginLeft: "20px"}}>Vision</span> 
+                            <span style={{color: theme.yellow, marginLeft: marginLeft}}>Vision</span> 
                         </h1>
                         <h1> 
                             <span style={{color: theme.green}}>To The</span>
-                            <span style={{color: theme.yellow, marginLeft: "20px"}}>Crypto Markets</span> 
+                            <span style={{color: theme.yellow, marginLeft: marginLeft}}>Crypto Markets</span> 
                         </h1>
                         <h4>A decentralized cryptocurrency prediction marketplace</h4>
                        
+                        <div className={styles.btnContainer}> 
                         <Button href={appLink}
                             btnClassName={styles.btnWrapper}
                             linkClassName={styles.btnText}
                         >Enter App</Button>
+                        </div>
                     </div>
 
-                    {!isTablet && 
+                    {true && 
                     <Tilt> 
                         <div className={styles.rightContent}>
                             <Image
                                 src={LandingImg}
-                                height={450}
-                                width={410}
+                                height={imgSize.h}
+                                width={imgSize.w}
                                 alt="Bring your vision to the crypto markets"    
                             />
                         </div>
                     </Tilt>
-                    }
+                    } 
 
                 </div>
-                
+            </div>
                 <div className={styles.partnerListContainer}>
                     <PartnerList />
                 </div>
@@ -69,7 +75,7 @@ export function TopSection(props) {
                     <DownArrow/>
                 </div>
                 
-            </div>
+        
         </Element>
     );
 }
