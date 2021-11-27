@@ -40,7 +40,7 @@ export function TopSection(props) {
                             <span style={{color: theme.green}}>To The</span>
                             <span style={{color: theme.yellow, marginLeft: marginLeft}}>Crypto Markets</span> 
                         </h1>
-                        <h4>A decentralized cryptocurrency prediction marketplace</h4>
+                        <h4>A Mission-Driven Decentralized Cryptocurrency Prediction Marketplace focusing on Social Impact</h4>
                        
                         <div className={styles.btnContainer}> 
                         <Button href={appLink}

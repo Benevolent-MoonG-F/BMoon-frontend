@@ -1,33 +1,32 @@
-.container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1000px;
-    flex-wrap: wrap;
-    z-index: 1;
-}
 
 .card {
     position: relative;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: blue;
     width: 40rem;
     height: 25rem;
     margin: 30px;
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.4);
     overflow: hidden;
     display: flex;
     justify-content: center;
     border-top: 1px solid rgba(255,255,255,0.5);
     border-left: 1px solid rgba(255,255,255,0.5);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(15px);
     cursor: pointer;
+
 }
 
 .content {
-    padding: 20px;
+    padding: 0 20px;
     text-align: center;
+    height: 90%;
     /* transform: translateY(100px);
     opacity: 0; */
     transition: 0.5s;
@@ -41,6 +40,8 @@
     color: white;
     z-index: 1;
     position: relative;
+    color: #142237da;
+
 }
 .content h2::before{
     content: '';
@@ -50,10 +51,16 @@
     bottom: -10px;
     width: 80px;
     height: 5px;
-    background: white;
+    background:  #142237da;
 }
+
 .content p {
-    font-size: 1em;
+    font-size: 1.2em;
+    letter-spacing: 1.5px;
     color:  white;
-    font-weight: 300;
+    font-weight: lighter;
+    padding: 20px;
+    line-height: 28px;
+    font-family: 'Raleway';
+    color: #142237da;
 }

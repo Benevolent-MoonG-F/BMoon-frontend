@@ -31,10 +31,13 @@
 .leftContent h4{
     font-size: 1.4em;
     font-weight: lighter;
-    margin-top: -1px;
+    margin-top: 30px;
+    margin-bottom: 50px;
     color: #fff;
     margin-left: 8px;
     font-family: Poppins;
+    width: 100%;
+    max-width: 800px;
 }
 
 .btnWrapper {

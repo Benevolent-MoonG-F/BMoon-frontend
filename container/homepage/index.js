@@ -9,8 +9,8 @@ export function HomePage(props) {
     return (
         <section className={styles.container}>
             <TopSection />
-            {/* <KeypointSection />
-            <WhyUsSection /> */}
+            <KeypointSection /> 
+            <WhyUsSection /> 
         </section>
     );
 }

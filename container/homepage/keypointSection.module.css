@@ -2,11 +2,12 @@
     width: 100vw;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     /* background: linear-gradient(to bottom, #2e6cc9, #46747ab2); */
     position: relative;
+    /* color: white; */
 }
 
 .color {
@@ -46,8 +47,8 @@
     border-bottom: 1px solid rgba(255,255,255,0.5);
     border-right: 1px solid rgba(255,255,255,0.5);
     backdrop-filter: blur(5px);
-    animation: animate 10s linear infinite;
-    animation-delay: calc(-1s * var(--i));
+    /* animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * var(--i)); */
 }
 .square:nth-child(1){
 
@@ -81,11 +82,38 @@
     width: 120px;
     height: 120px;
 }
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    /* height: 600px; */
+    width: 100vw;
+    z-index: 1;
+    flex-direction: column;
+}
 .marbleWrapper {
     display: flex;
     width: 800px;
     justify-content: space-between;
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
 }
+.cardWrapper {
+    position: relative;
+    /* width: 50rem; */
+    margin-top: -20px;
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.cardWrapper h2 {
+    /* z-index: 4; */
+}
+
 
 
 .downArrowContainer {
@@ -97,9 +125,9 @@
 }
 @keyframes animate {
     0%, 100% {
-        transform: translateY(-30px);
+        transform: translateY(-10px);
     }
     50% {
-        transform: translateY(30px);
+        transform: translateY(10px);
     }
 }
