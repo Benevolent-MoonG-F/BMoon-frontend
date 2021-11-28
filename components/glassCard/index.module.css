@@ -20,6 +20,9 @@
     border-left: 1px solid rgba(255,255,255,0.5);
     backdrop-filter: blur(15px);
     cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+    z-index: 0;
 
 }
 
@@ -88,4 +91,8 @@
     line-height: 28px;
     font-family: 'Raleway';
     color: #142237da;
+}
+.card:hover {
+    border: 3px solid rgba(255, 255, 255, 0.479);
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.6);
 }

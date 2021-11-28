@@ -38,7 +38,7 @@ export function KeypointSection(props) {
 
                     <div className={styles.cardWrapper}>
                         {/* <Tilt> */}
-                        <GlassCard />
+                        <GlassCard headline={keypoints[0].headline} content={keypoints[0].content}/>
                         {/* </Tilt> */}
                         {/* <Carousel>
                         {  keypoints.map( (item, idx) => (

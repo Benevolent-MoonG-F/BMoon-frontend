@@ -1,6 +1,6 @@
 .container {
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     /* flex-direction: column; */
     justify-content: center;
@@ -26,7 +26,7 @@
     right: 10px;
     width: 800px;
     height: 500px;
-    background: #FFFE74;
+    background: #ffff7498;
 }
 .color:nth-child(3) {
     bottom: 100px;

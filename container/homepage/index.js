@@ -4,12 +4,14 @@ import { Marginer } from "../../components/marginer";
 import { KeypointSection } from "./keypointSection";
 import styles from "./index.module.css";
 import { WhyUsSection } from "./whyUsSection";
+import { HowItWorkSection } from './howItWorks/howItWork';
 
 export function HomePage(props) {
     return (
         <section className={styles.container}>
             <TopSection />
             <KeypointSection /> 
+            <HowItWorkSection />
             <WhyUsSection /> 
         </section>
     );
