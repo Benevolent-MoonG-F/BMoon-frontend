@@ -5,6 +5,7 @@ import { KeypointSection } from "./keypointSection";
 import styles from "./index.module.css";
 import { WhyUsSection } from "./whyUsSection";
 import { HowItWorkSection } from './howItWorks/howItWork';
+import { TeamInfoSection } from './teamInfo';
 
 export function HomePage(props) {
     return (
@@ -12,6 +13,7 @@ export function HomePage(props) {
             <TopSection />
             <KeypointSection /> 
             <HowItWorkSection />
+            {/* <TeamInfoSection /> */}
             <WhyUsSection /> 
         </section>
     );

@@ -109,8 +109,8 @@
     z-index: 0;
 }
 .square:nth-child(4){
-    top: -180px;
-    left: 1090px;
+    bottom: -400px;
+    right: -380px;
     width: 120px;
     height: 60px;
     z-index: 1;

@@ -110,6 +110,12 @@
     align-items: center;
   
 }
+.carousel {
+    margin-top: 10;
+    width: 300;
+    height: 800;
+    background-color: 'black';
+}
 .cardWrapper h2 {
     /* z-index: 4; */
 }

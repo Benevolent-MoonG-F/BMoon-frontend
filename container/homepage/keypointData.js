@@ -7,9 +7,9 @@ const keypoints = [
     {
         id: 0,
         headline: 'Highly Secured',
-        content: `A fun crypto prognostication game that takes predictive markets to a more exciting  level
-        - Call the date and time of your favorite token doing a Moon Shot, win the pot while also directing a 
-        charitable donation to the organization of your choice from our list of benevolent partners.`,
+        content: `In the blockchain space, a security-focused approach protects our users  allowing them to enjoy 
+        a positive experience with all of our products with a comfort and peace of mind that they are protected by strong 
+        smart contract coded safeguards. Further, all our products will be expertedly audited prior to mainnet launch.`,
         key: "global",
         color: "yellow",
         icon: GlobalIcon,
@@ -26,10 +26,10 @@ const keypoints = [
     },
     {
         id: 1,
-        headline: 'Global Access',
-        content: `For a more immediate gratification, the Daily Rocket has a winner every day!  
-        Correctly predict the closing price of your favorite tokens (UTC close of day) and win the pot, 
-        while again choosing which benevolent cause receives a donation.`,
+        headline: 'Benevolent Mission',
+        content: `Our mission, as it is stated in our name, is to pursue all we do with benevolent intent.  
+        This objective has many layers, and we believe our reach and social impact will only grow as our community 
+        offers its voice via our DAO.  Healing the world is at the core of who we are. `,
         key: "blockchain",
         color: "yellow",
         icon: BlockchainIcon,
@@ -47,10 +47,10 @@ const keypoints = [
     },
     {
         id: 2,
-        headline: 'Charity',
-        content: `The BMSDAO is an essential component to bringing the vision, mission, and values of the project to 
-        full fruition.   As a community-centric, community-galvanizing project, the governance and growth by our $BMS 
-        family is central to a successful journey`,
+        headline: 'Fun-focused',
+        content: `Another central value of BMG&F is to provide a fun experience for our users.  While perhaps overly simple,
+        seeking fun, joyful experiences in life is at the core of the human condition.  People spend a tremendous amount of
+        time, money, and energy seeking fun activities in their lives- thus it a priority to make our offerings joyful `,
         key: "global",
         color: "yellow",
         icon: GlobalIcon,
@@ -68,10 +68,11 @@ const keypoints = [
     },
     {
         id: 3,
-        headline: 'Fun-focused',
-        content: `Benevolent Moon Gaming & Finance will mint the $BMS token which will be central to all mission-driven
-        unities.   Further, lending, borrowing, and yield farming instruments are in development to increasingly
-        serve our users, and our benevolent partners as a piece of all transactions on the protocol will go to charity.`,
+        headline: 'Community Centric',
+        content: `All of our products are born from the community experience that has brought us together as a team, and has had 
+        an emotionally positive palpable effect on our lives.   We built this project for the global community, to provide joy, 
+        help heal the world where it needs, and bring people together.  Further,  our BMS DAO will ultimately render this 
+        project a completely community governed entity.`,
         key: "bitcoin",
         color: "yellow",
         icon: BitcoinIcon,
@@ -89,11 +90,11 @@ const keypoints = [
     },
     {
         id: 4,
-        headline: 'Community Centric',
-        content: `for V2, we will have periodic lottery drawings for all users to win fresh #NFTs from emerging artists.
-        line with our values, we will openly promote the arts and culture of the world community, provide our users with a 
-        ce to display their collection, and opportunities to trade #NFTs.  Further, in development are Degen Moon Games, 
-        Lunar Fantasy Sports, Learn2Earn games. COMING SOON `,
+        headline: 'Financial Opportunities',
+        content: `All of our products will also provide for our community varied opportunities to grow financial wealth. 
+        The variety of activities will appeal to a very wide usership, from gamers, to predictive market enthusiasts, 
+        to NFT collectors, and Defi-Degens.  United by a community led DAO, we will continue to explore opportunities 
+        to serve our community in the area of financial growth.`,
         key: "global",
         color: "yellow",
         icon: SecurityIcon,

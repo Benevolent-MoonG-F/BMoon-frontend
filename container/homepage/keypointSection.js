@@ -5,12 +5,14 @@ import { GlassCard } from '../../components/glassCard'
 import { DownArrow } from '../../components/downArrow/downArrow';
 import { MarbaleBall } from '../../components/marbleBall';
 import { keypoints } from './keypointData';
-import { Carousel } from 'antd';
-import Slider from "react-slick";
+import Carousel from "react-material-ui-carousel";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
 export function KeypointSection(props) {
 
     const scrollToNextSection = () => {
-        scroller.scrollTo("whyUsSection", { smooth: true, duration: 1300 });
+        scroller.scrollTo("howItWorksSection", { smooth: true, duration: 1300 });
     };
 
     return (
@@ -38,15 +40,8 @@ export function KeypointSection(props) {
 
                     <div className={styles.cardWrapper}>
                         {/* <Tilt> */}
-                        <GlassCard headline={keypoints[0].headline} content={keypoints[0].content}/>
-                        {/* </Tilt> */}
-                        {/* <Carousel>
-                        {  keypoints.map( (item, idx) => (
-                                <div key={item.key} style={{"--i": idx}}>
-                                    <GlassCard header={item.header} content={item.content}/>
-                                </div>
-                        ))}
-                        </Carousel> */}
+                        <GlassCard headline={keypoints[0].headline} content={keypoints[0].content}>
+                        </GlassCard>
 
                     </div>
                     
