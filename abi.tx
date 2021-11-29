@@ -2,77 +2,9 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_dai",
-				"type": "address"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "previousOwner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "OwnershipTransferred",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "_placer",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "int256",
-				"name": "_prediction",
-				"type": "int256"
-			}
-		],
-		"name": "Predicted",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "AcceptedTokens",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes8",
 				"name": "_asset",
-				"type": "bytes8"
+				"type": "uint256"
 			},
 			{
 				"internalType": "address",
@@ -130,14 +62,138 @@
 				"type": "uint128"
 			},
 			{
-				"internalType": "bytes8",
+				"internalType": "uint256",
 				"name": "_asset",
-				"type": "bytes8"
+				"type": "uint256"
 			}
 		],
 		"name": "claimWinnings",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes",
+				"name": "performData",
+				"type": "bytes"
+			}
+		],
+		"name": "performUpkeep",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_dai",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_asset",
+				"type": "uint256"
+			},
+			{
+				"internalType": "int256",
+				"name": "_prediction",
+				"type": "int256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_token",
+				"type": "uint256"
+			}
+		],
+		"name": "predictClosePrice",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_placer",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "int256",
+				"name": "_prediction",
+				"type": "int256"
+			}
+		],
+		"name": "Predicted",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "AcceptedTokens",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -161,9 +217,9 @@
 				"type": "uint128"
 			},
 			{
-				"internalType": "bytes8",
+				"internalType": "uint256",
 				"name": "",
-				"type": "bytes8"
+				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
@@ -190,9 +246,9 @@
 				"type": "uint256"
 			},
 			{
-				"internalType": "bytes8",
+				"internalType": "uint256",
 				"name": "",
-				"type": "bytes8"
+				"type": "uint256"
 			}
 		],
 		"name": "dayAssetNoOfWinners",
@@ -214,9 +270,9 @@
 				"type": "uint256"
 			},
 			{
-				"internalType": "bytes8",
+				"internalType": "uint256",
 				"name": "",
-				"type": "bytes8"
+				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
@@ -243,9 +299,9 @@
 				"type": "uint256"
 			},
 			{
-				"internalType": "bytes8",
+				"internalType": "uint256",
 				"name": "",
-				"type": "bytes8"
+				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
@@ -272,9 +328,9 @@
 				"type": "uint256"
 			},
 			{
-				"internalType": "bytes8",
+				"internalType": "uint256",
 				"name": "",
-				"type": "bytes8"
+				"type": "uint256"
 			}
 		],
 		"name": "dayAssetTotalAmount",
@@ -296,9 +352,9 @@
 				"type": "uint128"
 			},
 			{
-				"internalType": "bytes8",
+				"internalType": "uint256",
 				"name": "",
-				"type": "bytes8"
+				"type": "uint256"
 			},
 			{
 				"internalType": "address",
@@ -365,42 +421,6 @@
 	{
 		"inputs": [
 			{
-				"internalType": "bytes",
-				"name": "performData",
-				"type": "bytes"
-			}
-		],
-		"name": "performUpkeep",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes8",
-				"name": "_asset",
-				"type": "bytes8"
-			},
-			{
-				"internalType": "int256",
-				"name": "_prediction",
-				"type": "int256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_token",
-				"type": "uint256"
-			}
-		],
-		"name": "predictClosePrice",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "address",
 				"name": "",
 				"type": "address"
@@ -420,26 +440,6 @@
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]
