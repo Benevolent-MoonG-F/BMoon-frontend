@@ -1,6 +1,7 @@
-.wrapper {
-  height: 100%;
-  padding-top: 4rem;
+.wrapper{
+    height: 100vh;
+    padding-top: 80px;
+    background-color: #142237;
 }
 
 .content {

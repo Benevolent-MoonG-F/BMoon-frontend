@@ -1,5 +1,5 @@
 .container {
-    width: 100%;
+    width: 100vw;
     height: 80px;
     box-shadow: 0 1px 3px rgba(15, 15, 15, 0.13);
     display: flex;
@@ -9,7 +9,7 @@
     font-family: 'Jost', sans-serif;
     position: fixed;
     z-index: 5;
-    background: #142237;
+    background-color: #142237;
 }
 
 .leftSection {
@@ -26,4 +26,8 @@
 
 .rightSection {
     display: flex;
+    background-color: aliceblue;
+    align-items: center;
+    justify-content: center;
+
 }

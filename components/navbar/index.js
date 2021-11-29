@@ -1,19 +1,14 @@
 import { useMediaQuery } from "react-responsive";
+import { DevicesSize } from "../responsive";
 import { Logo }from '../logo/index';
 import { NavLinks } from './navLinks';
-import { MobileNavLinks} from "./mobileNavLinks";
-import { Menu } from './menu'
+import { Menu } from './menu';
+import { MobileMenu} from './mobile/mobileMenu';
 import styles from './index.module.css';
-import { DevicesSize } from "../responsive";
-import React, { useState } from "react";
 
 export function Navbar(props) {
     const isTablet = useMediaQuery({ maxWidth: DevicesSize.tablet });
-    const [isMenuOpened, setIsMenuOpened] = useState(false);
 
-    const handleMenuBtn = () => {
-        setIsMenuOpened(prev => !(prev))
-    }
     return(
         <div className={styles.container}>
             <div className={styles.leftSection}>
@@ -23,8 +18,7 @@ export function Navbar(props) {
                 {!isTablet && <NavLinks />}
             </div>
             <div className={styles.rightSection}>
-                {!isTablet && <Menu isOpened={isMenuOpened} handleBtn={handleMenuBtn}/>}
-                {isTablet && <MobileNavLinks />}
+                {!isTablet ? <Menu/> : <MobileMenu/> }
             </div>
         </div>
     ) 

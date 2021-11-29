@@ -1,21 +1,25 @@
 .partners{
-    position: relative;
-    margin-top: 5rem;
     display: flex;
     flex-wrap: wrap;
-    padding: 1rem 0;
-    list-style: none;
     justify-content: space-evenly;
-    background-color: rgba(216, 216, 216, 0.25);
+    align-items: center;
+    list-style: none;
+    width: 95%;
+    max-width: 1450px;
+    margin: 10px;
 }
 
 .partners li {
-    padding: 1.5rem 2em;
-    font-weight: 900;
-    font-size: 1.8rem;
-    border-bottom: 3px solid transparent;
-    color: rgba(255, 255, 255, 0.438);
+    padding: 7px 12px;
+    margin: 5px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    flex: 0 1 10em;
-    text-align: center;
+}
+
+@media only screen and (max-width: 992px) {
+    .partners li {
+      flex: 0 1 14rem;
+    }
 }

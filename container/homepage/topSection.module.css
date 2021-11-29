@@ -1,18 +1,23 @@
 .container {
-    width: 100%;
-    height: 100vh;
-    padding: 0;
-    position: relative;
-}
-.wrapper{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 700px;
-    padding-top: 7rem;
+    /* width: 100vw; */
+    padding-top: 2rem;
+}
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 600px;
+    width: 90vw;
+    max-width: 1700px;
+
 }
 .leftContent{
- 
+    padding: 10px;
+    height: max-content;
 }
 .leftContent h1{
     font-size: 4.2em;
@@ -26,15 +31,16 @@
 .leftContent h4{
     font-size: 1.4em;
     font-weight: lighter;
-    margin-top: -1px;
+    margin-top: 30px;
+    margin-bottom: 50px;
     color: #fff;
     margin-left: 8px;
     font-family: Poppins;
+    width: 100%;
+    max-width: 800px;
 }
 
 .btnWrapper {
-    margin-left: 8px;
-    margin-top: 3rem;
     border: 1px solid #79FFF6;
     padding: 0.9rem 3.4em;
     border-radius: 10px;
@@ -55,9 +61,17 @@
     color: #fff;
 }
 .rightContent{
-    padding-left: 10rem;
+  
 }
 
+.partnerListContainer {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    justify-content: center;
+    background-color: rgba(216, 216, 216, 0.5);
+}
 .downArrowContainer {
     position: absolute;
     bottom: 100px;
@@ -65,30 +79,94 @@
     transform: translateX(-50%);
 }
 
-/* @media(max-width:992px) 
+@media only screen and (max-width: 768px)
 {
-    .wrapper{
-        min-height: 580px;
-    }
-    .leftContent{
-        width: 100%;
-        margin-top: -3rem;
+    .wrapper {
 
     }
+}
+@media only screen and (max-width: 1380px)
+{
+    .wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        min-height: 90%;
+        width: 100%;
+    }
+    .leftContent {
+    }
     .leftContent h1{
-        font-size: 3.8em;
-        font-weight: 700;
+        font-size: 3em;
+        margin: 0;
+        font-weight: 900;
+        line-height: 1.3;
+        font-family: Raleway;
+        text-align: center;
     }
     .leftContent h4{
-        font-size: 1.3em;
-        margin-top: 1rem;
+        /* margin-top:  30px 50px ; */
+        padding-top: 1rem;
+        font-size: 1.4em;
+        font-weight: bold;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
     }
-    .partners{
-        height: 6rem;
+    
+    .rightContent{
+
     }
-    .partners li {
-        padding: 1em;
-        font-weight: 850;
-        font-size: 1.4rem;
+    .btnContainer {
+
+        text-align: center;
+        align-self: center;
     }
-} */
+    .partnerListContainer {
+        margin-top: 4rem;
+    }
+}
+
+@media only screen and (max-width: 700px)
+{
+    .wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        min-height: 90%;
+        width: 100%;
+    }
+    .leftContent {
+    }
+    .leftContent h1{
+        font-size: 2.1em;
+        margin: 0;
+        font-weight: 900;
+        line-height: 1.3;
+        font-family: Raleway;
+        text-align: center;
+    }
+    .leftContent h4{
+        /* margin-top:  30px 50px ; */
+        padding-top: 1rem;
+        font-size: 1.1em;
+        font-weight: bold;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .rightContent{
+
+    }
+    .btnContainer {
+
+        text-align: center;
+        align-self: center;
+    }
+    .partnerListContainer {
+        margin-top: 4rem;
+    }
+}
