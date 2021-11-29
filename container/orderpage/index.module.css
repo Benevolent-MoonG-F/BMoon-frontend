@@ -1,11 +1,11 @@
 .wrapper{
-    height: 100vh;
     padding-top: 80px;
-    background-color: #142237;
+    /* background-color: #142237ec; */
+    height: 100vh;
 }
 
 .content {
-  /* background-color: lightseagreen; */
+  background-color: #142237ec;
 }
 .bannerContainer {
   display: flex;

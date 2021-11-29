@@ -130,8 +130,6 @@ export function OrderPage(props) {
     submit,
   };
   return (
-    <div>
-      <Navbar />
       <div className={styles.wrapper}>
         <div className={styles.content}>
           <PrizesBanner className={styles.bannerContainer} />
@@ -152,6 +150,5 @@ export function OrderPage(props) {
           <FormStepper step={step} className={styles.stepperContainer} />
         </div>
       </div>
-    </div>
   );
 }

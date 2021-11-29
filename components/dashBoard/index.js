@@ -44,8 +44,8 @@ const useStyles = makeStyles(theme => ({
     height: 240,
   },
   carousel: {
-    marginTop: "100",
-    width: 150,
+    marginTop: 0,
+    width: 250,
     height: 40,
     backgroudColor: 'black',
   },
@@ -87,7 +87,7 @@ export default function Dashboard() {
             </Grid>
 
             {/* First Row, right column */}
-            <Grid container xs={12} md={3} lg={3} 
+            <Grid item xs={12} md={3} lg={3}
               justifyContent="center"
               alignItems="center"
             >
