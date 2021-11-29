@@ -1,0 +1,32 @@
+.switchcontainer {
+  margin-top: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttoncontainer {
+  width: 800px;
+  background-color: #142237;
+  border-radius: 5px;
+}
+
+.dailyrocketbutton {
+  width: 50%;
+  /* background-color: #374254; */
+  color: #fff;
+  border: 1px inset rgba(240, 235, 235, 0.3);
+  border-top-left-radius: 15px;
+  cursor: pointer;
+}
+
+.bmsbutton {
+  width: 50%;
+  color: #fff;
+  background-color: #142237;
+  border: 1px inset rgba(240, 235, 235, 0.3);
+  border-top-right-radius: 15px;
+  cursor: pointer;
+  /* padding: 10px; */
+}

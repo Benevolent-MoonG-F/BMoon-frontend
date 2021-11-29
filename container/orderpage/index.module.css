@@ -1,24 +1,24 @@
-.wrapper{
-    height: 100%;
-    padding-top: 4rem;
+.wrapper {
+  height: 100%;
+  padding-top: 4rem;
 }
 
 .content {
-    /* background-color: lightseagreen; */
+  /* background-color: lightseagreen; */
 }
 .bannerContainer {
-    display: flex;
-    /* background-color: red; */
-    height: 200px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  /* background-color: red; */
+  height: 200px;
+  justify-content: center;
+  align-items: center;
 }
 .formContainer {
-    display: flex;
-    justify-content: center;
-    /* background-color: lightslategrey; */
-    padding: 1rem 3.5rem 4rem;
+  display: flex;
+  justify-content: center;
+  /* background-color: lightslategrey; */
+  padding: 0rem 3.5rem 4rem;
 }
 .stepperContainer {
-    padding: 1rem;
+  padding: 1rem;
 }

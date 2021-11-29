@@ -44,6 +44,7 @@ const menuLinks = [
   {
     title: 'Whitepapers',
     href: '#',
+    whitepaper: true,
   },
   {
     title: 'Developers',

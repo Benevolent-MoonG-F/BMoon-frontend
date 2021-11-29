@@ -1,84 +1,90 @@
 .wrapper {
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px inset rgba(240, 235, 235, 0.3);
-    background-color: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 15px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border: 1px inset rgba(240, 235, 235, 0.3);
+  background-color: rgba(255, 255, 255, 0.15);
 
-    width: 800px;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    /* justify-content: center; */
-    align-items: center;
-    font-size: 25px;
-    color: #0FDED2
+  width: 800px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* justify-content: center; */
+  align-items: center;
+  font-size: 25px;
+  color: #0fded2;
+  /* margin-top: 30px; */
 }
 
 .assetWrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
-    text-transform: uppercase;
-    font-size: 20px
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 .pricePanelWrapper {
-
-    width: 100%;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(240, 235, 235, 0.4);
-    position: relative;
-    /* background-color: indianred; */
-
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(240, 235, 235, 0.4);
+  position: relative;
+  /* background-color: indianred; */
 }
 .pricePanelWrapper h5 {
-    position: absolute;
-    padding: 10px 0;
-    top: -30px;
+  position: absolute;
+  padding: 10px 0;
+  top: -30px;
 }
 .pricePanelWrapper h1 {
-    padding-top: 2rem;
-    color: white
+  padding-top: 2rem;
+  color: white;
 }
 
 .priceInputWrapper {
-    width: 100%;
-    padding: 10px;
-    font-size: 20px;
-    text-transform: uppercase;
-    color: #0FDED2
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #0fded2;
 }
 
-.buttonContainer{
-    display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-    padding: 0.8rem;
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  padding: 0.8rem;
 }
 
 .connectBtn {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-    padding: 0.8rem;  
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  padding: 0.8rem;
 }
 .box {
-    background: rgba(240, 235, 235, 0.18);
-    border-radius: 4px;
+  background: rgba(240, 235, 235, 0.18);
+  border-radius: 4px;
 }
 .box:hover {
+}
 
-    
+.datepicker {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }

@@ -8,12 +8,18 @@ import Autocomplete from '@mui/material/Autocomplete';
 import BitcoinLogo from '../../public/images/bitcoin.png';
 import styles from './index.module.css';
 import axios from 'axios';
+import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle';
+import 'react-calendar/dist/Calendar.css';
+import 'react-clock/dist/Clock.css';
+import 'react-datetime-picker/dist/DateTimePicker.css';
 
 export function SelectAsset(props) {
-  const { order, setOrder } = props;
+  const { order, setOrder, isBMS } = props;
   const { asset, price } = order;
   const [currentPrice, setCurrentPrice] = useState('');
   const [count, setCount] = useState(0);
+  const [value, onChange] = useState(new Date());
+  const [endValue, onEndChange] = useState('');
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -33,19 +39,36 @@ export function SelectAsset(props) {
     }
   }, [asset, count]);
 
+  useEffect(() => {
+    const updateTime = (timeValue, time2Value) => {
+      setOrder((prevState) => ({
+        ...prevState,
+        time1: timeValue,
+        time2: time2Value,
+      }));
+    };
+    updateTime(value, endValue);
+  }, [value, setOrder, endValue]);
+
   const fetchPrice = async (asset) => {
     let Current = 0;
-    await axios
-      .get(
-        `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${asset.symbol}&tsyms=USD`
-      )
-      .then((res) => {
-        const assetSymbol = asset.symbol;
-        Current = res.data.RAW[assetSymbol].USD.PRICE;
-        setCurrentPrice(Current);
+    if (asset) {
+      try {
+        await axios
+          .get(
+            `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${asset.symbol}&tsyms=USD`
+          )
+          .then((res) => {
+            const assetSymbol = asset.symbol;
+            Current = res.data.RAW[assetSymbol].USD.PRICE;
+            setCurrentPrice(Current);
+            return Current;
+          });
         return Current;
-      });
-    return Current;
+      } catch (e) {
+        console.log(e);
+      }
+    }
   };
 
   const updateAsset = async (event, newValue) => {
@@ -109,13 +132,30 @@ export function SelectAsset(props) {
     </div>
   );
 
+  const reactDateTimePicker = (
+    <div className={styles.datepicker}>
+      <p style={{ fontSize: '20px' }}>PREDICT TIME</p>
+      <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          Start Time
+          <DateTimePicker onChange={onChange} value={value} />
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          End Time
+          <DateTimePicker onChange={onEndChange} value={endValue} />
+        </div>
+      </div>
+    </div>
+  );
+
   const priceInputBarComponent = (
     <div className={styles.priceInputWrapper}>
       Predict Price
       <div className={styles.priceInputWrapperWrapper}>
         <Box
           sx={{
-            '& > :not(style)': { mt: '5px' },
+            '& > :not(style)': { mt: isBMS ? '0px' : '5px' },
           }}
         >
           <TextField
@@ -144,6 +184,8 @@ export function SelectAsset(props) {
 
       {/* Predict Price Input Bar */}
       {priceInputBarComponent}
+
+      {isBMS ? reactDateTimePicker : ''}
     </Fragment>
   );
 }
