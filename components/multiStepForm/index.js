@@ -24,9 +24,8 @@ export function MultiStepForm(props) {
   } = props;
 
   // Temporarily setup, need to be implemented
-  const isAuthenticate = true;
   const connectWalet = () => {
-    alert('Connect Wallet');
+    authenticate({ signingMessage: 'Sign in to benevolent moon' });
   };
 
   // Prepare button for form control
