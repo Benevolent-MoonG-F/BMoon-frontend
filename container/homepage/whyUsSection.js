@@ -20,12 +20,12 @@ export function WhyUsSection(props) {
                 <div className={styles.content}> 
                     <Benefit
                         title = "Benevolent Moon"
-                        discription = " Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                        discription = "While other predictive market games benefit only the users, our goal is to benefit users and create a palpable social impact on the world. "
                     />
                     { !isMobile && <div className={styles.vertical}></div>}
                     <Benefit
-                        title = "Others"
-                        discription = " Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                        title = "Benevolent Organizations that benefit from our community efforts include UNICEFUSA, Lustgarten Foundation, The Water Project, Free Code Camp, Angel Protocol and more."
+                        discription = " "
                     />
                 </div>
             </div>
