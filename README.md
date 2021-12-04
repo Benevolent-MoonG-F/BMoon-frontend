@@ -1,5 +1,4 @@
 # BMoon-frontend
-# http://54.183.183.64:3000/app/new-game
 
 ## How to start the project?
 
