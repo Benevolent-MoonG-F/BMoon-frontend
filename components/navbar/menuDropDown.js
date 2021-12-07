@@ -28,7 +28,7 @@ export function MenuDropDown(props) {
             if (item.wallet && isAuthenticated) {
               logout();
             } else if (item.wallet && !isAuthenticated) {
-              authenticate({ signingMessage: 'Sign in to benevolent moon' });
+              authenticate({ signingMessage: 'Sign in to Benevolent Moon' });
             } else if (item.whitepaper) {
               console.log('run contract');
               runContractFunction();
