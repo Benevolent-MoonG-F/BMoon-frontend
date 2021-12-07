@@ -7,10 +7,10 @@ import FormControl from '@mui/material/FormControl';
 
 const paymentMethod = [
   {
-    label: 'USDC'
+    label: 'DAI'
   },
   {
-    label: 'Tera'
+    label: 'UST'
   }
 ]
 
