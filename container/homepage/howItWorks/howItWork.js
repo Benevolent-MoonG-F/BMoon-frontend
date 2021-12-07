@@ -6,7 +6,7 @@ import { GlassCard } from "../../../components/glassCard";
 import styles from './index.module.css';
 import Img from '../../../public/images/howitworks.png'
 const content = `Our games allow users to make educated predictions about their favorite projects. When a user 
-wins, they get their winnings sent to their wallet, while a donation is sent to the organization of their choice 
+wins, they get their winnings sent to their wallet, while their vote for which charity will receive a donation is cast 
 in a permissionless, trustless process. `;
 export function HowItWorkSection(props) {
 
