@@ -25,7 +25,7 @@ export function MultiStepForm(props) {
 
   // Temporarily setup, need to be implemented
   const connectWalet = () => {
-    authenticate({ signingMessage: 'Sign in to benevolent moon' });
+    authenticate({ signingMessage: 'Sign in to Benevolent Moon' });
   };
 
   // Prepare button for form control
