@@ -8,7 +8,7 @@ const landingPagelinks = [
     href: '/about',
   },
   {
-    title: 'Community',
+    title: 'DAO',
     href: '#',
   },
   {
@@ -26,7 +26,7 @@ const appLinks = [
     href: '#',
   },
   {
-    title: 'Community',
+    title: 'DAO',
     href: '#',
   },
   {
@@ -42,7 +42,7 @@ const menuLinks = [
     wallet: true,
   },
   {
-    title: 'Whitepapers',
+    title: 'Whitepaper',
     href: '#',
     whitepaper: true,
   },
