@@ -53,8 +53,8 @@ const useStyles = makeStyles(theme => ({
 
 const tokenData = [
   {
-    label: 'ETC',
-    currentPrice: 331,
+    label: 'ETH',
+    currentPrice: 4200,
   },
   {
     label: 'BTC',
