@@ -12,7 +12,7 @@ import Title from "./Title";
 function createData(id, transaction, date, asset, gameType, closeDate, predictionPrice, paymentMethod) {
   return { id, transaction, date, asset, gameType, closeDate, predictionPrice, paymentMethod};
 }
-
+// the following is sample of the dashboard data 
 const rows = [
   createData(
     0,
@@ -22,7 +22,7 @@ const rows = [
     "Daily Rocket",
     312.44,
     "18 Mar, 2019",
-    "USDC", 
+    "DAI", 
   ),
   createData(
     1,
@@ -32,7 +32,7 @@ const rows = [
     "Moon Square",
     312.44,
     "18 Mar, 2019",
-    "Tera", 
+    "DAI", 
   ),
   createData(
     2,
@@ -42,7 +42,7 @@ const rows = [
     "Moon Square",
     312.44,
     "8 Mar, 2019",
-    "USDC", 
+    "DAI", 
   ),
   createData(
     3,
@@ -52,7 +52,7 @@ const rows = [
     "Daily Rocket",
     312.44,
     "18 Mar, 2019",
-    "USDC", 
+    "DAI", 
   ),
   createData(
     4,
@@ -62,7 +62,7 @@ const rows = [
     "Moon Square",
     312.44,
     "18 Mar, 2019",
-    "USDC", 
+    "DAI", 
   )
 ];
 
