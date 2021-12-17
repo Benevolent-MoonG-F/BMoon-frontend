@@ -1,0 +1,20 @@
+.comingSoon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #142237;
+    color: white;
+    height: 100vh;
+}
+
+.comingSoon div{
+        cursor: pointer;
+        font-size: 20px;
+        color: rgb(15, 222, 210);
+}
+
+.comingSoon h1{
+    font-size: 40px;
+    padding-bottom: 50px;
+}

@@ -1,5 +1,5 @@
 import Layout from '../components/layout';
-import { HomePage } from '../container/homepage';
+import { AboutPage, aboutPage } from '../container/aboutPage/aboutPage';
 import { Navbar } from '../components/navbar';
 
 export default function About() {
@@ -7,6 +7,7 @@ export default function About() {
     <Layout>
       <Navbar />
       <h1 styles={{height: '100vh', backgroud: 'black'}}>About</h1>
+      <AboutPage/>
     </Layout>
   )
 }

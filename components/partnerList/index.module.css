@@ -1,12 +1,22 @@
-.partners{
+/* .partners{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     list-style: none;
-    width: 95%;
+    width: 100%;
     max-width: 1450px;
     margin: 10px;
+    border-bottom: 1px solid #dddddd;
+    background-color: #eeeeee;
+} */
+
+.logoContainer{
+    border-bottom: 1px solid #dddddd;
+    background-color: #eeeeee;
+    text-align: center;
+    padding: 50px;
+    margin-bottom: 100px;
 }
 
 .partners li {

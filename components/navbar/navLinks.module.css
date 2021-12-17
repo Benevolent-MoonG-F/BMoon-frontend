@@ -25,6 +25,7 @@
     transition: all 220ms ease-in-out;
     color: white;
     cursor: pointer;
+    text-decoration: none;
 }
 .linkItem::after::before{
     transition: all 270ms ;

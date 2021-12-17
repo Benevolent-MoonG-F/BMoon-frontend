@@ -1,0 +1,50 @@
+.dao h5{
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+    padding-bottom: 30px;
+}
+.dao h6{
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 10px;
+}
+
+.dao a{
+    text-align: center;
+    font-size: 25px;
+   /* text-underline-offset: 6px; */
+   color: #0FDED2
+}
+
+.daoQuote{
+    background: #fff;
+    padding-top: 100px;
+}
+
+
+
+@media (min-width: 768px) and (max-width: 990px){
+    .dao h6{
+    font-size: 20px ;
+    line-height: 24px;
+    }
+}
+
+@media (max-width: 575.98px){
+.dao h5{
+    font-size: 25px;
+}
+
+.dao h6 {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.dao a{
+    font-size: 20px;
+}
+
+}

@@ -104,7 +104,7 @@ export function MultiStepForm(props) {
     <div className={className}>
       <div
         className={styles.wrapper}
-        style={{ height: isBMS ? '580px' : '450px' }}
+        style={{ height: isBMS ? '680px' : '550px' }}
       >
         {/* Render content by step */}
         {content(step)}

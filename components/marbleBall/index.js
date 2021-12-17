@@ -5,7 +5,7 @@ export function MarbaleBall(props) {
     const { color, icon, iconSize=70, hasShade=false, customStyles} = props;
     return (
         <div 
-            className={styles.container} 
+            className={`${styles.marble} container`}
             style={customStyles.out}
         >
             <div className={styles.inner}

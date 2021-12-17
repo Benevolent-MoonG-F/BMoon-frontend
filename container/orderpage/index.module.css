@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   /* background-color: lightslategrey; */
-  padding: 0rem 3.5rem 4rem;
+  padding: 0rem 1rem 4rem;
 }
 .stepperContainer {
   padding: 1rem;

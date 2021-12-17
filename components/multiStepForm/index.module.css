@@ -14,37 +14,47 @@
   /* justify-content: center; */
   align-items: center;
   font-size: 25px;
-  color: #0fded2;
+  /* color: #0fded2; */
   /* margin-top: 30px; */
+}
+.dateTime h5{
+  margin-bottom: -7px;
 }
 
 .assetWrapper {
-  display: flex;
-  flex-direction: row;
+ /* display: flex; */
+  /* flex-direction: row; */
   justify-content: center;
-  align-items: center;
+  text-align: center;
+  /* align-items: center; */
   padding: 10px;
   width: 100%;
   text-transform: uppercase;
   font-size: 20px;
+
+
+  
 }
+
+
 .pricePanelWrapper {
   width: 100%;
-  height: 150px;
+  /* height: 150px; */
   display: flex;
   align-items: center;
   justify-content: center;
   color: rgba(240, 235, 235, 0.4);
   position: relative;
   /* background-color: indianred; */
+  
 }
 .pricePanelWrapper h5 {
   position: absolute;
-  padding: 10px 0;
+  padding: 10px 20;
   top: -30px;
 }
 .pricePanelWrapper h1 {
-  padding-top: 2rem;
+  padding: 0px;
   color: white;
 }
 
@@ -54,6 +64,7 @@
   font-size: 20px;
   text-transform: uppercase;
   color: #0fded2;
+  margin-top: 30px;
 }
 
 .buttonContainer {
@@ -63,21 +74,27 @@
   width: 100%;
   bottom: 0;
   right: 0;
-  padding: 0.8rem;
+  /* padding: 0.8rem; */
+ 
+
 }
 
 .connectBtn {
   display: flex;
   justify-content: center;
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
-  bottom: 0;
+  /* bottom: 0; */
   right: 0;
-  padding: 0.8rem;
+  /* padding: 0.8rem; */
+  
+
 }
 .box {
   background: rgba(240, 235, 235, 0.18);
   border-radius: 4px;
+  margin-bottom: 30px;
+  
 }
 .box:hover {
 }

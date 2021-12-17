@@ -1,16 +1,17 @@
-.container {
+/* .container {
     width: 100vw;
     height: 100vh;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background: linear-gradient(to bottom, #2e6cc9, #46747ab2); */
+    background: linear-gradient(to bottom, #2e6cc9, #46747ab2);
     position: relative;
-    /* color: white; */
-}
+    color: white;
+    background: white;
+} */
 
-.color {
+/* .color {
     position: absolute;
     filter: blur(150px);
 }
@@ -34,11 +35,11 @@
     width: 400px;
     height: 500px;
     background: white;
-}
-.box {
+} */
+/* .box {
     position: relative;
-}
-.square {
+} */
+/* .square {
     position: absolute;
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
@@ -47,8 +48,8 @@
     border-bottom: 1px solid rgba(255,255,255,0.5);
     border-right: 1px solid rgba(255,255,255,0.5);
     backdrop-filter: blur(5px);
-    /* animation: animate 10s linear infinite;
-    animation-delay: calc(-1s * var(--i)); */
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * var(--i)); 
 }
 .square:nth-child(1){
 
@@ -81,33 +82,44 @@
     left: -400px;
     width: 120px;
     height: 120px;
-}
+} */
+
+
 .content {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     height: 80vh;
     /* height: 600px; */
     width: 100vw;
     z-index: 1;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
-.marbleWrapper {
+
+/* .partnerList{
+    position: relative;
     display: flex;
-    width: 800px;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    justify-content: center;
+    background-color: rgba(216, 216, 216, 0.5);
+} */
+
+/* .marbleWrapper {
+    display: flex;
+    padding-top: 30px;
     justify-content: space-between;
     animation: animate 10s linear infinite;
     animation-delay: calc(-1s * var(--i));
-}
-.cardWrapper {
-    position: relative;
-    /* width: 50rem; */
-    margin-top: -20px;
-    width: 100vw;
-    height: 500px;
+    margin: auto;
+} */
+.card1 { 
+
+    /* width: 100vw;
+    height: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
   
 }
 .carousel {
@@ -137,3 +149,4 @@
         transform: translateY(10px);
     }
 }
+
