@@ -2,7 +2,7 @@ import Image from 'next/image'
 import "bootstrap/dist/css/bootstrap.css";
 import styles from "./footer.module.css"
 import Logo from "../../public/images/logo.png"
-import { FaFacebookSquare, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaDiscord, FaTwitter, FaTelegram } from 'react-icons/fa';
 export function Footer() {
     return(
         <div className={styles.footer}>
@@ -20,7 +20,7 @@ export function Footer() {
                     <ul className="text-center">
                     <li className="nav-item">
                         <a className="nav-link text-black" href="#">
-                        <FaFacebookSquare className={styles.facebook} />
+                        <FaDiscord className={styles.facebook} />
                         </a>
                     </li>
                     <li className="nav-item">
@@ -30,7 +30,7 @@ export function Footer() {
                     </li>
                     <li className="nav-item">
                         <a className="nav-link text-black" href="#">
-                            <FaLinkedin className={styles.linkedin}/>
+                            <FaTelegram className={styles.linkedin}/>
                         </a>
                     </li>
                     </ul>
