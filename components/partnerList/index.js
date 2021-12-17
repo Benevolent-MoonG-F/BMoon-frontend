@@ -57,7 +57,7 @@ export function PartnerList(props) {
                 <div className="col-md-3 col-6">
                 <Image src={PolygonLogo}  alt="logo" className={`${styles.logoImg} img-fluid`} width="200px" height="50px"/><br/>
      
-                </div>
+                </div><br/><br/>
                 <div className="col-md-3 col-6">
                 <Image src={MoralisLogo}  alt="logo" className={`${styles.logoImg} img-fluid`} width="200px" height="40px"/><br/>
      

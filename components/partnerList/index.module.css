@@ -15,9 +15,14 @@
     border-bottom: 1px solid #dddddd;
     background-color: #eeeeee;
     text-align: center;
-    padding: 50px;
-    margin-bottom: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+     margin-bottom: 70px; 
 }
+
+
 
 .partners li {
     padding: 7px 12px;
