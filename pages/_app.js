@@ -1,9 +1,13 @@
 import Head from 'next/head';
 import '../styles/globals.css';
+import "bootstrap/dist/css/bootstrap.css";
 import { MoralisProvider } from 'react-moralis';
 import { MoralisDappProvider } from '../providers/MoralisDappProvider/MoralisDappProvider';
-
+import { useEffect } from "react";
 export default function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap");
+}, []);
   return (
     <div>
       {/* <Head>

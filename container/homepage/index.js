@@ -6,6 +6,10 @@ import styles from "./index.module.css";
 import { WhyUsSection } from "./whyUsSection";
 import { HowItWorkSection } from './howItWorks/howItWork';
 import { TeamInfoSection } from './teamInfo';
+import {Footer} from '../../components/footer/footer';
+import{Games} from '../../components/games/games';
+import {DaoQuote} from '../../components/last-section/daoQuote';
+
 
 export function HomePage(props) {
     return (
@@ -13,8 +17,10 @@ export function HomePage(props) {
             <TopSection />
             <KeypointSection /> 
             <HowItWorkSection />
-            {/* <TeamInfoSection /> */}
-            <WhyUsSection /> 
+            <Games/>
+            <DaoQuote/>
+            <Footer/>
+            {/* <WhyUsSection />  */}
         </section>
     );
 }

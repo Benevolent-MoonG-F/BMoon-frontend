@@ -1,0 +1,45 @@
+.footer{
+background-color: #ffffff;
+padding-bottom: 5rem;
+padding-top: 5rem;
+text-align: center;
+}
+
+.footer ul{
+    display: inline-flex;
+    list-style-type: none;
+}
+
+.facebook{
+   font-size: 30px;
+   color: #3b5998;
+}
+
+.facebook:hover{
+    font-size: 50px;
+    transition: 1s ease-out 50ms;
+ }
+
+.twitter{
+    font-size: 30px;  
+    color: #00acee; 
+}
+.twitter:hover{
+    font-size: 50px;
+    transition: 1s ease-out 50ms;
+ }
+
+.linkedin{
+    font-size: 30px;
+    color: #0e76a8;
+}
+.linkedin:hover{
+    font-size: 50px;
+    transition: 1s ease-out 50ms;
+ }
+
+@media only screen and (max-width: 780px){
+    .footer ul{
+        text-align: center;
+    }
+}

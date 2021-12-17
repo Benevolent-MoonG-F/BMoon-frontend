@@ -21,7 +21,7 @@ export function CarouselCard(props) {
             // margin: 0,
           },
         }}
-        className={props.className}
+        
       >
         {props.children}             
       </Carousel>

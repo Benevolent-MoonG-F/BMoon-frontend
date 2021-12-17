@@ -1,19 +1,17 @@
 
 .card {
-    position: relative;
-    height: 25rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center;
     justify-content: space-evenly;
-    background-color: blue;
-    width: 40rem;
-    height: 25rem;
+    background-color: blue; */
+    /* width: 100%;
+    height: 25rem; */
     margin: 30px;
-    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5); */
     border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.4);
-    overflow: hidden;
+    background-color: #eeeeee;
+      /* overflow: hidden; */
     display: flex;
     justify-content: center;
     border-top: 1px solid rgba(255,255,255,0.5);
@@ -23,13 +21,15 @@
     border: 3px solid transparent;
     transition: all 0.2s ease-in-out;
     z-index: 0;
+    padding-top: 50px;
+    min-height: 20rem;;
 
 }
 
 .content {
     padding: 0 20px;
     text-align: center;
-    height: 90%;
+    /* height: 90%; */
     /* transform: translateY(100px);
     opacity: 0; */
     transition: 0.5s;
@@ -43,7 +43,7 @@
     opacity: 1;
 } */
 .content h2 {
-    font-size: 3em;
+    font-size: 2em;
     color: white;
     z-index: 1;
     position: relative;
@@ -61,6 +61,7 @@
     height: 5px;
     background:  #142237da;
     transition: all 0.4s ease-in-out;
+    left: 0px;
 }
 .content h2::after{
     content: '';
@@ -83,16 +84,38 @@
 }
 
 .content p {
-    font-size: 1.2em;
+    font-size: 24px;
     letter-spacing: 1.5px;
     color:  white;
     font-weight: lighter;
     padding: 20px;
-    line-height: 28px;
+    line-height: 29px;
     font-family: 'Raleway';
     color: #142237da;
+    text-align: left;
 }
 .card:hover {
     border: 3px solid rgba(255, 255, 255, 0.479);
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+
+
+@media (min-width: 768px) and (max-width: 990px){
+    .content p{
+    font-size: 20px ;
+    line-height: 24px;
+    }
+}
+
+@media (max-width: 575.98px){
+.content h2{
+    font-size: 25px;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 19px;
+}
+
 }

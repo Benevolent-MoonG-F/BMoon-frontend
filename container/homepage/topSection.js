@@ -12,6 +12,9 @@ import { DownArrow } from '../../components/downArrow/downArrow';
 import { PartnerList } from '../../components/partnerList';
 import Tilt from 'react-parallax-tilt';
 import Link from 'next/link'
+import TypeIt from "typeit-react";
+import "bootstrap/dist/css/bootstrap.css";
+import { style } from '@mui/system';
 
 const appLink = '/app/new-game';
 
@@ -27,53 +30,56 @@ export function TopSection(props) {
         scroller.scrollTo("keypointSection", { smooth: true, duration: 1300 });
     };
     return (
-        <Element name="topSection">
-            <div className={styles.container}>
-                <div className={styles.wrapper}>
+        <Element name="topSection" className={styles.topSec}>
+            <div className="container">
+                <div className="row">
 
-                    <div className={styles.leftContent}>
+                    <div className={`${styles.header} col-md-8 order-1`}>
                         <h1> 
-                            <span style={{color: theme.green}}>Bring Your</span>
-                            <span style={{color: theme.yellow, marginLeft: marginLeft}}>Vision</span> 
+                            <span style={{color: theme.green}}>Benevolent Moon Gaming & Decentralized Finance</span> 
                         </h1>
-                        <h1> 
-                            <span style={{color: theme.green}}>To The</span>
-                            <span style={{color: theme.yellow, marginLeft: marginLeft}}>Crypto Markets</span> 
-                        </h1>
-                        <h4>A Mission-Driven Decentralized Cryptocurrency Prediction Marketplace focusing on Social Impact</h4>
+                        <span style={{color: theme.yellow, marginLeft: marginLeft}}><TypeIt className={styles.typedCursor} options={{
+                            strings: ["A Mission-Driven Decentralized Cryptocurrency Prediction Marketplace focusing on Social Impact."],
+                            speed: 100,
+                            waitUntilVisible: true,
+                            }}/></span> <br/><br/><br/>
+                                   
+                        {/* <h4>A Mission-Driven Decentralized Cryptocurrency Prediction Marketplace focusing on Social Impact</h4> */}
                        
                         <div className={styles.btnContainer}> 
                         <Button href={appLink}
                             btnClassName={styles.btnWrapper}
                             linkClassName={styles.btnText}
-                        >Enter App</Button>
+                        >Play Game</Button>
                         </div>
                     </div>
-
+                    <div className={`${styles.headerImg} col-md-4 order-0 order-md-2`}>
                     {true && 
                     <Tilt> 
-                        <div className={styles.rightContent}>
+                        
                             <Image
                                 src={LandingImg}
-                                height={imgSize.h}
-                                width={imgSize.w}
-                                alt="Bring your vision to the crypto markets"    
+                                // height={imgSize.h}
+                                // width={imgSize.w}
+                                alt="Bring your vision to the crypto markets"  
+                                className={`${styles.headerImg} img-fluid`}  
                             />
-                        </div>
+                       
                     </Tilt>
-                    } 
+                    }  </div>
+                </div>
 
-                </div>
+               
             </div>
-                <div className={styles.partnerListContainer}>
-                    <PartnerList />
-                </div>
-                <div 
+
+            
+               
+                {/* <div 
                     className={styles.downArrowContainer}
                     onClick={scrollToNextSection}
                 >
                     <DownArrow/>
-                </div>
+                </div> */}
                 
         
         </Element>

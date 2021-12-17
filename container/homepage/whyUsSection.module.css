@@ -22,7 +22,7 @@
 
 }
 .vertical {
-    border-left: 3px solid white;
+    /* border-left: 3px solid white; */
     height: 500px;
     margin-top: 5rem;
 }

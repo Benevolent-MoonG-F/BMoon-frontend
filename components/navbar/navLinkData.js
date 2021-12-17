@@ -9,12 +9,9 @@ const landingPagelinks = [
   },
   {
     title: 'DAO',
-    href: '#',
+    href: '/comingSoon',
   },
-  {
-    title: 'FAQs',
-    href: '#',
-  },
+  
 ];
 const appLinks = [
   {
@@ -27,12 +24,9 @@ const appLinks = [
   },
   {
     title: 'DAO',
-    href: '#',
+    href: '/comingSoon',
   },
-  {
-    title: 'FAQs',
-    href: '#',
-  },
+  
 ];
 
 const menuLinks = [
@@ -43,14 +37,14 @@ const menuLinks = [
   },
   {
     title: 'Whitepaper',
-    href: '#',
+    href: '/comingSoon',
     whitepaper: true,
   },
   {
     title: 'Developers',
-    href: '#',
+    href: '/comingSoon',
   },
 ];
-const mobileLandingPageLinks = [...landingPagelinks, ...landingPagelinks];
+const mobileLandingPageLinks = [...menuLinks, ...landingPagelinks];
 
 export { landingPagelinks, appLinks, menuLinks, mobileLandingPageLinks };

@@ -7,9 +7,7 @@ const keypoints = [
     {
         id: 0,
         headline: 'Highly Secured',
-        content: `In the blockchain space, a security-focused approach protects our users  allowing them to enjoy 
-        a positive experience with all of our products with a comfort and peace of mind that they are protected by strong 
-        smart contract coded safeguards. Further, all our products will be expertedly audited prior to mainnet launch.`,
+        content: `In the blockchain space, a security-focused approach protects our users  allowing them to enjoy a positive experience with all of our products with a comfort and peace of mind that they are protected by strong smart contract coded safeguards.`,
         key: "global",
         color: "yellow",
         icon: GlobalIcon,
@@ -47,10 +45,9 @@ const keypoints = [
     },
     {
         id: 2,
-        headline: 'Fun-focused',
-        content: `Another central value of BMG&F is to provide a fun experience for our users.  While perhaps overly simple,
-        seeking fun, joyful experiences in life is at the core of the human condition.  People spend a tremendous amount of
-        time, money, and energy seeking fun activities in their lives- thus it a priority to make our offerings joyful `,
+        headline: 'Fun-Focused',
+        content: `Another central value of BMG&F is to provide a fun experience for our users. People spend a tremendous amount of time, money, and energy seeking fun activities in their lives- thus it a priority to make our offerings joyful  
+        `,
         key: "global",
         color: "yellow",
         icon: GlobalIcon,
@@ -110,6 +107,24 @@ const keypoints = [
 
         }
     
+    },
+    {
+        id: 5,
+        headline: 'Benevolent Moon Squares',
+        content: `A fun crypto prognostication game that takes predictive markets to a more exciting  level- Call the date and time of your favorite token doing a Moon Shot.`,
+        key: "global",
+        color: "yellow",
+        icon: GlobalIcon,
+        styles: {
+            out: {
+                background: `linear-gradient(#e7e7e6 0%, #f8f9e0 10%,  #fbfcae 50%, #f8fb00 100%)`,
+                top: 170,
+            },
+            inner: {
+                background: `linear-gradient(#e7e7e6 10%, #fbfcae 50%, #f8fb00 100%)`,
+
+            }
+        }
     },
 ];
 

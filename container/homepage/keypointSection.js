@@ -9,6 +9,10 @@ import Carousel from "react-material-ui-carousel";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import "bootstrap/dist/css/bootstrap.css";
+import { PartnerList } from "../../components/partnerList";
+
+
 export function KeypointSection(props) {
 
     const scrollToNextSection = () => {
@@ -17,42 +21,53 @@ export function KeypointSection(props) {
 
     return (
         <Element name="keypointSection" >
-            <div className={styles.container}>
-                <div className={styles.color}></div>
-                <div className={styles.color}></div>
-                <div className={styles.color}></div>
-                <div className={styles.box}>
-                   <div className={styles.square} style={{"--i": 0}}></div>
-                    <div className={styles.square} style={{"--i": 1}}></div>
-                    <div className={styles.square} style={{"--i": 2}}></div>
-                    <div className={styles.square} style={{"--i": 3}}></div>
-                    <div className={styles.square} style={{"--i": 4}}></div>
-        
-                </div>
-                <div className={styles.content}> 
-                    <div className={styles.marbleWrapper}>
+          
+            <PartnerList />
+          
+  
+            <div className={`${styles.container2} container-fluid`}>           
+                    <div className="row">
+                    {/* <div className={styles.marbleWrapper}>
                         {  keypoints.map( (item, idx) => (
                             <div key={item.key} style={{"--i": idx}}>
                                 <MarbaleBall key={item.key} color={item.color} icon={item.icon} customStyles={item.styles}/>
                             </div>
                         ))}
-                    </div>
+                    </div> */}
 
-                    <div className={styles.cardWrapper}>
-                        {/* <Tilt> */}
+                        <div className="col-md-6">
                         <GlassCard headline={keypoints[0].headline} content={keypoints[0].content}>
                         </GlassCard>
+                        </div>
 
+                        <div className="col-md-6">
+                        <GlassCard headline={keypoints[2].headline} content={keypoints[2].content}>
+                        </GlassCard>
+                        </div>
+                       
                     </div>
-                    
+                
+         
+                   
+
+                   
+                       
+                        
+
                 </div>
-                <div 
+               
+
+
+                {/* <div 
                     className={styles.downArrowContainer}
                     onClick={scrollToNextSection}
                 >
                     <DownArrow/>
-                </div>
-            </div>
+                </div> */}
+           
+
+
+
         </Element>
     );
 }

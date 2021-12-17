@@ -88,10 +88,11 @@ export function SelectAsset(props) {
 
   // Define components
   const assetComponent = (
-    <div className={styles.assetWrapper}>
-      Asset
+    <div className={`${styles.assetWrapper} container-fluid`}>
+      <div className={`${styles.assetWrapper}`}>
+      <h5 className="text-black">Select Asset</h5>
       <Autocomplete
-        className={styles.box}
+        className={`${styles.box} mx-auto`}
         value={asset}
         onChange={updateAsset}
         id="asset-select"
@@ -121,6 +122,8 @@ export function SelectAsset(props) {
         renderInput={(params) => <TextField {...params} />}
       />
     </div>
+    </div>
+    
   );
 
   const pricePannelComponent = (
@@ -133,17 +136,17 @@ export function SelectAsset(props) {
   );
 
   const reactDateTimePicker = (
-    <div className={styles.datepicker}>
-      <p style={{ fontSize: '20px' }}>PREDICT TIME</p>
-      <div style={{ display: 'flex' }}>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          Start Time
-          <DateTimePicker onChange={onChange} value={value} />
+    <div className="container-fluid">
+      {/* <p style={{ fontSize: '20px' }}>PREDICT TIME</p> */}
+      <div className={`${styles.dateTime} row`}>
+        <div className="col-lg-6 col-md-12 text-center">
+          <h5>Start Time</h5>
+          <DateTimePicker onChange={onChange} value={value} className={`${styles.assetWrapper}`} />
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          End Time
-          <DateTimePicker onChange={onEndChange} value={endValue} />
+        <div className="col-lg-6 col-md-12 text-center">
+          <h5>End Time</h5>
+          <DateTimePicker onChange={onEndChange} value={endValue}  className={`${styles.assetWrapper}`} />
         </div>
       </div>
     </div>
