@@ -33,7 +33,7 @@ export function HowItWorkSection(props) {
                         <div className={`${styles.gameCard}`}>
                         <h5>01</h5>
                         <h6>Make educated predictions</h6>
-                        <p>Our games allow users to make educated predictions about their favorite projects</p> 
+                        <p>Our games allow users to make educated predictions about their favorite projects.</p> 
                     </div>
                     </div>
                     <div className=" col-md-6">
@@ -64,7 +64,7 @@ export function HowItWorkSection(props) {
                         <div className={`${styles.gameCard}`}>
                         <h5>03</h5>
                         <h6>Receive payment</h6>
-                        <p>When a user wins, they get their winnings sent to their wallet, and the charity they chose receives the donation. This is a permissionless, trustless</p> 
+                        <p>When a user wins, they get their winnings sent to their wallet, and the charity they chose receives the donation.</p> 
                     </div>
                     </div>
                     <div className=" col-md-6">

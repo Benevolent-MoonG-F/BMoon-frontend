@@ -16,7 +16,7 @@ export function DailyRocket(){
                 </div>
                 
                 <p className="card-text text-white">
-                For a more immediate gratification, the Daily Rocket has a winner every day!  Correctly predict the closing price of your favorite tokens (UTC close of day) and win the pot, while again choosing which benevolent cause receives a donation
+                For a more immediate gratification, the Daily Rocket has a winner every day!  Correctly predict the closing price of your favorite tokens (UTC close of day) and win the pot, while again choosing which benevolent cause receives a donation.
                 </p>
                 <Button href={appLink}
                         btnClassName={styles.btnWrapper}
