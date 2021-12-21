@@ -92,8 +92,9 @@ export function SelectAsset(props) {
       <div className={`${styles.assetWrapper}`}>
       <h5 className="text-black">Select Asset</h5>
       <Autocomplete
-        className={`${styles.box} mx-auto`}
+        className={`${styles.box1} mx-auto`}
         value={asset}
+        
         onChange={updateAsset}
         id="asset-select"
         sx={{ width: '200px', mx: '20px' }}
