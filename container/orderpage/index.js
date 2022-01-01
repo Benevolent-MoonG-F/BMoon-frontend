@@ -9,6 +9,9 @@ import { SwitchButton } from '../../components/switch';
 import { useMoralis, useWeb3Contract } from 'react-moralis';
 import daiabi from '../../utils/abis/dai.json';
 import dailyrocket from '../../utils/abis/dailyrocket.json';
+import bms from '../../utils/abis/bms.json';
+import { useContract } from '../../utils/hooks/useContract';
+import TransactionStateModal from '../../components/TransactionModal/TransactionStateModal';
 
 export function OrderPage(props) {
   const [step, setStep] = useState(
@@ -27,6 +30,60 @@ export function OrderPage(props) {
           payment: null,
         }
   );
+
+  const [modal, setModal] = useState(false);
+  const [modalDetails, setModalDetails] = useState('');
+
+  const { contract, bmscontract } = useContract(
+    dailyrocket,
+    '0xfe825801CCA48fEbdf09F4bdE540eEaD8440e6eA',
+    bms,
+    '0x537c9f52e021c3cdde2f0948255a16536bfcf581'
+  );
+  console.log(contract);
+
+  const handleSubmit = async () => {
+    console.log(order);
+    const formatPrice = parseFloat(order.price) * 10 ** 8;
+    console.log(formatPrice);
+    try {
+      const tx = await contract.methods
+        .predictClosePrice(
+          order.asset.symbol,
+          formatPrice,
+          '0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD'
+        )
+        .send({
+          from: '0x63319ccC5AbC515B9bFd594741B9C64E4e477126',
+        });
+      console.log(tx);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleBMSSubmit = async () => {
+    try {
+      const tx = await bmscontract.methods
+        .predictAsset(
+          orderBMS.time1.getTime(),
+          '0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD',
+          order.asset.symbol
+        )
+        .send({
+          from: '0x63319ccC5AbC515B9bFd594741B9C64E4e477126',
+        });
+      console.log(tx);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const options = {
+    contractAddress: '0x91873876e830EcF10F1bC73c168C13ccAbfecff7',
+    functionName: 'predictClosePrice',
+    abi: dailyrocket,
+  };
 
   const { runContractFunction, contractResponse, error, isRunning, isLoading } =
     useWeb3Contract({
@@ -108,8 +165,14 @@ export function OrderPage(props) {
   };
 
   const submit = () => {
-    runContractFunction();
+    // runContractFunction();
+    handleSubmit();
   };
+
+  const submitBMS = () => {
+    handleBMSSubmit();
+  };
+
   var props = {
     step,
     setOrder,
@@ -127,28 +190,34 @@ export function OrderPage(props) {
     setOrder: setOrderBMS,
     prevStep: prevStepBMS,
     nextStep: nextStepBMS,
-    submit,
+    submit: submitBMS,
   };
   return (
-      <div className={styles.wrapper}>
-        <div className={styles.content}>
-          <PrizesBanner className={styles.bannerContainer} />
-          <SwitchButton isBMS={isBMS} setIsBMS={setIsBMS} />
-          {isBMS ? (
-            <MultiStepForm
-              {...propsBMS}
-              isBMS={isBMS}
-              className={styles.formContainer}
-            />
-          ) : (
-            <MultiStepForm
-              {...props}
-              isBMS={isBMS}
-              className={styles.formContainer}
-            />
-          )}
-          <FormStepper step={step} className={styles.stepperContainer} />
-        </div>
+    <div className={styles.wrapper}>
+      <div className={styles.content}>
+        <PrizesBanner className={styles.bannerContainer} />
+        <SwitchButton isBMS={isBMS} setIsBMS={setIsBMS} />
+        {isBMS ? (
+          <MultiStepForm
+            {...propsBMS}
+            isBMS={isBMS}
+            className={styles.formContainer}
+          />
+        ) : (
+          <MultiStepForm
+            {...props}
+            isBMS={isBMS}
+            className={styles.formContainer}
+          />
+        )}
+        <FormStepper step={step} className={styles.stepperContainer} />
       </div>
+      {/* <TransactionStateModal
+        modal={modal}
+        setModal={setModal}
+        modalDetails={modalDetails}
+      /> */}
+      {/* <TransactionStateModal /> */}
+    </div>
   );
 }
