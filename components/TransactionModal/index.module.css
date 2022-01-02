@@ -1,0 +1,9 @@
+.closebtn:active{
+    border: 'none';
+    background-color: 'none';
+} 
+
+.closebtn:hover{
+    border: 'none';
+    background-color: 'red';
+} 

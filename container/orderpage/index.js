@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MultiStepForm } from '../../components/multiStepForm';
 import { Navbar } from '../../components/navbar';
 import { PrizesBanner } from '../../components/prizesBanner';
@@ -12,6 +12,10 @@ import dailyrocket from '../../utils/abis/dailyrocket.json';
 import bms from '../../utils/abis/bms.json';
 import { useContract } from '../../utils/hooks/useContract';
 import TransactionStateModal from '../../components/TransactionModal/TransactionStateModal';
+import { useAllowance } from '../../utils/hooks/useAllowance';
+import { useMoralisDapp } from '../../providers/MoralisDappProvider/MoralisDappProvider';
+import { ethers } from 'ethers';
+
 
 export function OrderPage(props) {
   const [step, setStep] = useState(
@@ -30,9 +34,13 @@ export function OrderPage(props) {
           payment: null,
         }
   );
-
+  const {Moralis} = useMoralis()
+  const {walletAddress} = useMoralisDapp()
   const [modal, setModal] = useState(false);
-  const [modalDetails, setModalDetails] = useState('');
+  const [show,setShow] = useState(false)
+  const [txstate,settxstate] = useState('failed')
+  const [reload,setReload] = useState(false)
+  const {isDailyApproved,isBmsApproved} = useAllowance(reload)
 
   const { contract, bmscontract } = useContract(
     dailyrocket,
@@ -40,42 +48,97 @@ export function OrderPage(props) {
     bms,
     '0x537c9f52e021c3cdde2f0948255a16536bfcf581'
   );
-  console.log(contract);
+
+  
+
+  console.log(isDailyApproved,isBmsApproved)
+
+  const approveDai = async(address) => {
+      try {
+        setModal(true)
+        settxstate('loading')
+        window.scroll(300,0)
+        const minimum = 10*10**18
+        const web3 = await Moralis.enableWeb3()
+        const contract = new web3.eth.Contract(daiabi,'0xff795577d9ac8bd7d90ee22b6c1703490b6512fd')
+        const tx = await contract.methods.approve(address,minimum.toString()).send({
+          from: walletAddress
+        })
+        console.log(tx)
+        // if(confirmations >= 1){
+          setModal(true)
+          settxstate('success')
+          setReload(true)
+        // }
+        
+      }catch(err){
+        console.log(err)
+        setModal(true)
+        settxstate('failed')
+
+      }
+  }
 
   const handleSubmit = async () => {
     console.log(order);
     const formatPrice = parseFloat(order.price) * 10 ** 8;
     console.log(formatPrice);
-    try {
-      const tx = await contract.methods
-        .predictClosePrice(
-          order.asset.symbol,
-          formatPrice,
-          '0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD'
-        )
-        .send({
-          from: '0x63319ccC5AbC515B9bFd594741B9C64E4e477126',
-        });
-      console.log(tx);
-    } catch (err) {
-      console.log(err);
+
+    if(isDailyApproved){
+      try {
+        setModal(true)
+        settxstate('loading')
+        setShow(true)
+        window.scroll(300,0)
+        
+        const tx = await contract.methods
+          .predictClosePrice(
+            order.asset.symbol,
+            formatPrice,
+            '0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD'
+          )
+          .send({
+            from: walletAddress,
+          });
+          setModal(true)
+          settxstate('success')
+        
+      } catch (err) {
+        setModal(true)
+        settxstate('failed')
+        console.log(err);
+      }
+    }else{
+      approveDai('0xfe825801CCA48fEbdf09F4bdE540eEaD8440e6eA')
     }
   };
 
   const handleBMSSubmit = async () => {
-    try {
-      const tx = await bmscontract.methods
-        .predictAsset(
-          orderBMS.time1.getTime(),
-          '0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD',
-          order.asset.symbol
-        )
-        .send({
-          from: '0x63319ccC5AbC515B9bFd594741B9C64E4e477126',
-        });
-      console.log(tx);
-    } catch (err) {
-      console.log(err);
+    if(isBmsApproved){
+      try {
+        settxstate('loading')
+        setModal(true)
+        const tx = await bmscontract.methods
+          .predictAsset(
+            orderBMS.time1.getTime(),
+            '0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD',
+            order.asset.symbol
+          )
+          .send({
+            from: walletAddress,
+          });
+        
+          setModal(true)
+          settxstate('success')
+        
+        
+      } catch (err) {
+        console.log(err);
+        setModal(true)
+        settxstate('failed')
+      }
+    }else{
+      approveDai('0x537c9f52e021c3cdde2f0948255a16536bfcf581')
     }
   };
 
@@ -84,20 +147,6 @@ export function OrderPage(props) {
     functionName: 'predictClosePrice',
     abi: dailyrocket,
   };
-
-  const { runContractFunction, contractResponse, error, isRunning, isLoading } =
-    useWeb3Contract({
-      abi: dailyrocket,
-      contractAddress: '0x91873876e830EcF10F1bC73c168C13ccAbfecff7',
-      functionName: 'predictClosePrice',
-      params: {
-        _asset: '',
-        _prediction: order.price,
-        _token: '',
-        _swapPairs: '',
-      },
-    });
-
   // console.log(isLoading);
 
   const [stepBMS, setStepBMS] = useState(
@@ -181,6 +230,8 @@ export function OrderPage(props) {
     prevStep,
     nextStep,
     submit,
+    approved: isDailyApproved
+
   };
 
   var propsBMS = {
@@ -191,6 +242,7 @@ export function OrderPage(props) {
     prevStep: prevStepBMS,
     nextStep: nextStepBMS,
     submit: submitBMS,
+    approved: isBmsApproved
   };
   return (
     <div className={styles.wrapper}>
@@ -212,12 +264,8 @@ export function OrderPage(props) {
         )}
         <FormStepper step={step} className={styles.stepperContainer} />
       </div>
-      {/* <TransactionStateModal
-        modal={modal}
-        setModal={setModal}
-        modalDetails={modalDetails}
-      /> */}
-      {/* <TransactionStateModal /> */}
+     
+      <TransactionStateModal modal={modal} setModal={setModal} txstate={txstate} />
     </div>
   );
 }

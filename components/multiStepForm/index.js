@@ -21,6 +21,7 @@ export function MultiStepForm(props) {
     submit,
     className,
     isBMS,
+    approved
   } = props;
 
   // Temporarily setup, need to be implemented
@@ -63,7 +64,7 @@ export function MultiStepForm(props) {
               onClick={submit}
             >
               {' '}
-              Submit{' '}
+              {approved ? 'Submit' : 'Approve Dai'}{' '}
             </Button>
           )}
         </div>
