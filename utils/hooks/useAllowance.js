@@ -16,17 +16,10 @@ export const useAllowance = (reload) => {
                 const minimum = 10*10**18
                 const web3 = await Moralis.enableWeb3()
                 const contract = new web3.eth.Contract(daiabi,'0xff795577d9ac8bd7d90ee22b6c1703490b6512fd')
-
-                console.log(contract)
                 const dailyallowance = await contract.methods.allowance(walletAddress,'0xfe825801CCA48fEbdf09F4bdE540eEaD8440e6eA').call()
                 const bmsallowance = await contract.methods.allowance(walletAddress,'0x537c9f52e021c3cdde2f0948255a16536bfcf581').call()
                 const dailyapproval = dailyallowance >= minimum.toString() ? true : false
-                const bmsapproval = bmsallowance >= minimum.toString() ? true : false
-
-                console.log(dailyallowance)
-                console.log(dailyapproval)
-
-  
+                const bmsapproval = bmsallowance >= minimum.toString() ? true : false  
 
                 setisdailyApproved(dailyapproval)
                 setisBMSApproved(bmsapproval)
