@@ -13,6 +13,7 @@ import { AnalogClock } from "../analogClock";
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
+import { useAccountHistoryForDaily,useAccountHistoryForBMS,useAccountTransaction } from "../../utils/hooks/useAccountHistory";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -68,6 +69,12 @@ const tokenData = [
 export default function Dashboard() {
   const classes = useStyles();
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  const {dailydata} = useAccountHistoryForDaily()
+  const {bmsdata} = useAccountHistoryForBMS()
+
+  console.log('dailydata -',dailydata)
+  console.log('bmsdata -',bmsdata)
+ 
 
   return (
     <div className={classes.root}>
