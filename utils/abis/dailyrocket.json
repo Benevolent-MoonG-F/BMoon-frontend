@@ -2,9 +2,106 @@
   {
     "inputs": [
       {
-        "internalType": "bytes8",
+        "internalType": "address",
+        "name": "_dai",
+        "type": "address"
+      },
+      {
+        "internalType": "contract ISwapRouter",
+        "name": "_swapRouter",
+        "type": "address"
+      },
+      {
+        "internalType": "contract IMoonSquares",
+        "name": "_moonsqr",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_placer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "_prediction",
+        "type": "int256"
+      }
+    ],
+    "name": "Predicted",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "AcceptedTokens",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "activeAsset",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
         "name": "_asset",
-        "type": "bytes8"
+        "type": "string"
       },
       {
         "internalType": "address",
@@ -20,7 +117,7 @@
   {
     "inputs": [
       {
-        "internalType": "contract IERC20",
+        "internalType": "address",
         "name": "_address",
         "type": "address"
       }
@@ -51,7 +148,7 @@
         "type": "bytes"
       }
     ],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -62,143 +159,14 @@
         "type": "uint128"
       },
       {
-        "internalType": "bytes8",
+        "internalType": "string",
         "name": "_asset",
-        "type": "bytes8"
+        "type": "string"
       }
     ],
     "name": "claimWinnings",
     "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes",
-        "name": "performData",
-        "type": "bytes"
-      }
-    ],
-    "name": "performUpkeep",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "renounceOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "contract IERC20",
-        "name": "_dai",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "previousOwner",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "newOwner",
-        "type": "address"
-      }
-    ],
-    "name": "OwnershipTransferred",
-    "type": "event"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes8",
-        "name": "_asset",
-        "type": "bytes8"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_prediction",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_token",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address[]",
-        "name": "swapPairs",
-        "type": "address[]"
-      }
-    ],
-    "name": "predictClosePrice",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "_placer",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "_prediction",
-        "type": "uint256"
-      }
-    ],
-    "name": "Predicted",
-    "type": "event"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "newOwner",
-        "type": "address"
-      }
-    ],
-    "name": "transferOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "AcceptedTokens",
-    "outputs": [
-      {
-        "internalType": "contract IERC20",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -222,9 +190,9 @@
         "type": "uint128"
       },
       {
-        "internalType": "bytes8",
+        "internalType": "string",
         "name": "",
-        "type": "bytes8"
+        "type": "string"
       },
       {
         "internalType": "uint256",
@@ -251,9 +219,9 @@
         "type": "uint256"
       },
       {
-        "internalType": "bytes8",
+        "internalType": "string",
         "name": "",
-        "type": "bytes8"
+        "type": "string"
       }
     ],
     "name": "dayAssetNoOfWinners",
@@ -275,9 +243,9 @@
         "type": "uint256"
       },
       {
-        "internalType": "bytes8",
+        "internalType": "string",
         "name": "",
-        "type": "bytes8"
+        "type": "string"
       },
       {
         "internalType": "uint256",
@@ -288,9 +256,9 @@
     "name": "dayAssetPrediction",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "int256",
         "name": "",
-        "type": "uint256"
+        "type": "int256"
       }
     ],
     "stateMutability": "view",
@@ -304,9 +272,9 @@
         "type": "uint256"
       },
       {
-        "internalType": "bytes8",
+        "internalType": "string",
         "name": "",
-        "type": "bytes8"
+        "type": "string"
       },
       {
         "internalType": "uint256",
@@ -333,9 +301,9 @@
         "type": "uint256"
       },
       {
-        "internalType": "bytes8",
+        "internalType": "string",
         "name": "",
-        "type": "bytes8"
+        "type": "string"
       }
     ],
     "name": "dayAssetTotalAmount",
@@ -357,9 +325,9 @@
         "type": "uint128"
       },
       {
-        "internalType": "bytes8",
+        "internalType": "string",
         "name": "",
-        "type": "bytes8"
+        "type": "string"
       },
       {
         "internalType": "address",
@@ -370,9 +338,9 @@
     "name": "dayAssetUserPrediction",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "int256",
         "name": "",
-        "type": "uint256"
+        "type": "int256"
       }
     ],
     "stateMutability": "view",
@@ -389,9 +357,9 @@
     "name": "getPrice",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "int256",
         "name": "",
-        "type": "uint256"
+        "type": "int256"
       }
     ],
     "stateMutability": "view",
@@ -412,6 +380,19 @@
   },
   {
     "inputs": [],
+    "name": "moonSquare",
+    "outputs": [
+      {
+        "internalType": "contract IMoonSquares",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "owner",
     "outputs": [
       {
@@ -421,6 +402,55 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "performData",
+        "type": "bytes"
+      }
+    ],
+    "name": "performUpkeep",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "poolFee",
+    "outputs": [
+      {
+        "internalType": "uint24",
+        "name": "",
+        "type": "uint24"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_asset",
+        "type": "string"
+      },
+      {
+        "internalType": "int256",
+        "name": "_prediction",
+        "type": "int256"
+      },
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "predictClosePrice",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -445,6 +475,39 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "swapRouter",
+    "outputs": [
+      {
+        "internalType": "contract ISwapRouter",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   }
 ]

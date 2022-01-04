@@ -1,13 +1,14 @@
 import Head from 'next/head';
 import '../styles/globals.css';
-import "bootstrap/dist/css/bootstrap.css";
+import 'bootstrap/dist/css/bootstrap.css';
 import { MoralisProvider } from 'react-moralis';
 import { MoralisDappProvider } from '../providers/MoralisDappProvider/MoralisDappProvider';
-import { useEffect } from "react";
+import { useEffect } from 'react';
+
 export default function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    import("bootstrap/dist/js/bootstrap");
-}, []);
+    import('bootstrap/dist/js/bootstrap');
+  }, []);
   return (
     <div>
       {/* <Head>
@@ -18,13 +19,11 @@ export default function MyApp({ Component, pageProps }) {
       </Head> */}
 
       <MoralisProvider
-        appId="YUfmatAO05TOm0I0Fr8hHGjRmrk1iSJ4eRGq9LJl"
-        serverUrl="https://bfcz4zkoflul.usemoralis.com:2053/server"
+        appId="Amrco2Pbc0LcAAlhIyMITx7J00VMi1rTDZJqfIKn"
+        serverUrl="https://oepovfty0zcq.usemoralis.com:2053/server"
       >
         <MoralisDappProvider>
-
           <Component {...pageProps} />
-
         </MoralisDappProvider>
       </MoralisProvider>
     </div>

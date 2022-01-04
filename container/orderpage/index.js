@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MultiStepForm } from '../../components/multiStepForm';
 import { Navbar } from '../../components/navbar';
 import { PrizesBanner } from '../../components/prizesBanner';
@@ -9,6 +9,13 @@ import { SwitchButton } from '../../components/switch';
 import { useMoralis, useWeb3Contract } from 'react-moralis';
 import daiabi from '../../utils/abis/dai.json';
 import dailyrocket from '../../utils/abis/dailyrocket.json';
+import bms from '../../utils/abis/bms.json';
+import { useContract } from '../../utils/hooks/useContract';
+import TransactionStateModal from '../../components/TransactionModal/TransactionStateModal';
+import { useAllowance } from '../../utils/hooks/useAllowance';
+import { useMoralisDapp } from '../../providers/MoralisDappProvider/MoralisDappProvider';
+import { ethers } from 'ethers';
+
 
 export function OrderPage(props) {
   const [step, setStep] = useState(
@@ -27,20 +34,119 @@ export function OrderPage(props) {
           payment: null,
         }
   );
+  const {Moralis} = useMoralis()
+  const {walletAddress} = useMoralisDapp()
+  const [modal, setModal] = useState(false);
+  const [show,setShow] = useState(false)
+  const [txstate,settxstate] = useState('failed')
+  const [reload,setReload] = useState(false)
+  const {isDailyApproved,isBmsApproved} = useAllowance(reload)
 
-  const { runContractFunction, contractResponse, error, isRunning, isLoading } =
-    useWeb3Contract({
-      abi: dailyrocket,
-      contractAddress: '0x91873876e830EcF10F1bC73c168C13ccAbfecff7',
-      functionName: 'predictClosePrice',
-      params: {
-        _asset: '',
-        _prediction: order.price,
-        _token: '',
-        _swapPairs: '',
-      },
-    });
+  const { contract, bmscontract } = useContract(
+    dailyrocket,
+    '0xfe825801CCA48fEbdf09F4bdE540eEaD8440e6eA',
+    bms,
+    '0x537c9f52e021c3cdde2f0948255a16536bfcf581'
+  );
 
+  
+
+  console.log(isDailyApproved,isBmsApproved)
+
+  const approveDai = async(address) => {
+      try {
+        setModal(true)
+        settxstate('loading')
+        window.scroll(300,0)
+        const minimum = 10*10**18
+        const web3 = await Moralis.enableWeb3()
+        const contract = new web3.eth.Contract(daiabi,'0xff795577d9ac8bd7d90ee22b6c1703490b6512fd')
+        const tx = await contract.methods.approve(address,minimum.toString()).send({
+          from: walletAddress
+        })
+        console.log(tx)
+        // if(confirmations >= 1){
+          setModal(true)
+          settxstate('success')
+          setReload(true)
+        // }
+        
+      }catch(err){
+        console.log(err)
+        setModal(true)
+        settxstate('failed')
+
+      }
+  }
+
+  const handleSubmit = async () => {
+    console.log(order);
+    const formatPrice = parseFloat(order.price) * 10 ** 8;
+    console.log(formatPrice);
+
+    if(isDailyApproved){
+      try {
+        setModal(true)
+        settxstate('loading')
+        setShow(true)
+        window.scroll(300,0)
+        
+        const tx = await contract.methods
+          .predictClosePrice(
+            order.asset.symbol,
+            formatPrice,
+            '0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD'
+          )
+          .send({
+            from: walletAddress,
+          });
+          setModal(true)
+          settxstate('success')
+        
+      } catch (err) {
+        setModal(true)
+        settxstate('failed')
+        console.log(err);
+      }
+    }else{
+      approveDai('0xfe825801CCA48fEbdf09F4bdE540eEaD8440e6eA')
+    }
+  };
+
+  const handleBMSSubmit = async () => {
+    if(isBmsApproved){
+      try {
+        settxstate('loading')
+        setModal(true)
+        const tx = await bmscontract.methods
+          .predictAsset(
+            orderBMS.time1.getTime(),
+            '0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD',
+            order.asset.symbol
+          )
+          .send({
+            from: walletAddress,
+          });
+        
+          setModal(true)
+          settxstate('success')
+        
+        
+      } catch (err) {
+        console.log(err);
+        setModal(true)
+        settxstate('failed')
+      }
+    }else{
+      approveDai('0x537c9f52e021c3cdde2f0948255a16536bfcf581')
+    }
+  };
+
+  const options = {
+    contractAddress: '0x91873876e830EcF10F1bC73c168C13ccAbfecff7',
+    functionName: 'predictClosePrice',
+    abi: dailyrocket,
+  };
   // console.log(isLoading);
 
   const [stepBMS, setStepBMS] = useState(
@@ -108,8 +214,14 @@ export function OrderPage(props) {
   };
 
   const submit = () => {
-    runContractFunction();
+    // runContractFunction();
+    handleSubmit();
   };
+
+  const submitBMS = () => {
+    handleBMSSubmit();
+  };
+
   var props = {
     step,
     setOrder,
@@ -118,6 +230,8 @@ export function OrderPage(props) {
     prevStep,
     nextStep,
     submit,
+    approved: isDailyApproved
+
   };
 
   var propsBMS = {
@@ -127,28 +241,31 @@ export function OrderPage(props) {
     setOrder: setOrderBMS,
     prevStep: prevStepBMS,
     nextStep: nextStepBMS,
-    submit,
+    submit: submitBMS,
+    approved: isBmsApproved
   };
   return (
-      <div className={styles.wrapper}>
-        <div className={styles.content}>
-          <PrizesBanner className={styles.bannerContainer} />
-          <SwitchButton isBMS={isBMS} setIsBMS={setIsBMS} />
-          {isBMS ? (
-            <MultiStepForm
-              {...propsBMS}
-              isBMS={isBMS}
-              className={styles.formContainer}
-            />
-          ) : (
-            <MultiStepForm
-              {...props}
-              isBMS={isBMS}
-              className={styles.formContainer}
-            />
-          )}
-          <FormStepper step={step} className={styles.stepperContainer} />
-        </div>
+    <div className={styles.wrapper}>
+      <div className={styles.content}>
+        <PrizesBanner className={styles.bannerContainer} />
+        <SwitchButton isBMS={isBMS} setIsBMS={setIsBMS} />
+        {isBMS ? (
+          <MultiStepForm
+            {...propsBMS}
+            isBMS={isBMS}
+            className={styles.formContainer}
+          />
+        ) : (
+          <MultiStepForm
+            {...props}
+            isBMS={isBMS}
+            className={styles.formContainer}
+          />
+        )}
+        <FormStepper step={step} className={styles.stepperContainer} />
       </div>
+     
+      <TransactionStateModal modal={modal} setModal={setModal} txstate={txstate} />
+    </div>
   );
 }
