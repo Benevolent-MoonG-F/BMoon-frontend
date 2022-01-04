@@ -3,7 +3,7 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-
+import styles from './index.module.css';
 
 const paymentMethod = [
   {
@@ -51,7 +51,7 @@ export function SelectPayment(props) {
 
   return (
     <Fragment>
-      <div>
+      <div className={styles.card8}>
         <h3>Asset {`${order?.asset?.label}`}</h3>
         <h3>Predicted price {`$${order?.price}`}</h3>
         

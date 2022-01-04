@@ -16,7 +16,7 @@ export function BMS(){
                 <h5 className="text-white">BMS</h5>
                 </div>
                 
-                <p className="card-text text-white">Benevolent Moon Squares(BMS) is a fun crypto prognostication game that takes predictive markets to a more exciting  level- Call the date and time of your favorite token doing a Moon Shot, win the pot while also directing a charitable donation to the organization of your choice from our list of benevolent partners.</p>
+                <p className="card-text text-white">Benevolent Moon Squares(BMS) is a fun crypto prognostication game that takes predictive markets to a more exciting level. Call the date and time of your favorite token doing a Moon Shot, win the pot while also directing to charity.</p>
                 <Button href={appLink}
                                         btnClassName={styles.btnWrapper}
                                         linkClassName={styles.btnText}

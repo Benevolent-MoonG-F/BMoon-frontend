@@ -91,6 +91,7 @@ export default function Dashboard() {
               justifyContent="center"
               alignItems="center"
             >
+              
               {/* Display Clock */}
               <Grid item xs={12}>
                 <AnalogClock />
@@ -121,11 +122,11 @@ export default function Dashboard() {
             </Grid>
 
             {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
+            {/* <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
                 <Chart />
               </Paper>
-            </Grid>
+            </Grid> */}
 
             {/* Recent Deposits */}
             <Grid container item xs={12} md={4} lg={3} justifyContent="center" alignItems="center">

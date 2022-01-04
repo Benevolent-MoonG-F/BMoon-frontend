@@ -114,3 +114,15 @@
     width: auto ;
   }
 } 
+
+.card8{
+  background: #ffffff;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  /* border-radius: 50px; */
+  background: linear-gradient(360deg);
+  box-shadow:  12px 12px 13px ,
+             -12px -12px 13px ;
+}

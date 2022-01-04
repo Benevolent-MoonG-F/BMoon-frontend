@@ -15,6 +15,9 @@ export function Games(){
                 <div className="col-md-6">
                 <DailyRocket/>
                 </div>
+                {/* <div className={`${styles.tokens} col-12`}>
+                    <h5>BTC ETH LINK ADA AVAX ONE LUNA MATIC </h5>
+                </div> */}
             </div>
         </div>
         </Element>
