@@ -6,6 +6,9 @@
     min-height: 230px;
     padding: 10px;
 }
+.text{
+    color: yellow ;
+}
 .clock {
     background-color: white;
     padding: 50px;

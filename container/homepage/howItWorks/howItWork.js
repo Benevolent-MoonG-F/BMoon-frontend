@@ -29,27 +29,27 @@ export function HowItWorkSection(props) {
                     </span>
                 </div>
                 <div className="row mb-5">
-                    <div className="col-md-6">
+                    <div className="col-md-12">
                         <div className={`${styles.gameCard}`}>
                         <h5>01</h5>
                         <h6>Make educated predictions</h6>
                         <p>Our games allow users to make educated predictions about their favorite projects.</p> 
                     </div>
                     </div>
-                    <div className=" col-md-6">
+                    {/* <div className=" col-md-6">
                     <div className={`${styles.games}`}>
                     <Image src={Prediction}  alt="logo" className="img-fluid" height="400px" width="400px" /><br/>
                     </div>
-                    </div>  
+                    </div>   */}
                 </div><br/><br/>
 
                 <div className="row mb-5">
-                    <div className=" col-md-6 order-1">
+                    {/* <div className=" col-md-6 order-1">
                     <div className={`${styles.games}`}>
                     <Image src={Donate}  alt="logo" className="img-fluid" height="400px" width="400px" /><br/>
                     </div>
-                    </div>  
-                    <div className="col-md-6 order-0 order-md-2">
+                    </div>   */}
+                    <div className="col-md-12">
                         <div className={`${styles.gameCard}`}>
                         <h5>02</h5>
                         <h6>Select benevolent organization</h6>
@@ -60,22 +60,19 @@ export function HowItWorkSection(props) {
 
                 <div className="row mb-5">
                     
-                    <div className="col-md-6">
+                    <div className="col-md-12">
                         <div className={`${styles.gameCard}`}>
                         <h5>03</h5>
                         <h6>Receive payment</h6>
-                        <p>When a user wins, they get their winnings sent to their wallet, and the charity they chose receives the donation.</p> 
+                        <p>When a user wins, they get their winnings sent to their wallet, and the charity they chose receives the donation. <br/>This is a permissionless and trustless process. </p> 
                     </div>
                     </div>
-                    <div className=" col-md-6">
+                    {/* <div className=" col-md-6">
                     <div className={`${styles.games}`}>
                     <Image src={Alert}  alt="logo" className="img-fluid" height="400px" width="400px" /><br/>
                     </div>
-                    </div>  
-                    {/* <Button href={appLink}
-                            btnClassName={styles.btnWrapper}
-                            linkClassName={styles.btnText}
-                        >Play Game</Button> */}
+                    </div>   */}
+                  
                     
 
                 </div><br/><br/>

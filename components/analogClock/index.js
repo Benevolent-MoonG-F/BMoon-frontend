@@ -5,10 +5,11 @@ import { makeStyles } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 
 import styles from './index.module.css';
+import { color } from '@mui/system';
 const useStyles = makeStyles({
     depositContext: {
-      flex: 1
-    }
+      flex: 1,
+    }  
   });
 
 function convertDateToUTC(date) { 
@@ -32,10 +33,10 @@ export function AnalogClock(props) {
   return (
     <div className={styles.container}>
 
-      <Typography className={useStyles.depositContext}>
+      <Typography className={useStyles.depositContext, styles.text}>
         {value.toUTCString().substr(0, 16)}
       </Typography>
-      <Typography className={useStyles.depositContext}>
+      <Typography className={useStyles.depositContext, styles.text}>
         {value.toUTCString().substr(16, 25)}
       </Typography>
       <Clock value={convertDateToUTC(value)} className={styles.clock} renderNumbers={true} />

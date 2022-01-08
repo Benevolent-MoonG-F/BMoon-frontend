@@ -3,9 +3,20 @@
   border-radius: 15px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  border: 1px inset rgba(240, 235, 235, 0.3);
-  background-color: rgba(255, 255, 255, 0.15);
-
+  border: 1px solid rgb(235, 233, 233);
+  background: linear-gradient(
+    111.29deg,
+    rgba(255, 255, 255, 0.53) -1.83%,
+    rgba(255, 255, 255, 0) 109.95%
+  );
+  box-shadow: 50px 60px 100px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(70px);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  /* background: #010124e1; */
+ backdrop-filter: 40px;
   width: 800px;
   height: 450px;
   display: flex;
@@ -116,13 +127,22 @@
 } 
 
 .card8{
-  background: #ffffff;
+  background: #010124e1;
   width: 100%;
   text-align: center;
   padding: 20px;
   border-radius: 20px;
+  color: white;
   /* border-radius: 50px; */
   background: linear-gradient(360deg);
-  box-shadow:  12px 12px 13px ,
-             -12px -12px 13px ;
+  /* box-shadow:  12px 12px 13px ,
+             -12px -12px 13px ; */
+}
+.card8 h4{
+  color: yellow;
+}
+
+.radio{
+  color: white !important;
+ 
 }

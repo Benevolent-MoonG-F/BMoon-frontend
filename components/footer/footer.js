@@ -36,7 +36,7 @@ export function Footer() {
                     </ul>
                 </div>
                
-                <div className="col-md-3 order-md-1">
+                <div className="col-md-3 order-md-1 text-white">
                     <p>Copyrights © 2021</p>
                 </div>
                 </div>

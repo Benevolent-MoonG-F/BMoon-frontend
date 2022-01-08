@@ -7,7 +7,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Title from "./Title";
-
+import styles from './dashBoard.module.css';
 // Generate Order Data
 function createData(id, transaction, date, asset, gameType, closeDate, predictionPrice, paymentMethod) {
   return { id, transaction, date, asset, gameType, closeDate, predictionPrice, paymentMethod};
@@ -75,30 +75,32 @@ const useStyles = makeStyles(theme => ({
 export default function Orders() {
   const classes = useStyles();
   return (
-    <React.Fragment>
-      <Title> Recent Transactions</Title>
+    <React.Fragment>    
+  <Title>Transactions</Title>
+      {/* <Title> Recent Transactions</Title> */}
       <Table size="small">
+
         <TableHead>
-          <TableRow>
-            <TableCell>Transaction</TableCell>
-            <TableCell>Date</TableCell>
-            <TableCell>Asset</TableCell>
-            <TableCell>Game</TableCell>
-            <TableCell>Close Date</TableCell>
-            <TableCell>Prediction Price</TableCell>
-            <TableCell>Payment Method</TableCell>
+          <TableRow className={styles.tr}>
+            <TableCell className={styles.th}>Transaction</TableCell>
+            <TableCell className={styles.th}>Date</TableCell>
+            <TableCell className={styles.th}>Asset</TableCell>
+            <TableCell className={styles.th}>Game</TableCell>
+            <TableCell className={styles.th}>Close Date</TableCell>
+            <TableCell className={styles.th}>Prediction Price</TableCell>
+            <TableCell className={styles.th}>Payment Method</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.transaction}</TableCell>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.asset}</TableCell>
-              <TableCell>{row.gameType}</TableCell>
-              <TableCell>{row.predictionPrice}</TableCell>
-              <TableCell>{row.closeDate}</TableCell>
-              <TableCell >{row.paymentMethod}</TableCell>
+            <TableRow key={row.id} className={styles.tr}>
+              <TableCell className={styles.td}>{row.transaction}</TableCell>
+              <TableCell className={styles.td}>{row.date}</TableCell>
+              <TableCell className={styles.td}>{row.asset}</TableCell>
+              <TableCell className={styles.td}>{row.gameType}</TableCell>
+              <TableCell className={styles.td}>{row.predictionPrice}</TableCell>
+              <TableCell className={styles.td}>{row.closeDate}</TableCell>
+              <TableCell className={styles.td} >{row.paymentMethod}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -108,6 +110,8 @@ export default function Orders() {
           View More
         </Link>
       </div>
+
+
     </React.Fragment>
   );
 }

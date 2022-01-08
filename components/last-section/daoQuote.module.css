@@ -1,15 +1,21 @@
+@import url('http://fonts.cdnfonts.com/css/nasalization-2');
+
 .dao h5{
     text-align: center;
-    font-size: 30px;
+    font-size: 3rem;
     font-weight: normal;
     padding-bottom: 30px;
+    color: white;
+    font-family: 'Nasalization', sans-serif;
+    letter-spacing: 5px;
 }
 .dao h6{
     text-align: center;
     font-size: 2.25rem;
-    font-weight: 500;
+    font-weight: 200;
     font-family: 'Inter', sans-serif;
     padding-bottom: 10px;
+    color: rgb(255, 254, 116);
 }
 
 .dao a{
@@ -20,8 +26,9 @@
 }
 
 .daoQuote{
-    background: #fff;
-    padding-top: 100px;
+    /* background: #fff; */
+    /* padding-top: 100px; */
+    padding-bottom: 100px;
 }
 
 

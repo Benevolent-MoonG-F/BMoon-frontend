@@ -41,11 +41,11 @@ export function SelectPayment(props) {
       >
         {paymentMethod.map(item => 
         <Fragment key={item.label}>
-          <FormControlLabel value={item.label} control={<Radio />} label={item.label} />
+          <FormControlLabel value={item.label} control={<Radio className={styles.radio} />} label={item.label}  />
         </Fragment>
         )}
       </RadioGroup>
-      <h4>Estimated nextwork fees: ${fee}</h4>
+      <h5>Estimated nextwork fees: ${fee}</h5>
     </FormControl>
   );
 
@@ -53,7 +53,7 @@ export function SelectPayment(props) {
     <Fragment>
       <div className={styles.card8}>
         <h3>Asset {`${order?.asset?.label}`}</h3>
-        <h3>Predicted price {`$${order?.price}`}</h3>
+        <h4>Predicted price: {`$${order?.price}`}</h4>
         
         {paymentSelectionComponent}
 
