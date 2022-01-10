@@ -1,7 +1,19 @@
+@import url('http://fonts.cdnfonts.com/css/nasalization-2');
+
+
+.dao{
+    border: 2px solid rgba(94, 26, 252, 0.479);
+    border-radius: 30px;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
 .btnWrapper {
     border: 1px solid #79FFF6;
     padding: 0.1rem 3.4em;
-    border-radius: 0px;
+    border-radius: 10px;
     background-color: #000;
     /* background-image: linear-gradient(to left, transparent 0%, #6adf76 100%); */
     transition: all 0.4s ease-in-out;
@@ -36,34 +48,44 @@
 .header h5{
     margin-top: 50px;
     padding-left: 10px;
+    font-family: 'Nasalization', sans-serif;
+    font-size: 24px;
+  
 }
 
 .dao p{
-    font-size: 24px;
-    line-height: 29px;
-    font-family: 'Bentham', serif;
+    font-size: 20px;
+    line-height: 39px;
+    font-family: 'Raleway', sans-serif;
 }
 
-.dao h5{
-    font-size: 30px;
-    font-family: 'Bentham', serif;
+.dao h6{
+   
+   
+    /* letter-spacing: 3px; */
+}
+
+.header img{
+    height: 100px !important;
+    width: 100px !important;
+    border-radius: 100px;
 }
 
 @media (min-width: 768px) and (max-width: 990px){
     .dao p{
     font-size: 20px ;
-    line-height: 24px;
+    line-height: 30px;
     }
 }
 
 @media (max-width: 575.98px){
-.dao h5{
+.dao h6{
     font-size: 25px;
 }
 
 .dao p {
     font-size: 16px;
-    line-height: 19px;
+    line-height: 29px;
 }
 
 }

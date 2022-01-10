@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from '../../components/button/index';
 import styles from './dailyRocket.module.css';
 import Image from 'next/image';
-import Logo from '../../public/images/logo.png'
+import Logo from '../../public/images/dailylogo.png'
 import {Element} from 'react-scroll';
 const appLink = '/app/new-game';
 export function DailyRocket(){
@@ -16,7 +16,7 @@ export function DailyRocket(){
                 </div>
                 
                 <p className="card-text text-white">
-                For a more immediate gratification, the Daily Rocket has a winner every day!  Correctly predict the closing price of your favorite tokens (UTC close of day) and win the pot, while again choosing which benevolent cause receives a donation
+                For a more immediate gratification, the Daily Rocket has a winner every day!  Correctly predict the closing price of your favorite tokens (UTC close of day) and win the pot, while again choosing which benevolent cause receives a donation.
                 </p>
                 <Button href={appLink}
                         btnClassName={styles.btnWrapper}

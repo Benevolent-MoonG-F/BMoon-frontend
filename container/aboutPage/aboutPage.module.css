@@ -12,8 +12,16 @@
 
 .about h1{
     margin-bottom: 70px;
+    color: rgb(255, 254, 116);
+  
 }
 .bmoon{
     display: flex;
     margin: auto;
+}
+
+@media (max-width: 575.98px){
+    .about h1{
+        font-size: 20px;
+    }
 }

@@ -4,13 +4,17 @@ body {
   margin: 0;
   font-family: 'Play', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  /* background-color: #142237; */
-  /* background-color: #222831; */
+   /* background-color: #142237; 
+   background-color: #222831; */
+   background: linear-gradient(0deg, rgba(7, 7, 7, 0.603), rgba(7, 7, 7, 0.603)) ,url(../public/images/bg-img.jpg);
+   height: 100vh;
+   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
-  min-height: "100vh" ;
+  min-height: "100vh";
 
 }
-
 
 a {
   color: inherit;

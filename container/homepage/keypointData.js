@@ -46,7 +46,7 @@ const keypoints = [
     {
         id: 2,
         headline: 'Fun-Focused',
-        content: `Another central value of BMG&F is to provide a fun experience for our users. People spend a tremendous amount of time, money, and energy seeking fun activities in their lives- thus it a priority to make our offerings joyful  
+        content: `Another central value of BMG&F is to provide a fun experience for our users. People spend a tremendous amount of time, money, and energy seeking fun activities in their lives- thus it's a priority to make our users joyful.  
         `,
         key: "global",
         color: "yellow",

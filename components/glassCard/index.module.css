@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/nasalization-2');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 
 .card {
     /* display: flex; */
@@ -10,7 +12,7 @@
     margin: 30px;
     /* box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5); */
     border-radius: 15px;
-    background-color: #eeeeee;
+    background-color: transparent;
       /* overflow: hidden; */
     display: flex;
     justify-content: center;
@@ -22,8 +24,11 @@
     transition: all 0.2s ease-in-out;
     z-index: 0;
     padding-top: 50px;
-    min-height: 20rem;;
-
+    /* min-height: 20rem;; */
+    border: 3px solid rgba(255, 255, 255, 0.479);
+    
+    height: 100%;
+    
 }
 
 .content {
@@ -43,13 +48,13 @@
     opacity: 1;
 } */
 .content h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     color: white;
     z-index: 1;
     position: relative;
-    color: #142237da;
+    color: #ffffff;
     width: fit-content;
-
+    font-family: 'Nasalization', sans-serif;
 }
 .content h2::before{
     content: '';
@@ -58,8 +63,8 @@
     justify-content: center;
     bottom: -15px;
     width: 70px;
-    height: 5px;
-    background:  #142237da;
+    height: 2px;
+    background:  #ffffff;
     transition: all 0.4s ease-in-out;
     left: 0px;
 }
@@ -69,17 +74,17 @@
     justify-content: end;
     right: 0px;
     width: 70px;
-    height: 5px;
+    height: 2px;
     top: -5px;
-    background:  #142237da;
+    background:  #ffffff;
     transition: all 0.4s ease-in-out;
 }
 .card:hover h2::before{
-    background:  #1f3555b7;
+    background:  #ffffff;
     width: 100%;
 }
 .card:hover h2::after{
-    background:  #1f3555b7;
+    background:  #ffffff;
     width: 100%;
 }
 
@@ -91,11 +96,10 @@
     padding: 20px;
     line-height: 29px;
     font-family: 'Raleway';
-    color: #142237da;
     text-align: left;
 }
 .card:hover {
-    border: 3px solid rgba(255, 255, 255, 0.479);
+   
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.6);
 }
 
@@ -114,8 +118,8 @@
 }
 
 .content p {
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 20px;
+    line-height: 24px;
 }
 
 }

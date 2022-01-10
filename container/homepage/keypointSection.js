@@ -22,7 +22,7 @@ export function KeypointSection(props) {
     return (
         <Element name="keypointSection" >
           
-            <PartnerList />
+            {/* <PartnerList /> */}
           
   
             <div className={`${styles.container2} container-fluid`}>           
@@ -35,12 +35,12 @@ export function KeypointSection(props) {
                         ))}
                     </div> */}
 
-                        <div className="col-md-6">
+                        <div className="col-md-6 mb-5">
                         <GlassCard headline={keypoints[0].headline} content={keypoints[0].content}>
                         </GlassCard>
                         </div>
 
-                        <div className="col-md-6">
+                        <div className="col-md-6 mb-5">
                         <GlassCard headline={keypoints[2].headline} content={keypoints[2].content}>
                         </GlassCard>
                         </div>

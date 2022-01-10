@@ -31,6 +31,7 @@
     "next": "^12.0.7",
     "prop-types": "^15.7.2",
     "react": "17.0.2",
+    "react-bootstrap": "^2.1.0",
     "react-canvas-confetti": "^1.2.1",
     "react-clock": "^3.0.0",
     "react-datetime-picker": "^3.4.3",

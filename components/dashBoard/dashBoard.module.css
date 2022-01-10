@@ -1,0 +1,84 @@
+.tr {
+    height: 40px !important;
+  }
+  
+  .th {
+    max-width: 125px;
+    min-width: 125px;
+    padding: 10 !important;
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: center !important;
+    font-weight: bold !important;
+    color: white !important;
+  }
+  
+  .td {
+    height: 40px !important;
+    padding: 20px !important;
+    text-align: center !important;
+    color: white !important;
+  }
+  
+  .carousel{
+      background: white;
+      width: 100%;
+     padding-top: 80px;
+     padding-bottom: 80px;
+     border-radius: 30px;
+     margin-left: auto;
+     margin-right: auto;
+     /* border: 1px solid rgb(235, 233, 233); */
+     background: #00000ac4;
+    box-shadow: 0 3px 10px rgba(196, 192, 192, 0.2);
+    backdrop-filter: blur(70px);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin-bottom: 100px;
+  }
+
+  .main{
+      padding-top: 150px;
+      background: #0f0f46c4;
+      min-height: 100vh;
+      padding-bottom: 100px;
+  }
+
+  .clock{
+      background: white;
+      border-radius: 30px;
+      margin-bottom: 50px;
+      /* border: 1px solid rgb(235, 233, 233); */
+      background: #00000ac4;
+      box-shadow: 0 3px 10px rgba(196, 192, 192, 0.2);
+     
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+  
+  }
+
+  .carouselText1{
+    color: rgb(255, 254, 116);
+      font-size: 24px; 
+  }
+
+  .carouselText2{
+    color: white;
+    font-size: 18px; 
+}
+
+.table{
+    background: #00000ac4;
+    /* margin-bottom: 100px; */
+    border-radius: 10px;
+}
+.title{
+    color: rgb(255, 254, 116);
+}
+
+
+

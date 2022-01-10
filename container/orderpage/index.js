@@ -14,7 +14,7 @@ import { useContract } from '../../utils/hooks/useContract';
 import TransactionStateModal from '../../components/TransactionModal/TransactionStateModal';
 import { useAllowance } from '../../utils/hooks/useAllowance';
 import { useMoralisDapp } from '../../providers/MoralisDappProvider/MoralisDappProvider';
-import { ethers } from 'ethers';
+// import { ethers } from 'ethers';
 
 
 export function OrderPage(props) {

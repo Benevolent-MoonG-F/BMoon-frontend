@@ -2,10 +2,10 @@ import { useMemo,useState } from "react";
 import dailyrocketabi from '../abis/dailyrocket.json'
 import bmsabi from '../abis/bms.json'
 import { useMoralisDapp } from "../../providers/MoralisDappProvider/MoralisDappProvider";
-const abiDecoder = require('abi-decoder')
+
 import { DAILYROCKETADDRESS,BMSADDRESS } from "../constants";
 
-
+const abiDecoder = require('abi-decoder');
 export function timeConverter(UNIX_timestamp){
     const a = new Date(UNIX_timestamp * 1000);
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -23,7 +23,7 @@ export function timeConverter(UNIX_timestamp){
 export const useAccountHistoryForDaily = () => {
     const {walletAddress} = useMoralisDapp()
     const [loading,setLoading] = useState(false)
-    const [dailydata,setdailydata] = useState({})
+    const [dailydata,setdailydata] = useState([])
 
     abiDecoder.addABI(dailyrocketabi)
     function decodeInput(input){
@@ -86,7 +86,7 @@ export const useAccountHistoryForDaily = () => {
 export const useAccountHistoryForBMS = () => {
     const {walletAddress} = useMoralisDapp()
     const [loading,setLoading] = useState(false)
-    const [bmsdata,setbmsdata] = useState({})
+    const [bmsdata,setbmsdata] = useState([])
 
     abiDecoder.addABI(bmsabi)
     function decodeInput(input){

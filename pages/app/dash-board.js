@@ -10,9 +10,9 @@ export default function DashBoard(props) {
   return (
     <Layout>
         <Navbar />
-        <div className={styles.container}>
+       
           <Dashboard />
-        </div>
+        
     </Layout>
   );
 }

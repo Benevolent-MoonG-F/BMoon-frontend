@@ -50,7 +50,7 @@ export function TopSection(props) {
                         <Button href={appLink}
                             btnClassName={styles.btnWrapper}
                             linkClassName={styles.btnText}
-                        >Play Game</Button>
+                        >Play & Earn</Button>
                         </div>
                     </div>
                     <div className={`${styles.headerImg} col-md-4 order-0 order-md-2`}>

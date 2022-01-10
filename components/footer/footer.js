@@ -14,9 +14,9 @@ export function Footer() {
                     <hr className="text-black"/>
                 </div>
                 </div>
-                <div className="row gutter-0 gutter-lg-6 text-secondary">
+                <div className="row text-secondary">
                 <div className="col-md-3 text-lg-right order-md-2"></div>
-                <div className="col-md-6 text-center order-md-2">
+                <div className="col-md-6 text-center order-md-2 mx-auto">
                     <ul className="text-center">
                     <li className="nav-item">
                         <a className="nav-link text-black" href="#">
@@ -36,7 +36,7 @@ export function Footer() {
                     </ul>
                 </div>
                
-                <div className="col-md-3 order-md-1">
+                <div className="col-md-3 order-md-1 text-white">
                     <p>Copyrights © 2021</p>
                 </div>
                 </div>

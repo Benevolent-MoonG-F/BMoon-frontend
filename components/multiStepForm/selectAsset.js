@@ -92,8 +92,9 @@ export function SelectAsset(props) {
       <div className={`${styles.assetWrapper}`}>
       <h5 className="text-black">Select Asset</h5>
       <Autocomplete
-        className={`${styles.box} mx-auto`}
+        className={`${styles.box1} mx-auto`}
         value={asset}
+        
         onChange={updateAsset}
         id="asset-select"
         sx={{ width: '200px', mx: '20px' }}
@@ -130,7 +131,7 @@ export function SelectAsset(props) {
     <div className={styles.pricePanelWrapper}>
       {/* Fetch and idsplay asset's price in real time */}
       {/* Need to be implemented */}
-      {asset && <h5>Current Price – {asset?.label}</h5>}
+      {asset && <h5 className='text-black'>Current Price – {asset?.label}</h5>}
       {asset && <h1>{`$ ${currentPrice}`}</h1>}
     </div>
   );
@@ -140,12 +141,12 @@ export function SelectAsset(props) {
       {/* <p style={{ fontSize: '20px' }}>PREDICT TIME</p> */}
       <div className={`${styles.dateTime} row`}>
         <div className="col-lg-6 col-md-12 text-center">
-          <h5>Start Time</h5>
+          <h5 className='text-black'>Start Time</h5>
           <DateTimePicker onChange={onChange} value={value} className={`${styles.assetWrapper}`} />
         </div>
 
         <div className="col-lg-6 col-md-12 text-center">
-          <h5>End Time</h5>
+          <h5 className='text-black'>End Time</h5>
           <DateTimePicker onChange={onEndChange} value={endValue}  className={`${styles.assetWrapper}`} />
         </div>
       </div>

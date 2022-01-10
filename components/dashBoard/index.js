@@ -7,14 +7,15 @@ import Orders from "./Orders";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-
+import styles from './dashBoard.module.css';
 import { CarouselCard } from "../carouselCard";
 import { AnalogClock } from "../analogClock";
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
-import { useAccountHistoryForDaily,useAccountHistoryForBMS,useAccountTransaction } from "../../utils/hooks/useAccountHistory";
-
+import DailyData from "./dailyData";
+import BMSData from "./bmsData";
+import "bootstrap/dist/css/bootstrap.css";
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex"
@@ -69,47 +70,32 @@ const tokenData = [
 export default function Dashboard() {
   const classes = useStyles();
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-  const {dailydata} = useAccountHistoryForDaily()
-  const {bmsdata} = useAccountHistoryForBMS()
+ 
+  // const {bmsdata} = useAccountHistoryForBMS()
 
-  console.log('dailydata -',dailydata)
-  console.log('bmsdata -',bmsdata)
+  
+  // console.log('bmsdata -',bmsdata)
  
 
   return (
-    <div className={classes.root}>
-
-      <main className={classes.content}>
-      
-        <Container maxWidth="lg" className={classes.container}>
-
-          {/* Container grid */}
-          <Grid container spacing={3}>
-
-            {/* Recent Orders */}
-            <Grid item xs={12} md={9} lg={9}>
-              <Paper className={classes.paper}>
-                <Orders />
-              </Paper>
-            </Grid>
-
-            {/* First Row, right column */}
-            <Grid item xs={12} md={3} lg={3}
-              justifyContent="center"
-              alignItems="center"
-            >
-              {/* Display Clock */}
-              <Grid item xs={12}>
-                <AnalogClock />
-              </Grid>
-
-              {/* Display Token Price  */}
-              <Grid item>
-                <Paper className={classes.paper}>
-                  <CarouselCard 
+      <main className={styles.main}>
+        <div className="container">
+          <div className="row">
+              <div className="col-md-5">
+                    {/* Display Clock */}
+                    <div className={styles.clock}>
+                    <AnalogClock />
+                    </div>
+                  
+              </div>
+              <div className="col-md-7">
+                  {/* Display Token Price  */}
+           
+               <div className={styles.carousel}>
+               <CarouselCard 
                     indicators={false}
                     navButtonsAlwaysVisible={true}
-                    className={classes.carousel}>
+                     >
                     {tokenData.map((item, idx) => (
                       <Grid 
                         key={idx}
@@ -118,30 +104,61 @@ export default function Dashboard() {
                         justifyContent="center"
                         alignItems="center"
                       >
-                        <div>{item.label}</div>
-                        <div>{item.currentPrice}</div>
+                        <div className={styles.carouselText1}>{item.label}</div>
+                        <div className={styles.carouselText2}>{item.currentPrice}</div>
                       </Grid>
                     ))}              
                   </CarouselCard>
-                </Paper>
-              </Grid>
-            </Grid>
+               </div>
+                  
+               
+              </div>
+          </div>
+            <div className="row">
+              <div className="col-12 mb-5 pb-5">
+                    {/* Daily rocket */}
+                <DailyData />
+              </div>
 
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <Chart />
+              <div className="col-12">
+                  {/* BMS rocket */}
+            
+                <BMSData />
+              </div>
+            </div>
+
+        </div>
+           
+             
+            
+             
+
+              
+           
+
+            {/* Recent Orders */}
+            {/* <Grid item xs={12} md={12} lg={12} order={{ xs: 2, md: 1, lg: 1 }}>
+              <Paper className={classes.paper}>
+                <Orders />
               </Paper>
-            </Grid>
+            </Grid> */}
 
-            {/* Recent Deposits */}
-            <Grid container item xs={12} md={4} lg={3} justifyContent="center" alignItems="center">
+           
 
-            </Grid>
-          </Grid>
+            
+              
+
+           
+            
+
+
+            
+
+           
+         
           
-        </Container>
+       
       </main>
-    </div>
+    
   );
 }
