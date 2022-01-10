@@ -93,7 +93,7 @@
     cursor: pointer;
 }
 .games1{
-    margin-top: 70px;
+    margin-top: 50px;
     animation: animate 3s linear infinite;
     animation-delay: calc(-1s * var(--i)); 
     cursor: pointer;
