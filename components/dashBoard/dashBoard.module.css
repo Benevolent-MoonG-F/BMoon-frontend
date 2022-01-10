@@ -5,7 +5,7 @@
   .th {
     max-width: 125px;
     min-width: 125px;
-    padding: 0 !important;
+    padding: 10 !important;
     overflow-x: auto;
     white-space: nowrap;
     text-align: center !important;
@@ -62,7 +62,7 @@
   }
 
   .carouselText1{
-      color: yellow;
+    color: rgb(255, 254, 116);
       font-size: 24px; 
   }
 
@@ -77,7 +77,7 @@
     border-radius: 10px;
 }
 .title{
-    color: yellow;
+    color: rgb(255, 254, 116);
 }
 
 

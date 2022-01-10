@@ -87,11 +87,17 @@
 
 
 .games{
-   margin-top: 100px;
-   animation: animate 4s linear infinite;
+   /* margin-top: 100px; */
+   animation: animate 3s linear infinite;
     animation-delay: calc(-1s * var(--i)); 
     cursor: pointer;
 }
+.games1{
+    margin-top: 70px;
+    animation: animate 3s linear infinite;
+    animation-delay: calc(-1s * var(--i)); 
+    cursor: pointer;
+} 
 
 .gameCard p{
     font-size: 24px;
@@ -117,6 +123,12 @@
 .gameCard p {
     font-size: 16px;
     line-height: 19px;
+}
+.games1{
+    margin-top: -30px;
+}
+.games{
+    margin-top: -40px !important;
 }
 
 }

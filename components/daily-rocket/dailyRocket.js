@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from '../../components/button/index';
 import styles from './dailyRocket.module.css';
 import Image from 'next/image';
-import Logo from '../../public/images/logo.png'
+import Logo from '../../public/images/dailylogo.png'
 import {Element} from 'react-scroll';
 const appLink = '/app/new-game';
 export function DailyRocket(){

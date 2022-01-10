@@ -48,6 +48,8 @@
 .header h5{
     margin-top: 50px;
     padding-left: 10px;
+    font-family: 'Nasalization', sans-serif;
+    font-size: 24px;
   
 }
 
@@ -57,10 +59,16 @@
     font-family: 'Raleway', sans-serif;
 }
 
-.dao h5{
-    font-size: 30px;
-    font-family: 'Nasalization', sans-serif;
-    letter-spacing: 3px;
+.dao h6{
+   
+   
+    /* letter-spacing: 3px; */
+}
+
+.header img{
+    height: 100px !important;
+    width: 100px !important;
+    border-radius: 100px;
 }
 
 @media (min-width: 768px) and (max-width: 990px){
@@ -71,7 +79,7 @@
 }
 
 @media (max-width: 575.98px){
-.dao h5{
+.dao h6{
     font-size: 25px;
 }
 

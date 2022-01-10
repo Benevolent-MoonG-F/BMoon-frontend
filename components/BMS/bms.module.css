@@ -63,6 +63,11 @@
 .bms h5{
     font-size: 30px;
 }
+.header img{
+    height: 100px !important;
+    width: 100px !important;
+    border-radius: 100px;
+}
 
 @media (min-width: 768px) and (max-width: 990px){
     .bms p{

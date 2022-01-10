@@ -41,5 +41,12 @@
     .games figure{
         padding-right: 15px;
     }
+    .games p{
+        font-size: 18px;
+    }
+    .games img{
+        height: 70px !important;
+        width: 100px !important;
+    }
 }
 

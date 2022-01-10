@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from '../../components/button/index';
 import styles from './bms.module.css';
 import Image from 'next/image';
-import Logo from '../../public/images/logo.png'
+import Logo from '../../public/images/bmslogo.png';
 const appLink = '/app/new-game';
 import {Element} from 'react-scroll';
 
