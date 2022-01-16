@@ -7,21 +7,25 @@ import Orders from "./Orders";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import styles from './dashBoard.module.css';
+import styles from "./dashBoard.module.css";
 import { CarouselCard } from "../carouselCard";
 import { AnalogClock } from "../analogClock";
-import Box from '@mui/material/Box';
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
+import Box from "@mui/material/Box";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
 import DailyData from "./dailyData";
 import BMSData from "./bmsData";
+import {
+  useHistoryForBMS,
+  useHistoryForDaily,
+} from "../../utils/hooks/useHistory";
 import "bootstrap/dist/css/bootstrap.css";
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex"
+    display: "flex",
   },
   title: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   content: {
     // content which is class of main needs to be flex and column direction
@@ -29,11 +33,11 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     flexGrow: 1,
     height: "100vh",
-    overflow: "auto"
+    overflow: "auto",
   },
   container: {
     paddingTop: theme.spacing(16),
-    paddingBottom: theme.spacing(4)
+    paddingBottom: theme.spacing(4),
   },
   paper: {
     padding: theme.spacing(2),
@@ -49,116 +53,86 @@ const useStyles = makeStyles(theme => ({
     marginTop: 0,
     width: 250,
     height: 40,
-    backgroudColor: 'black',
+    backgroudColor: "black",
   },
 }));
 
 const tokenData = [
   {
-    label: 'ETH',
+    label: "ETH",
     currentPrice: 4200,
   },
   {
-    label: 'BTC',
+    label: "BTC",
     currentPrice: 65551,
   },
   {
-    label: 'ONE',
+    label: "ONE",
     currentPrice: 2500,
-  }
-]
+  },
+];
 export default function Dashboard() {
   const classes = useStyles();
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
- 
-  // const {bmsdata} = useAccountHistoryForBMS()
 
-  
-  // console.log('bmsdata -',bmsdata)
- 
+  // const {bmsdata} = useAccountHistoryForBMS()
+  // const { bmshistorydata } = useHistoryForBMS();
+  useHistoryForBMS();
+  // const { dailyhistorydata } = useHistoryForDaily();
 
   return (
-      <main className={styles.main}>
-        <div className="container">
-          <div className="row">
-              <div className="col-md-5">
-                    {/* Display Clock */}
-                    <div className={styles.clock}>
-                    <AnalogClock />
-                    </div>
-                  
-              </div>
-              <div className="col-md-7">
-                  {/* Display Token Price  */}
-           
-               <div className={styles.carousel}>
-               <CarouselCard 
-                    indicators={false}
-                    navButtonsAlwaysVisible={true}
-                     >
-                    {tokenData.map((item, idx) => (
-                      <Grid 
-                        key={idx}
-                        container
-                        direction="column"
-                        justifyContent="center"
-                        alignItems="center"
-                      >
-                        <div className={styles.carouselText1}>{item.label}</div>
-                        <div className={styles.carouselText2}>{item.currentPrice}</div>
-                      </Grid>
-                    ))}              
-                  </CarouselCard>
-               </div>
-                  
-               
-              </div>
-          </div>
-            <div className="row">
-              <div className="col-12 mb-5 pb-5">
-                    {/* Daily rocket */}
-                <DailyData />
-              </div>
-
-              <div className="col-12">
-                  {/* BMS rocket */}
-            
-                <BMSData />
-              </div>
+    <main className={styles.main}>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-md-5'>
+            {/* Display Clock */}
+            <div className={styles.clock}>
+              <AnalogClock />
             </div>
+          </div>
+          <div className='col-md-7'>
+            {/* Display Token Price  */}
 
+            <div className={styles.carousel}>
+              <CarouselCard indicators={false} navButtonsAlwaysVisible={true}>
+                {tokenData.map((item, idx) => (
+                  <Grid
+                    key={idx}
+                    container
+                    direction='column'
+                    justifyContent='center'
+                    alignItems='center'
+                  >
+                    <div className={styles.carouselText1}>{item.label}</div>
+                    <div className={styles.carouselText2}>
+                      {item.currentPrice}
+                    </div>
+                  </Grid>
+                ))}
+              </CarouselCard>
+            </div>
+          </div>
         </div>
-           
-             
-            
-             
+        <div className='row'>
+          <div className='col-12 mb-5 pb-5'>
+            {/* Daily rocket */}
+            <DailyData />
+          </div>
 
-              
-           
+          <div className='col-12'>
+            {/* BMS rocket */}
 
-            {/* Recent Orders */}
-            {/* <Grid item xs={12} md={12} lg={12} order={{ xs: 2, md: 1, lg: 1 }}>
+            <BMSData />
+          </div>
+        </div>
+      </div>
+
+      {/* Recent Orders */}
+      {/* <Grid item xs={12} md={12} lg={12} order={{ xs: 2, md: 1, lg: 1 }}>
               <Paper className={classes.paper}>
                 <Orders />
               </Paper>
             </Grid> */}
-
-           
-
-            
-              
-
-           
-            
-
-
-            
-
-           
-         
-          
-       
-      </main>
-    
+    </main>
   );
 }
