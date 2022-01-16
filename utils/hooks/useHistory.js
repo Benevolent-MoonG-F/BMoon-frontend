@@ -31,10 +31,10 @@ export function timeConverter(UNIX_timestamp) {
   return date + " " + month + " " + year + " " + hour + ":" + min + ":" + sec;
 }
 
-export const useAccountHistoryForDaily = () => {
+export const useHistoryForDaily = () => {
   const { walletAddress } = useMoralisDapp();
   const [loading, setLoading] = useState(false);
-  const [dailydata, setdailydata] = useState([]);
+  const [dailyhistorydata, setdailyhistorydata] = useState([]);
 
   abiDecoder.addABI(dailyrocketabi);
   function decodeInput(input) {
@@ -45,7 +45,8 @@ export const useAccountHistoryForDaily = () => {
     if (walletAddress) {
       setLoading(true);
       try {
-        const uri = `https://api-kovan.etherscan.io/api?module=account&action=txlist&address=${walletAddress}&startblock=0&endblock=latest&sort=desc&apikey=1R83N7NU9TED47UB8HXSW696FGMFM6FQKJ`;
+        const uri = `https://api-kovan.etherscan.io/api?module=account&action=txlist&address=${DAILYROCKETADDRESS}&startblock=0
+        &endblock=latest&sort=desc&apikey=1R83N7NU9TED47UB8HXSW696FGMFM6FQKJ`;
         const data = await fetch(uri);
         const jsondata = await data.json();
         const dailyrockettx = jsondata.result.filter(
@@ -65,7 +66,11 @@ export const useAccountHistoryForDaily = () => {
             hash: items.hash,
           }));
 
-        const userData = dataFiltered.map((data) => ({
+        const newarray = dataFiltered.filter(
+          (data) => data.transactionObj.length !== 2
+        );
+
+        const userData = newarray.map((data) => ({
           asset: data.transactionObj[0].value,
           prediction: data.transactionObj[1].value,
           payment:
@@ -77,7 +82,7 @@ export const useAccountHistoryForDaily = () => {
           hash: data.hash,
         }));
 
-        setdailydata(userData);
+        setdailyhistorydata(userData);
         setLoading(false);
       } catch (err) {
         setLoading(false);
@@ -88,13 +93,13 @@ export const useAccountHistoryForDaily = () => {
     }
   }, [walletAddress]);
 
-  return { loading, dailydata };
+  return { loading, dailyhistorydata };
 };
 
-export const useAccountHistoryForBMS = () => {
+export const useHistoryForBMS = () => {
   const { walletAddress } = useMoralisDapp();
   const [loading, setLoading] = useState(false);
-  const [bmsdata, setbmsdata] = useState([]);
+  const [bmshistorydata, setbmshistorydata] = useState([]);
 
   abiDecoder.addABI(bmsabi);
   function decodeInput(input) {
@@ -105,7 +110,8 @@ export const useAccountHistoryForBMS = () => {
     if (walletAddress) {
       setLoading(true);
       try {
-        const uri = `https://api-kovan.etherscan.io/api?module=account&action=txlist&address=${walletAddress}&startblock=0&endblock=latest&sort=desc&apikey=1R83N7NU9TED47UB8HXSW696FGMFM6FQKJ`;
+        const uri = `https://api-kovan.etherscan.io/api?module=account&action=txlist&address=${BMSADDRESS}&startblock=0
+        &endblock=latest&sort=desc&apikey=1R83N7NU9TED47UB8HXSW696FGMFM6FQKJ`;
         const data = await fetch(uri);
         const jsondata = await data.json();
         const bmstx = jsondata.result.filter((item) => item.to == BMSADDRESS);
@@ -125,7 +131,11 @@ export const useAccountHistoryForBMS = () => {
 
         console.log(dataFiltered);
 
-        const userData = dataFiltered.map((data) => ({
+        const newarray = dataFiltered.filter(
+          (data) => data.transactionObj.length === 3
+        );
+
+        const userData = newarray.map((data) => ({
           starttime: timeConverter(data.transactionObj[0].value),
           payment:
             data.transactionObj[1].value ===
@@ -137,7 +147,9 @@ export const useAccountHistoryForBMS = () => {
           hash: data.hash,
         }));
 
-        setbmsdata(userData);
+        console.log("userdatabms", userData);
+
+        setbmshistorydata(userData);
         setLoading(false);
       } catch (err) {
         console.log(err);
@@ -148,5 +160,5 @@ export const useAccountHistoryForBMS = () => {
     }
   }, [walletAddress]);
 
-  return { loading, bmsdata };
+  return { loading, bmshistorydata };
 };
