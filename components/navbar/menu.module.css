@@ -20,10 +20,6 @@
 .menuBtn:hover {
     color: black;
     transition-delay: 1s;
-    /* font-weight: 680; */
-    /* background-color: #00c9ff;
-    background-image: linear-gradient(to left, transparent 0%, #6adf76 100%);  */
-    /* padding: 9px 2em; */
     box-shadow: 0 0 5px #79FFF6,
                 0 0 20px #79FFF6,
                 0 0 40px #79FFF6,

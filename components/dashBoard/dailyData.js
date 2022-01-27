@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "@material-ui/core/Link";
 import Title from "./Title";
-import { useAccountHistoryForDaily,useAccountTransaction } from "../../utils/hooks/useAccountHistory";
+import { useAccountHistoryForDaily} from "../../utils/hooks/useAccountHistory";
 import styles from './dashBoard.module.css';
 import { Table } from 'react-bootstrap';
 
@@ -36,34 +36,6 @@ export default function DailyData() {
     
   </tbody>
 </Table>
-
-
-      {/* <Table size="small" className={styles.table}>
-        <TableHead>
-          <TableRow className={styles.tr}>
-            <TableCell className={styles.th}>Asset</TableCell>
-            <TableCell className={styles.th}>Hash</TableCell>
-            <TableCell className={styles.th}>Payment Method</TableCell>
-            <TableCell className={styles.th}>Prediction</TableCell>
-            <TableCell className={styles.th}>Time</TableCell>
-          
-            
-          </TableRow>
-        </TableHead>
-        <TableBody className={styles.tableBody}>
-        {dailydata && dailydata.map(row => (
-            <TableRow className={styles.tr} key={row.id}>
-              <TableCell className={styles.td}>{row.asset}</TableCell>
-              <TableCell className={styles.td}>{row.hash}</TableCell>
-              <TableCell className={styles.td}>{row.payment}</TableCell>
-              <TableCell className={styles.td}>{row.prediction}</TableCell>
-              <TableCell className={styles.td}>{row.time}</TableCell>
-            
-            </TableRow>
-         ))}   
-        
-        </TableBody>
-      </Table> */}
       
     </React.Fragment>
   );

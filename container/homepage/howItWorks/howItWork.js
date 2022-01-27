@@ -2,10 +2,8 @@ import Image from 'next/image';
 import { Element, scroller } from "react-scroll";
 import { useMediaQuery } from "react-responsive";
 import { DevicesSize } from "../../../components/responsive";
-import { GlassCard } from "../../../components/glassCard";
 import styles from './index.module.css';
 import "bootstrap/dist/css/bootstrap.css";
-// import Img from '../../../public/images/howitworks.png'
 import Prediction from '../../../public/images/prediction.svg';
 import Donate from '../../../public/images/donate.svg';
 import Alert from '../../../public/images/alert.svg';

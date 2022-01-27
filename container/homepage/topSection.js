@@ -2,19 +2,13 @@ import Image from 'next/image'
 import { useMediaQuery } from "react-responsive";
 import { DevicesSize } from "../../components/responsive";
 import { Element, scroller } from "react-scroll";
-import { Navbar } from '../../components/navbar'
-import { Marginer } from '../../components/marginer'
 import { Button } from '../../components/button';
 import styles from './topSection.module.css';
 import LandingImg from '../../public/images/landing-no-shadow.png'
 import { theme } from '../../components/theme';
-import { DownArrow } from '../../components/downArrow/downArrow';
-import { PartnerList } from '../../components/partnerList';
 import Tilt from 'react-parallax-tilt';
-import Link from 'next/link'
 import TypeIt from "typeit-react";
 import "bootstrap/dist/css/bootstrap.css";
-import { style } from '@mui/system';
 
 const appLink = '/app/new-game';
 
@@ -43,8 +37,6 @@ export function TopSection(props) {
                             speed: 100,
                             waitUntilVisible: true,
                             }}/></span> <br/><br/><br/>
-                                   
-                        {/* <h4>A Mission-Driven Decentralized Cryptocurrency Prediction Marketplace focusing on Social Impact</h4> */}
                        
                         <div className={styles.btnContainer}> 
                         <Button href={appLink}
@@ -59,8 +51,6 @@ export function TopSection(props) {
                         
                             <Image
                                 src={LandingImg}
-                                // height={imgSize.h}
-                                // width={imgSize.w}
                                 alt="Bring your vision to the crypto markets"  
                                 className={`${styles.headerImg} img-fluid`}  
                             />
@@ -71,17 +61,6 @@ export function TopSection(props) {
 
                
             </div>
-
-            
-               
-                {/* <div 
-                    className={styles.downArrowContainer}
-                    onClick={scrollToNextSection}
-                >
-                    <DownArrow/>
-                </div> */}
-                
-        
         </Element>
     );
 }

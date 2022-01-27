@@ -34,34 +34,3 @@
     border-bottom: 2px solid #79FFF6;
     color: #79FFF6;
 }
-
-.linkItem a{
-    /* text-decoration: none;
-    color: inherit;
-    font-size: 100px; */
-}
-
-/* .linkItem .link {
-    position: relative;
-}
-
-.listItem:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 0%;
-    content: '.';
-    color: transparent;
-    background: #aaa;
-    height: 1px;
-  }
-  .link:hover:after {
-    width: 100%;
-  }
-  
-.link {
-    transition: all 2s;
-}
-   */

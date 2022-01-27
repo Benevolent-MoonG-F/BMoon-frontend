@@ -9,7 +9,7 @@ export const SwitchButton = ({ isBMS, setIsBMS }) => {
               setIsBMS(false);
             }
           }}
-          // className={isBMS ? styles.bmsbutton : styles.dailyrocketbutton}
+        
           className={styles.dailyrocketbutton}
           style={{ backgroundColor: isBMS ? '#142237' : '#374254' }}
         >
@@ -25,7 +25,7 @@ export const SwitchButton = ({ isBMS, setIsBMS }) => {
               setIsBMS(true);
             }
           }}
-          // className={isBMS ? styles.dailyrocketbutton : styles.bmsbutton}
+        
           className={styles.bmsbutton}
           style={{ backgroundColor: isBMS ? '#374254' : '#142237' }}
         >

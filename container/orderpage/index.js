@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { MultiStepForm } from '../../components/multiStepForm';
-import { Navbar } from '../../components/navbar';
 import { PrizesBanner } from '../../components/prizesBanner';
 import { FormStepper } from '../../components/formStepper';
 import { topAssets } from '../../components/multiStepForm/assetData';
@@ -245,6 +244,7 @@ export function OrderPage(props) {
     approved: isBmsApproved
   };
   return (
+    <main className={styles.main}>
     <div className={styles.wrapper}>
       <div className={styles.content}>
         <PrizesBanner className={styles.bannerContainer} />
@@ -267,5 +267,7 @@ export function OrderPage(props) {
      
       <TransactionStateModal modal={modal} setModal={setModal} txstate={txstate} />
     </div>
+    </main>
+    
   );
 }

@@ -1,4 +1,4 @@
-import Head from 'next/head';
+
 import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { MoralisProvider } from 'react-moralis';
@@ -11,12 +11,7 @@ export default function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <div>
-      {/* <Head>
-        <title>Benevolent Moon</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Meta description content goes here." />      
-        <link rel="icon" href="/images/logo.png" />
-      </Head> */}
+      
 
       <MoralisProvider
         appId="Amrco2Pbc0LcAAlhIyMITx7J00VMi1rTDZJqfIKn"

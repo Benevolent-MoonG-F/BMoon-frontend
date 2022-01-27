@@ -1,4 +1,4 @@
-import { StylesContext } from '@mui/styles';
+
 import React from 'react';
 import {Element} from 'react-scroll';
 import styles from './aboutPage.module.css';

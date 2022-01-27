@@ -1,135 +1,20 @@
-/* .container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to bottom, #2e6cc9, #46747ab2);
-    position: relative;
-    color: white;
-    background: white;
-} */
-
-/* .color {
-    position: absolute;
-    filter: blur(150px);
-}
-.color:nth-child(1) {
-    top: 150px;
-    left: 10px;
-    width: 900px;
-    height: 500px;
-    background: #79FFF6;
-}
-.color:nth-child(2) {
-    bottom: -50px;
-    right: 10px;
-    width: 800px;
-    height: 500px;
-    background: #ffff7498;
-}
-.color:nth-child(3) {
-    bottom: 100px;
-    right: 600px;
-    width: 400px;
-    height: 500px;
-    background: white;
-} */
-/* .box {
-    position: relative;
-} */
-/* .square {
-    position: absolute;
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255,0.5);
-    border-bottom: 1px solid rgba(255,255,255,0.5);
-    border-right: 1px solid rgba(255,255,255,0.5);
-    backdrop-filter: blur(5px);
-    animation: animate 10s linear infinite;
-    animation-delay: calc(-1s * var(--i)); 
-}
-.square:nth-child(1){
-
-    top: -30px;
-    left: -110px;
-    width: 75px;
-    height: 75px;
-}
-.square:nth-child(2){
-    top: -30px;
-    right: -380px;
-    width: 190px;
-    height: 100px;
-
-}
-.square:nth-child(3){
-    bottom: -400px;
-    right: -380px;
-    width: 80px;
-    height: 80px;
-}
-.square:nth-child(4){
-    bottom: -550px;
-    left: -150px;
-    width: 50px;
-    height: 50px;
-}
-.square:nth-child(5){
-    top: 250px;
-    left: -400px;
-    width: 120px;
-    height: 120px;
-} */
-
 
 .content {
     display: flex;
     justify-content: left;
     align-items: left;
     height: 80vh;
-    /* height: 600px; */
     width: 100vw;
     z-index: 1;
-    /* flex-direction: column; */
 }
 
-/* .partnerList{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 1rem;
-    justify-content: center;
-    background-color: rgba(216, 216, 216, 0.5);
-} */
 
-/* .marbleWrapper {
-    display: flex;
-    padding-top: 30px;
-    justify-content: space-between;
-    animation: animate 10s linear infinite;
-    animation-delay: calc(-1s * var(--i));
-    margin: auto;
-} */
-.card1 { 
 
-    /* width: 100vw;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
-  
-}
 .carousel {
     margin-top: 10;
     width: 300;
     height: 800;
     background-color: 'black';
-}
-.cardWrapper h2 {
-    /* z-index: 4; */
 }
 
 

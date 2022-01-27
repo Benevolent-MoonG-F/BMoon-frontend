@@ -15,16 +15,13 @@
     padding: 0.1rem 3.4em;
     border-radius: 10px;
     background-color: #000;
-    /* background-image: linear-gradient(to left, transparent 0%, #6adf76 100%); */
     transition: all 0.4s ease-in-out;
     cursor: pointer;
-    /* width: 400px; */
     margin: auto;
 }
 
 .btnWrapper:hover {
     font-weight: 400;
-    /* background: none; */
     background-image: linear-gradient(to left, transparent 0%, #6adf76 100%); 
 }
 .btnText{
@@ -57,12 +54,6 @@
     font-size: 20px;
     line-height: 39px;
     font-family: 'Raleway', sans-serif;
-}
-
-.dao h6{
-   
-   
-    /* letter-spacing: 3px; */
 }
 
 .header img{

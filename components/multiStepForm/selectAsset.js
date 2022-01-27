@@ -5,7 +5,6 @@ import { topAssets } from './assetData';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import BitcoinLogo from '../../public/images/bitcoin.png';
 import styles from './index.module.css';
 import axios from 'axios';
 import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle';
@@ -138,7 +137,6 @@ export function SelectAsset(props) {
 
   const reactDateTimePicker = (
     <div className="container-fluid">
-      {/* <p style={{ fontSize: '20px' }}>PREDICT TIME</p> */}
       <div className={`${styles.dateTime} row`}>
         <div className="col-lg-6 col-md-12 text-center">
           <h5 className='text-black'>Start Time</h5>

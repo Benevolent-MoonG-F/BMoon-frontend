@@ -1,18 +1,9 @@
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import Chart from "./Chart";
-import Deposits from "./Deposits";
-import Orders from "./Orders";
-
-import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import styles from './dashBoard.module.css';
 import { CarouselCard } from "../carouselCard";
 import { AnalogClock } from "../analogClock";
-import Box from '@mui/material/Box';
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
 import DailyData from "./dailyData";
 import BMSData from "./bmsData";
 import "bootstrap/dist/css/bootstrap.css";
@@ -71,12 +62,6 @@ export default function Dashboard() {
   const classes = useStyles();
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
  
-  // const {bmsdata} = useAccountHistoryForBMS()
-
-  
-  // console.log('bmsdata -',bmsdata)
- 
-
   return (
       <main className={styles.main}>
         <div className="container">
@@ -128,36 +113,7 @@ export default function Dashboard() {
             </div>
 
         </div>
-           
-             
-            
-             
-
-              
-           
-
-            {/* Recent Orders */}
-            {/* <Grid item xs={12} md={12} lg={12} order={{ xs: 2, md: 1, lg: 1 }}>
-              <Paper className={classes.paper}>
-                <Orders />
-              </Paper>
-            </Grid> */}
-
-           
-
-            
-              
-
-           
-            
-
-
-            
-
-           
-         
-          
-       
+        
       </main>
     
   );

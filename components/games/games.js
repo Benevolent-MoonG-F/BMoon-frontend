@@ -12,7 +12,6 @@ import AVAX from '../../public/images/avax.png';
 import ONE from '../../public/images/one.png';
 import LUNA  from '../../public/images/luna.png';
 import MATIC from '../../public/images/matic.png';
-import { PartnerList } from '../partnerList';
 
 export function Games(){
     return(
@@ -28,17 +27,15 @@ export function Games(){
                         <div className="col-md-6 mb-5">
                         <DailyRocket/>
                         </div>
-                        {/* <div className={`${styles.tokens} col-12`}>
-                            <h5>BTC ETH LINK ADA AVAX ONE LUNA MATIC </h5>
-                        </div> */}
+                    
                     </div>
                     <div className='row mt-5 pt-5'>
                         <div className='col-12'>
-                            <h3 className='text-white text-center pt-5'>Tokens</h3>
+                            <h3 className='text-white text-center pt-2'>Tokens</h3>
                             <p className='text-white text-center'>Token required for gameplay across Benevolent Moon Gaming.</p>
                         </div>
 
-                        <div className='col-12 text-center pt-5 mb-5'>   
+                        <div className='col-12 text-center pt-5'>   
                         <figure className=' pb-5'>
                             <Image alt="BTC" src={BTC} className={`${styles.tokenImg} img-fluid`} height="130px" width="130px"/>
                                 <figcaption>BTC</figcaption>
@@ -81,11 +78,6 @@ export function Games(){
                         </div>
 
                     </div>
-                    {/* <div className='row'>
-                        <div className='col-12'>
-                            <PartnerList/>
-                        </div>
-                    </div> */}
         </div>
         </Element>
         

@@ -1,13 +1,10 @@
-import { useState } from 'react';
-// import SwipeableViews from 'react-swipeable-views';
+
 import { SelectAsset } from './selectAsset';
 import { SelectPayment } from './selectPayment';
 import { Button } from '@mui/material';
 import styles from './index.module.css';
 import { useMoralis, useWeb3Contract } from 'react-moralis';
 import { useMoralisDapp } from '../../providers/MoralisDappProvider/MoralisDappProvider';
-import daiabi from '../../utils/abis/dai.json';
-import usdcabi from '../../utils/abis/usdc.json';
 export function MultiStepForm(props) {
   const { walletAddress, chainId } = useMoralisDapp();
   const { authenticate, isAuthenticated, logout } = useMoralis();

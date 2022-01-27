@@ -1,6 +1,5 @@
 .switchcontainer {
   margin-top: 60px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +13,6 @@
 
 .dailyrocketbutton {
   width: 50%;
-  /* background-color: #374254; */
   color: #fff;
   border: 1px inset rgba(240, 235, 235, 0.3);
   border-top-left-radius: 15px;
@@ -28,7 +26,6 @@
   border: 1px inset rgba(240, 235, 235, 0.3);
   border-top-right-radius: 15px;
   cursor: pointer;
-  /* padding: 10px; */
 }
 
 

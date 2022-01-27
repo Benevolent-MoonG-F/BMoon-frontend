@@ -4,7 +4,6 @@ const Carousel = dynamic(
   () => import ('react-material-ui-carousel'),
   {ssr: false}
 )
-import styles from './index.module.css';
 
 export function CarouselCard(props) {
   const { indicators=true, navButtonsAlwaysVisible=false} = props;

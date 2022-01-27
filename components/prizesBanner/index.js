@@ -1,15 +1,6 @@
 import styles from './index.module.css';
-import { useAPIContract } from 'react-moralis';
 export function PrizesBanner(props) {
-  // const { runContractFunction, data, error, isLoading, isFetching } =
-  //   useAPIContract({
-  //     abi: usdcEthPoolAbi,
-  //     address: usdcEthPoolAddress,
-  //     functionName: 'observe',
-  //     params: {
-  //       secondsAgos: [0, 10],
-  //     },
-  //   });
+  
 
   const { className } = props;
   console.log(className);

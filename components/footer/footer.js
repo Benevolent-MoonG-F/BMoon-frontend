@@ -1,7 +1,6 @@
-import Image from 'next/image'
+
 import "bootstrap/dist/css/bootstrap.css";
 import styles from "./footer.module.css"
-import Logo from "../../public/images/logo.png"
 import { FaDiscord, FaTwitter, FaTelegram } from 'react-icons/fa';
 export function Footer() {
     return(
