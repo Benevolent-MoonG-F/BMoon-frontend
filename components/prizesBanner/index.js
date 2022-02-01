@@ -7,7 +7,7 @@ export function PrizesBanner(props) {
   return (
     <div className={className}>
       <div className={styles.textContainer}>
-        <h1 style={{ textAlign: 'center', fontSize: '40px' }}>$1000</h1>
+        <h1 style={{ textAlign: 'center', fontSize: '40px' }}><b>$1000</b></h1>
         <h3 style={{ textAlign: 'center' }}>In Daily Pot</h3>
       </div>
     </div>
