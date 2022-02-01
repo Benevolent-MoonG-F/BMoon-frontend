@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { MultiStepForm } from '../../components/multiStepForm';
 import { PrizesBanner } from '../../components/prizesBanner';
 import { FormStepper } from '../../components/formStepper';
 import { topAssets } from '../../components/multiStepForm/assetData';
 import styles from './index.module.css';
 import { SwitchButton } from '../../components/switch';
-import { useMoralis, useWeb3Contract } from 'react-moralis';
+import { useMoralis} from 'react-moralis';
 import daiabi from '../../utils/abis/dai.json';
 import dailyrocket from '../../utils/abis/dailyrocket.json';
 import bms from '../../utils/abis/bms.json';
@@ -50,7 +50,7 @@ export function OrderPage(props) {
 
   
 
-  console.log(isDailyApproved,isBmsApproved)
+  // console.log(isDailyApproved,isBmsApproved)
 
   const approveDai = async(address) => {
       try {
@@ -63,7 +63,7 @@ export function OrderPage(props) {
         const tx = await contract.methods.approve(address,minimum.toString()).send({
           from: walletAddress
         })
-        console.log(tx)
+        // console.log(tx)
         // if(confirmations >= 1){
           setModal(true)
           settxstate('success')
@@ -71,7 +71,7 @@ export function OrderPage(props) {
         // }
         
       }catch(err){
-        console.log(err)
+        // console.log(err)
         setModal(true)
         settxstate('failed')
 
@@ -79,9 +79,9 @@ export function OrderPage(props) {
   }
 
   const handleSubmit = async () => {
-    console.log(order);
+    // console.log(order);
     const formatPrice = parseFloat(order.price) * 10 ** 8;
-    console.log(formatPrice);
+    // console.log(formatPrice);
 
     if(isDailyApproved){
       try {
@@ -105,7 +105,7 @@ export function OrderPage(props) {
       } catch (err) {
         setModal(true)
         settxstate('failed')
-        console.log(err);
+        // console.log(err);
       }
     }else{
       approveDai('0xfe825801CCA48fEbdf09F4bdE540eEaD8440e6eA')
@@ -132,7 +132,7 @@ export function OrderPage(props) {
         
         
       } catch (err) {
-        console.log(err);
+        // console.log(err);
         setModal(true)
         settxstate('failed')
       }
@@ -169,10 +169,10 @@ export function OrderPage(props) {
 
   const [isBMS, setIsBMS] = useState(false);
 
-  const handleChange = (index) => (e) => {
-    setStep(index);
-    localStorage.setItem('step', index);
-  };
+  // const handleChange = (index) => (e) => {
+  //   setStep(index);
+  //   localStorage.setItem('step', index);
+  // };
 
   const nextStep = () => {
     if (order.asset !== null && order.price !== null && step < 2) {
