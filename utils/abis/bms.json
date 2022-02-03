@@ -15,11 +15,6 @@
         "internalType": "contract ISuperToken",
         "name": "acceptedToken",
         "type": "address"
-      },
-      {
-        "internalType": "contract ISwapRouter",
-        "name": "_swapRouter",
-        "type": "address"
       }
     ],
     "stateMutability": "nonpayable",
@@ -68,19 +63,6 @@
     ],
     "name": "Predicted",
     "type": "event"
-  },
-  {
-    "inputs": [],
-    "name": "PAYMENT_INDEX",
-    "outputs": [
-      {
-        "internalType": "uint32",
-        "name": "",
-        "type": "uint32"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
   },
   {
     "inputs": [],
@@ -152,7 +134,7 @@
   {
     "inputs": [
       {
-        "internalType": "address",
+        "internalType": "contract IRedirect",
         "name": "addr",
         "type": "address"
       }
@@ -165,7 +147,7 @@
   {
     "inputs": [
       {
-        "internalType": "address",
+        "internalType": "contract IGovernanceToken",
         "name": "_gtAdress",
         "type": "address"
       }
@@ -184,19 +166,6 @@
       }
     ],
     "name": "addToWinners",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_add",
-        "type": "address"
-      }
-    ],
-    "name": "addpaymentToken",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -534,6 +503,25 @@
   {
     "inputs": [
       {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "coinRound",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
@@ -583,6 +571,35 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_round",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "market",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "checkeAddress",
+        "type": "address"
+      }
+    ],
+    "name": "isAwiner",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "lendingPool",
     "outputs": [
@@ -590,6 +607,19 @@
         "internalType": "contract ILendingPool",
         "name": "",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "monthCount",
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "",
+        "type": "uint128"
       }
     ],
     "stateMutability": "view",
@@ -609,6 +639,19 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "payroundStartTime",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "bytes",
@@ -622,29 +665,11 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "poolFee",
-    "outputs": [
-      {
-        "internalType": "uint24",
-        "name": "",
-        "type": "uint24"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint256",
         "name": "_start",
         "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "coin",
-        "type": "address"
       },
       {
         "internalType": "string",
@@ -772,83 +797,36 @@
         "type": "string"
       }
     ],
-    "name": "roundCoinMoonPrice",
+    "name": "roundCoinInfo",
     "outputs": [
       {
         "internalType": "int256",
-        "name": "",
+        "name": "moonPrice",
         "type": "int256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
       },
       {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "name": "roundCoinStartPrice",
-    "outputs": [
+        "internalType": "uint256",
+        "name": "winnings",
+        "type": "uint256"
+      },
       {
         "internalType": "int256",
-        "name": "",
+        "name": "startPrice",
         "type": "int256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
+      },
       {
         "internalType": "uint256",
-        "name": "",
+        "name": "totalStaked",
         "type": "uint256"
       },
       {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "name": "roundCoinStartTime",
-    "outputs": [
-      {
         "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
+        "name": "startTime",
         "type": "uint256"
       },
       {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "name": "roundCoinTotalStaked",
-    "outputs": [
-      {
         "internalType": "uint256",
-        "name": "",
+        "name": "winningTime",
         "type": "uint256"
       }
     ],
@@ -873,12 +851,12 @@
         "type": "uint256"
       }
     ],
-    "name": "roundCoinWinningIndex",
+    "name": "roundCoinPlayerArray",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "address",
         "name": "",
-        "type": "uint256"
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -897,7 +875,26 @@
         "type": "string"
       }
     ],
-    "name": "roundCoinWinningTime",
+    "name": "roundCoinWinningIsWinner",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "roundInterestEarned",
     "outputs": [
       {
         "internalType": "uint256",
@@ -911,22 +908,17 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
+        "internalType": "uint128",
         "name": "",
-        "type": "uint256"
-      },
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
+        "type": "uint128"
       }
     ],
-    "name": "roundCoinWinnings",
+    "name": "roundVoteResults",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "address",
         "name": "",
-        "type": "uint256"
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -952,12 +944,12 @@
   },
   {
     "inputs": [],
-    "name": "swapRouter",
+    "name": "totalPaid",
     "outputs": [
       {
-        "internalType": "contract ISwapRouter",
+        "internalType": "uint256",
         "name": "",
-        "type": "address"
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",

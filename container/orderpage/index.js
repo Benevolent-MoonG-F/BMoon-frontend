@@ -43,9 +43,9 @@ export function OrderPage(props) {
 
   const { contract, bmscontract } = useContract(
     dailyrocket,
-    "0xfe825801CCA48fEbdf09F4bdE540eEaD8440e6eA",
+    "0xb0A1157854279D0f309Df6a92486293B3B899330",
     bms,
-    "0x537c9f52e021c3cdde2f0948255a16536bfcf581"
+    "0x982F0f5e1192A4627d6a1acF4e151497253819Af"
   );
 
   console.log(isDailyApproved, isBmsApproved);
@@ -92,11 +92,7 @@ export function OrderPage(props) {
         window.scroll(300, 0);
 
         const tx = await contract.methods
-          .predictClosePrice(
-            order.asset.symbol,
-            formatPrice,
-            "0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD"
-          )
+          .predictClosePrice(order.asset.symbol, formatPrice)
           .send({
             from: walletAddress,
           });
@@ -108,21 +104,18 @@ export function OrderPage(props) {
         console.log(err);
       }
     } else {
-      approveDai("0xfe825801CCA48fEbdf09F4bdE540eEaD8440e6eA");
+      approveDai("0xb0A1157854279D0f309Df6a92486293B3B899330");
     }
   };
 
   const handleBMSSubmit = async () => {
     if (isBmsApproved) {
+      console.log(orderBMS.time1.getTime());
       try {
         settxstate("loading");
         setModal(true);
         const tx = await bmscontract.methods
-          .predictAsset(
-            orderBMS.time1.getTime(),
-            "0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD",
-            order.asset.symbol
-          )
+          .predictAsset(orderBMS.time1.getTime(), order.asset.symbol)
           .send({
             from: walletAddress,
           });
@@ -135,7 +128,7 @@ export function OrderPage(props) {
         settxstate("failed");
       }
     } else {
-      approveDai("0x537c9f52e021c3cdde2f0948255a16536bfcf581");
+      approveDai("0x982F0f5e1192A4627d6a1acF4e151497253819Af");
     }
   };
 
