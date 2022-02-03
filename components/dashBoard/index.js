@@ -19,7 +19,12 @@ import {
   useHistoryForBMS,
   useHistoryForDaily,
 } from "../../utils/hooks/useHistory";
+import {
+  useAccountHistoryForBMS,
+  useAccountHistoryForDaily,
+} from "../../utils/hooks/useAccountHistory";
 import "bootstrap/dist/css/bootstrap.css";
+import { useDailyTransactions } from "../../utils/hooks/useGetTransactions";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -74,11 +79,6 @@ const tokenData = [
 export default function Dashboard() {
   const classes = useStyles();
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-
-  // const {bmsdata} = useAccountHistoryForBMS()
-  // const { bmshistorydata } = useHistoryForBMS();
-  useHistoryForBMS();
-  // const { dailyhistorydata } = useHistoryForDaily();
 
   return (
     <main className={styles.main}>

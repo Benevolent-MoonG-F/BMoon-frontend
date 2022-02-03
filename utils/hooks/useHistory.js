@@ -129,19 +129,12 @@ export const useHistoryForBMS = () => {
             hash: items.hash,
           }));
 
-        console.log(dataFiltered);
-
         const newarray = dataFiltered.filter(
           (data) => data.transactionObj.length === 3
         );
 
         const userData = newarray.map((data) => ({
           starttime: timeConverter(data.transactionObj[0].value),
-          payment:
-            data.transactionObj[1].value ===
-            "0xff795577d9ac8bd7d90ee22b6c1703490b6512fd"
-              ? "DAI"
-              : null,
           market: data.transactionObj[2].value,
           time: timeConverter(data.timestamp),
           hash: data.hash,
