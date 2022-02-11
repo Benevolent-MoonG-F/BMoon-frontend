@@ -7,7 +7,16 @@ import { AnalogClock } from "../analogClock";
 import DailyData from "./dailyData";
 import BMSData from "./bmsData";
 import "bootstrap/dist/css/bootstrap.css";
-const useStyles = makeStyles(theme => ({
+// import {
+//   useHistoryForBMS,
+//   useHistoryForDaily,
+// } from "../../utils/hooks/useHistory";
+// import {
+//   useAccountHistoryForBMS,
+//   useAccountHistoryForDaily,
+// } from "../../utils/hooks/useAccountHistory";
+// import { useDailyTransactions } from "../../utils/hooks/useGetTransactions";
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex"
   },
@@ -62,6 +71,7 @@ export default function Dashboard() {
   const classes = useStyles();
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
  
+
   return (
       <main className={styles.main}>
         <div className="container">
