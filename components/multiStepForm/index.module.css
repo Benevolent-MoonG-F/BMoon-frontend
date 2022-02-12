@@ -6,7 +6,7 @@
   border: 1px solid rgb(235, 233, 233);
   background: linear-gradient(
     111.29deg,
-    rgba(255, 255, 255, 0.53) -1.83%,
+    rgba(146, 144, 144, 0.53) -1.83%,
     rgba(255, 255, 255, 0) 109.95%
   );
   box-shadow: 50px 60px 100px rgba(0, 0, 0, 0.05);
@@ -15,29 +15,22 @@
   border-top-right-radius: 40px;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-  /* background: #010124e1; */
  backdrop-filter: 40px;
   width: 800px;
   height: 450px;
   display: flex;
   flex-direction: column;
   position: relative;
-  /* justify-content: center; */
   align-items: center;
   font-size: 25px;
-  /* color: #0fded2; */
-  /* margin-top: 30px; */
 }
 .dateTime h5{
   margin-bottom: -7px;
 }
 
 .assetWrapper {
- /* display: flex; */
-  /* flex-direction: row; */
   justify-content: center;
   text-align: center;
-  /* align-items: center; */
   padding: 10px;
   width: 100%;
   text-transform: uppercase;
@@ -85,19 +78,13 @@
   width: 100%;
   bottom: 0;
   right: 0;
-  /* padding: 0.8rem; */
- 
-
 }
 
 .connectBtn {
   display: flex;
   justify-content: center;
-  /* position: absolute; */
   width: 100%;
-  /* bottom: 0; */
   right: 0;
-  /* padding: 0.8rem; */
   
 }
 .box {
@@ -133,10 +120,8 @@
   padding: 20px;
   border-radius: 20px;
   color: white;
-  /* border-radius: 50px; */
   background: linear-gradient(360deg);
-  /* box-shadow:  12px 12px 13px ,
-             -12px -12px 13px ; */
+
 }
 .card8 h4{
   color: yellow;

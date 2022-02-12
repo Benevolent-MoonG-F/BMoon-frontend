@@ -1,15 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 .wrapper{
     padding-top: 80px;
-    /* background: linear-gradient(to left, #010124e1, #010124e1) */
-    height: 100vh ;
+    font-family: 'Raleway' !important;
+    font-weight: bold; 
+    min-height: 100vh;
 }
 
-.content {
-  /* background-color: #142237ec; */
+.main{
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  font-family: 'Raleway' !important;
+
 }
+
 .bannerContainer {
   display: flex;
-  /* background-color: red; */
   height: 200px;
   justify-content: center;
   align-items: center;
@@ -17,8 +25,8 @@
 .formContainer {
   display: flex;
   justify-content: center;
-  /* background-color: lightslategrey; */
   padding: 0rem 1rem 4rem;
+  
 }
 .stepperContainer {
   padding: 1rem;

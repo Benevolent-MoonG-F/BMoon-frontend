@@ -96,7 +96,7 @@ export const useAccountHistoryForBMS = () => {
   const { walletAddress } = useMoralisDapp();
   const [loading, setLoading] = useState(false);
   const [bmsdata, setbmsdata] = useState([]);
-  const [transactionInfo, setTransactionInfo] = useState({});
+  const [transactionInfo, setTransactionInfo] = useState([]);
 
   const { Moralis } = useMoralis();
 
@@ -119,7 +119,7 @@ export const useAccountHistoryForBMS = () => {
         console.log(jsondata);
         const bmstx = jsondata.result.filter((item) => item.to == BMSADDRESS);
 
-        console.log("bmstx", bmstx);
+        // console.log("bmstx", bmstx);
 
         const dataFiltered = bmstx
           .filter(
@@ -134,7 +134,7 @@ export const useAccountHistoryForBMS = () => {
             hash: items.hash,
           }));
 
-        console.log(dataFiltered);
+        // console.log(dataFiltered);
 
         const userData = dataFiltered.map((data) => ({
           starttime: timeConverter(data.transactionObj[0].value),
@@ -150,9 +150,9 @@ export const useAccountHistoryForBMS = () => {
           .isAwiner(coinRound, "BTC", walletAddress)
           .call();
 
-        console.log(transaction, isWinner);
+        // console.log(transaction, isWinner);
 
-        console.log("userData", userData);
+        // console.log("userData", userData);
         info = {
           isWinner: isWinner,
           startTime: timeConverter(transaction.squareStartTime),
@@ -160,7 +160,7 @@ export const useAccountHistoryForBMS = () => {
           time: userData[0].time,
         };
 
-        console.log(info);
+        // console.log(info);
         setbmsdata(userData);
         setTransactionInfo(info);
         setLoading(false);
@@ -173,5 +173,5 @@ export const useAccountHistoryForBMS = () => {
     }
   }, [walletAddress]);
 
-  return { loading, bmsdata, transactionInfo };
+  return [ loading, bmsdata, transactionInfo ];
 };

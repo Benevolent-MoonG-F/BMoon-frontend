@@ -7,7 +7,7 @@ import { timeConverter } from "./useAccountHistory";
 
 export const useDailyTransactions = () => {
   const { Moralis } = useMoralis();
-  const [transactions, setTransactions] = useState(null);
+  const [transactions, setTransactions] = useState([]);
   const { walletAddress } = useMoralisDapp();
 
   const formatData = (transaction) => {
@@ -37,5 +37,5 @@ export const useDailyTransactions = () => {
       }
     }
   }, [walletAddress]);
-  return transactions;
+  return [transactions];
 };

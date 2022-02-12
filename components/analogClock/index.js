@@ -5,7 +5,6 @@ import { makeStyles } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 
 import styles from './index.module.css';
-import { color } from '@mui/system';
 const useStyles = makeStyles({
     depositContext: {
       flex: 1,

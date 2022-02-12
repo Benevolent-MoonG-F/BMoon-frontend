@@ -29,11 +29,4 @@ a {
   flex-direction: column;
   min-height: 100vh;
 }
-/* body > div:first-child,
-div#__next,
-div#__next > div {
-  width: 100%;
-  background-color:black;
-} */
-
 

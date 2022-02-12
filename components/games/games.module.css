@@ -48,5 +48,9 @@
         height: 70px !important;
         width: 100px !important;
     }
+
+    .games h3{
+        font-size: 1.8rem;
+    }
 }
 

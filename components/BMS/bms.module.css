@@ -16,10 +16,8 @@
     padding: 0.1rem 3.4em;
     border-radius: 10px;
     background-color: #000;
-    /* background-image: linear-gradient(to left, transparent 0%, #6adf76 100%); */
     transition: all 0.4s ease-in-out;
     cursor: pointer;
-    /* width: 400px; */
     margin: auto;
     
 }

@@ -5,7 +5,6 @@ import { topAssets } from './assetData';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import BitcoinLogo from '../../public/images/bitcoin.png';
 import styles from './index.module.css';
 import axios from 'axios';
 import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle';
@@ -90,7 +89,7 @@ export function SelectAsset(props) {
   const assetComponent = (
     <div className={`${styles.assetWrapper} container-fluid`}>
       <div className={`${styles.assetWrapper}`}>
-      <h5 className="text-black">Select Asset</h5>
+      <h5 className="text-black"><b>Select Asset</b></h5>
       <Autocomplete
         className={`${styles.box1} mx-auto`}
         value={asset}
@@ -131,22 +130,21 @@ export function SelectAsset(props) {
     <div className={styles.pricePanelWrapper}>
       {/* Fetch and idsplay asset's price in real time */}
       {/* Need to be implemented */}
-      {asset && <h5 className='text-black'>Current Price – {asset?.label}</h5>}
+      {asset && <h5 className='text-black'><b>Current Price – {asset?.label}</b></h5>}
       {asset && <h1>{`$ ${currentPrice}`}</h1>}
     </div>
   );
 
   const reactDateTimePicker = (
     <div className="container-fluid">
-      {/* <p style={{ fontSize: '20px' }}>PREDICT TIME</p> */}
       <div className={`${styles.dateTime} row`}>
         <div className="col-lg-6 col-md-12 text-center">
-          <h5 className='text-black'>Start Time</h5>
+          <h5 className='text-black'><b>Start Time</b></h5>
           <DateTimePicker onChange={onChange} value={value} className={`${styles.assetWrapper}`} />
         </div>
 
         <div className="col-lg-6 col-md-12 text-center">
-          <h5 className='text-black'>End Time</h5>
+          <h5 className='text-black'><b>End Time</b></h5>
           <DateTimePicker onChange={onEndChange} value={endValue}  className={`${styles.assetWrapper}`} />
         </div>
       </div>

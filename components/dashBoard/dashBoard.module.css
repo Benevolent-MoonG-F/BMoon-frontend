@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 .tr {
     height: 40px !important;
   }
@@ -6,11 +8,12 @@
     max-width: 125px;
     min-width: 125px;
     padding: 10 !important;
-    overflow-x: auto;
+    /* overflow-x: auto; */
     white-space: nowrap;
     text-align: center !important;
     font-weight: bold !important;
     color: white !important;
+    font-family: 'Raleway' !important;
   }
   
   .td {
@@ -18,10 +21,10 @@
     padding: 20px !important;
     text-align: center !important;
     color: white !important;
+    font-family: 'Raleway' !important;
   }
   
   .carousel{
-      background: white;
       width: 100%;
      padding-top: 80px;
      padding-bottom: 80px;
@@ -37,13 +40,19 @@
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
     margin-bottom: 100px;
+    font-family: 'Raleway';
   }
 
   .main{
-      padding-top: 150px;
-      background: #0f0f46c4;
-      min-height: 100vh;
-      padding-bottom: 100px;
+        padding-top: 150px;
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(17, 25, 40, 0.75);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        font-family: 'Raleway' !important;
+        padding-bottom: 100px;
+        min-height: 100vh;
   }
 
   .clock{
@@ -78,6 +87,12 @@
 }
 .title{
     color: rgb(255, 254, 116);
+}
+
+@media (max-width: 575.98px){
+    .main{
+        margin: 0;
+    }
 }
 
 

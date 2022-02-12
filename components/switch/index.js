@@ -1,5 +1,4 @@
 import styles from './index.module.css';
-
 export const SwitchButton = ({ isBMS, setIsBMS }) => {
   return (
     <div className={styles.switchcontainer}>
@@ -10,11 +9,15 @@ export const SwitchButton = ({ isBMS, setIsBMS }) => {
               setIsBMS(false);
             }
           }}
-          // className={isBMS ? styles.bmsbutton : styles.dailyrocketbutton}
+        
           className={styles.dailyrocketbutton}
           style={{ backgroundColor: isBMS ? '#142237' : '#374254' }}
         >
-          <p style={{ fontSize: '17px', fontWeight: 'bold' }}>Daily Rocket</p>
+          
+           <p style={{ fontSize: '17px', fontWeight: 'bold' }}>Daily Rocket</p>
+        
+
+         
         </button>
         <button
           onClick={() => {
@@ -22,7 +25,7 @@ export const SwitchButton = ({ isBMS, setIsBMS }) => {
               setIsBMS(true);
             }
           }}
-          // className={isBMS ? styles.dailyrocketbutton : styles.bmsbutton}
+        
           className={styles.bmsbutton}
           style={{ backgroundColor: isBMS ? '#374254' : '#142237' }}
         >
