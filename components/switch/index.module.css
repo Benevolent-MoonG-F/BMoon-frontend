@@ -6,7 +6,7 @@
 }
 
 .buttoncontainer {
-  width: 800px;
+  width: 750px;
   background-color: #142237;
   border-radius: 5px;
 }
@@ -16,16 +16,17 @@
   color: #fff;
   border: 1px inset rgba(240, 235, 235, 0.3);
   border-top-left-radius: 15px;
+  padding: 5px;
+  /* border-bottom-left-radius: 15px; */
   cursor: pointer;
 }
 
 .bmsbutton {
   width: 50%;
+  padding: 5px;
   color: #fff;
   background-color: #142237;
   border: 1px inset rgba(240, 235, 235, 0.3);
   border-top-right-radius: 15px;
   cursor: pointer;
 }
-
-

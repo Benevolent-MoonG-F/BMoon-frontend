@@ -1,24 +1,25 @@
-
-import '../styles/globals.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import { MoralisProvider } from 'react-moralis';
-import { MoralisDappProvider } from '../providers/MoralisDappProvider/MoralisDappProvider';
-import { useEffect } from 'react';
+import "../styles/globals.css";
+import "bootstrap/dist/css/bootstrap.css";
+import { MoralisProvider } from "react-moralis";
+import { MoralisDappProvider } from "../providers/MoralisDappProvider/MoralisDappProvider";
+import { useEffect } from "react";
+import { Provider } from "react-redux";
+import store from "../state";
 
 export default function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    import('bootstrap/dist/js/bootstrap');
+    import("bootstrap/dist/js/bootstrap");
   }, []);
   return (
     <div>
-      
-
       <MoralisProvider
-        appId="Amrco2Pbc0LcAAlhIyMITx7J00VMi1rTDZJqfIKn"
-        serverUrl="https://oepovfty0zcq.usemoralis.com:2053/server"
+        appId={process.env.NEXT_PUBLIC_APPID}
+        serverUrl={process.env.NEXT_PUBLIC_SERVERURL}
       >
         <MoralisDappProvider>
-          <Component {...pageProps} />
+          <Provider store={store}>
+            <Component {...pageProps} />
+          </Provider>
         </MoralisDappProvider>
       </MoralisProvider>
     </div>

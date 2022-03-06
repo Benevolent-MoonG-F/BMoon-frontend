@@ -5,10 +5,16 @@ import { useMoralisDapp } from "../../providers/MoralisDappProvider/MoralisDappP
 
 import { DAILYROCKETADDRESS, BMSADDRESS } from "../constants";
 import { useMoralis } from "react-moralis";
+import moment from "moment";
 
 const abiDecoder = require("abi-decoder");
 export function timeConverter(UNIX_timestamp) {
-  const a = new Date(UNIX_timestamp * 1000);
+  const formatUnix = UNIX_timestamp.toString().substring(0, 10);
+  const a = new Date(formatUnix * 1000);
+  // console.log(UNIX_timestamp);
+  const s = moment.unix(formatUnix).format("DD-MM-YYYY HH:mm:ss");
+  console.log(s);
+  console.log(a);
   const months = [
     "Jan",
     "Feb",
@@ -173,5 +179,5 @@ export const useAccountHistoryForBMS = () => {
     }
   }, [walletAddress]);
 
-  return [ loading, bmsdata, transactionInfo ];
+  return [loading, bmsdata, transactionInfo];
 };
