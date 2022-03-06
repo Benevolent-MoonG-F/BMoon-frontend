@@ -25,6 +25,8 @@ export default function MyApp({ Component, pageProps }) {
   useEffect(async () => {
     import("bootstrap/dist/js/bootstrap");
   }, []);
+
+  console.log("env", process.env);
   return (
     <div>
       <MoralisProvider
