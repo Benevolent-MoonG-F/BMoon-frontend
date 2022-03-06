@@ -28,8 +28,8 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <div>
       <MoralisProvider
-        appId={process.env.NEXT_PUBLIC_APPID}
-        serverUrl={process.env.NEXT_PUBLIC_SERVERURL}
+        appId='Amrco2Pbc0LcAAlhIyMITx7J00VMi1rTDZJqfIKn'
+        serverUrl='https://oepovfty0zcq.usemoralis.com:2053/server'
       >
         <MoralisDappProvider>
           <Provider store={store}>
