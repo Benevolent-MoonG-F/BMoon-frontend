@@ -12,9 +12,9 @@ const store = configureStore({
   },
   middleware: [
     ...getDefaultMiddleware({ thunk: true }),
-    save({ states: PERSISTED_KEYS }),
+    save({ states: PERSISTED_KEYS, disableWarnings: true }),
   ],
-  preloadedState: load({ states: PERSISTED_KEYS }),
+  preloadedState: load({ states: PERSISTED_KEYS, disableWarnings: true }),
 });
 
 export default store;

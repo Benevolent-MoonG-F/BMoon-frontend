@@ -101,6 +101,8 @@ export const useDailyTransactions = () => {
 
         const formattedData = formatData(bets, dayInfo);
 
+        console.log(bets);
+
         setTransactions(formattedData);
       } catch (error) {
         console.log("transaction error", error);

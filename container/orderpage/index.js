@@ -142,7 +142,7 @@ export function OrderPage(props) {
         setModal(true);
         // settxstate("success");
         setTxState("success", true);
-        localStorage.setItem("step", 0);
+        typeof window !== "undefined" && localStorage.setItem("step", 0);
       } catch (err) {
         setModal(true);
         // settxstate("failed");
@@ -168,7 +168,7 @@ export function OrderPage(props) {
 
         setModal(true);
         settxstate("success", true);
-        localStorage.setItem("stepBMS", 0);
+        typeof window !== "undefined" && localStorage.setItem("stepBMS", 0);
       } catch (err) {
         console.log(err);
         setModal(true);
