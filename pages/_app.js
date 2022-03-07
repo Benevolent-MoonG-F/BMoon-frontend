@@ -26,14 +26,11 @@ export default function MyApp({ Component, pageProps }) {
     import("bootstrap/dist/js/bootstrap");
   }, []);
 
-  console.log("env", process.env.APPID);
-  console.log("env2", process.env.SERVERURL);
-  console.log("env3", process.env.NEXT_PUBLIC_APPID);
   return (
     <div>
       <MoralisProvider
-        appId='Amrco2Pbc0LcAAlhIyMITx7J00VMi1rTDZJqfIKn'
-        serverUrl='https://oepovfty0zcq.usemoralis.com:2053/server'
+        appId={process.env.NEXT_PUBLIC_APPID}
+        serverUrl={process.env.NEXT_PUBLIC_SERVERURL}
       >
         <MoralisDappProvider>
           <Provider store={store}>
