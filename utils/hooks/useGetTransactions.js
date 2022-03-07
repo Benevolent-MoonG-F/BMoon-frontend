@@ -86,7 +86,7 @@ export const useDailyTransactions = () => {
           DAILYROCKETADDRESS
         );
         const daycount = await contract.methods.dayCount().call();
-        // const daycount = 1;
+        // const daycount = 0;
         const assetName = await contract.methods.assetName().call();
         const dayInfo = await contract.methods.dayAssetInfo(daycount).call();
         const betIdArray = await loopTransactions(
