@@ -36,8 +36,11 @@ export default function BMSData() {
               <td className={styles.td}>{row.endTime}</td>
             
             </tr>
+         
          ))}   
-    
+     <div className={styles.pagination}>
+       <a href="#">Prev</a> <a href="#">next</a>
+     </div>
   </tbody>
 </Table>
     </React.Fragment>

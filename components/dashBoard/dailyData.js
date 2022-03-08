@@ -33,7 +33,9 @@ export default function DailyData() {
               <td className={styles.td}>{row.date}</td>         
             </tr>
          ))}   
-    
+      <div className={styles.pagination}>
+       <a href="#">Prev</a> <a href="#">next</a>
+     </div>
   </tbody>
 </Table>
 

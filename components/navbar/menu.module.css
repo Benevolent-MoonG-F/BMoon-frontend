@@ -11,8 +11,8 @@
     font-family: 'Jost', sans-serif;
     text-transform: uppercase;
 
-    background-color: #142237;
-    transition: all 0.4s ease-in-out;
+    background-color: #79FFF6;
+    /* transition: all 0.4s ease-in-out; */
     cursor: pointer;
     letter-spacing: 3px;
 }
@@ -29,7 +29,7 @@
 .menuBtn a{
     filter: hue-rotate(80deg);
 }
-.menuBtn::before {
+/* .menuBtn::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -76,9 +76,11 @@
     box-shadow: -5px 0 0 #79FFF6,
                 -5px 0 0 #79FFF6;
     transition-delay: 0s, 0.5s, 1s, 1s;
-}
+} */
 
 .menuBtn a {
     position: relative;
     z-index: 1;
+    color: black;
+    text-decoration: none;
 }

@@ -20,6 +20,11 @@
     cursor: pointer;
 }
 
+.link1{
+  width: 180px;
+  
+}
+
 .linkItem{
     width: 90%;
     color: white;

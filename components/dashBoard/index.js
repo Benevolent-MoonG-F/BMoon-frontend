@@ -6,7 +6,10 @@ import { CarouselCard } from "../carouselCard";
 import { AnalogClock } from "../analogClock";
 import DailyData from "./dailyData";
 import BMSData from "./bmsData";
+import {useState, useEffect } from 'react';
+import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.css";
+
 // import {
 //   useHistoryForBMS,
 //   useHistoryForDaily,
@@ -55,22 +58,30 @@ const useStyles = makeStyles((theme) => ({
 
 const tokenData = [
   {
-    label: 'ETH',
+    label: 'ethereum',
     currentPrice: 4200,
   },
   {
-    label: 'BTC',
+    label: 'bitcoin',
     currentPrice: 65551,
   },
   {
-    label: 'ONE',
-    currentPrice: 2500,
+    label: 'One',
+    currentPrice: 51,
   }
 ]
+
+
+
 export default function Dashboard() {
-  const classes = useStyles();
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
- 
+  const [coins, setCoins] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cone%2Cmatic-network%2Cchainlink%2Cterra-luna%2Ccardano%2Cavalanche-2&vs_currencies=usd').then(res => {
+      setCoins(res.data);
+    }).catch(error => console.log(error));
+  },[])
+
 
   return (
       <main className={styles.main}>
@@ -91,16 +102,21 @@ export default function Dashboard() {
                     indicators={false}
                     navButtonsAlwaysVisible={true}
                      >
-                    {tokenData.map((item, idx) => (
+                   
+                    {Object.entries(coins).map((item, id) => (
+                      console.log('cont', item),
+                      
+                    
                       <Grid 
-                        key={idx}
+                        key={id}
                         container
                         direction="column"
                         justifyContent="center"
                         alignItems="center"
                       >
-                        <div className={styles.carouselText1}>{item.label}</div>
-                        <div className={styles.carouselText2}>{item.currentPrice}</div>
+                        
+                        <div className={styles.carouselText1}>{item[0]}</div>
+                        <div className={styles.carouselText2}>${item[1].usd}</div>
                       </Grid>
                     ))}              
                   </CarouselCard>

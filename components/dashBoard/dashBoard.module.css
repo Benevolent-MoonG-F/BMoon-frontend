@@ -89,9 +89,28 @@
     color: rgb(255, 254, 116);
 }
 
+.pagination{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pagination a{
+  color: #000 !important;
+  background: rgb(255, 254, 116);
+  margin-right: 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  display: inline-flex;
+  text-decoration: none;
+}
+
 @media (max-width: 575.98px){
     .main{
         margin: 0;
+    }
+    .pagination a{
+      margin-right: 5px;
+      margin-left: 5px;
     }
 }
 

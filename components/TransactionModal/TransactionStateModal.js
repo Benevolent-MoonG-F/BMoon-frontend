@@ -53,7 +53,7 @@ export default function TransactionStateModal({txstate,modal,setModal}) {
               justifyContent: 'center',
             }}
           >
-            {txstate === 'loading' ? (<CircularProgress size="6rem" />) : txstate === 'success' ? ( <CheckCircleOutlineIcon sx={{fontSize: '100px', color: 'green'}} />): txstate === 'failed' ? (<HighlightOffIcon sx={{fontSize: '100px', color: 'red'}} />) : null} 
+            {txstate === 'loading' ? (<CircularProgress size="6rem" color="secondary" disableShrink thickness={2.6} />) : txstate === 'success' ? ( <CheckCircleOutlineIcon sx={{fontSize: '100px', color: 'green'}} />): txstate === 'failed' ? (<HighlightOffIcon sx={{fontSize: '100px', color: 'red'}} />) : null} 
            
           </Box>
           <Box
