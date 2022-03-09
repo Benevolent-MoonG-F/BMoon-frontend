@@ -8,9 +8,12 @@ import ClaimModal from "./modals/ClaimModal";
 import { addClaim } from "../../state/claim/action";
 import { useDispatch } from "react-redux";
 
+
 export default function DailyData() {
   const transactions = useDailyTransactions();
   const [open, setOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
   console.log("dailydata -", transactions);
   const dispatch = useDispatch();
 
@@ -47,7 +50,18 @@ export default function DailyData() {
           </tr>
         </thead>
         <tbody className={styles.tableBody}>
-          {transactions.map((row) => (
+          {isLoading  === false ?(
+            <tr>
+            <td className={styles.loadingContainer}></td>
+            <td className={styles.loadingContainer}>
+            <div className={styles.loading}><div></div><div></div><div></div><div></div></div>
+            </td>
+            <td className={styles.loadingContainer}></td>
+            <td className={styles.loadingContainer}></td>
+          </tr>
+          )
+          :
+          (transactions.map((row) => (
             <tr className={styles.tr} key={row.id}>
               <td
                 onClick={
@@ -79,7 +93,7 @@ export default function DailyData() {
               <td className={styles.td}>{row.prediction}</td>
               <td className={styles.td}>{row.date}</td>
             </tr>
-         ))}   
+          )))}   
       <div className={styles.pagination}>
        <a href="#">Prev</a> <a href="#">next</a>
      </div>
