@@ -1,36 +1,83 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import Link from "@material-ui/core/Link";
 import Title from "./Title";
-import {useDailyTransactions} from "../../utils/hooks/useGetTransactions";
-import styles from './dashBoard.module.css';
-import { Table } from 'react-bootstrap';
+import { useDailyTransactions } from "../../utils/hooks/useGetTransactions";
+import styles from "./dashBoard.module.css";
+import { Table } from "react-bootstrap";
+import ClaimModal from "./modals/ClaimModal";
+import { addClaim } from "../../state/claim/action";
+import { useDispatch } from "react-redux";
 
 export default function DailyData() {
-    const transactions = useDailyTransactions();
-    console.log('dailydata -',transactions);
+  const transactions = useDailyTransactions();
+  const [open, setOpen] = useState(false);
+  console.log("dailydata -", transactions);
+  const dispatch = useDispatch();
+
+  const showClaimModal = useCallback(
+    (isWinner, isRoundOver, betId, dayCount, assetName, DailyRocket) => {
+      if (isWinner && isRoundOver) {
+        dispatch(
+          addClaim({
+            open: true,
+            betId: betId,
+            dayCount,
+            assetName,
+            DailyRocket,
+          })
+        );
+      }
+    },
+    [dispatch]
+  );
 
   return (
     <React.Fragment className={styles.divide}>
-      <Title><h5 className={styles.title}>DailyRocket Transactions</h5></Title>
+      <Title>
+        <h5 className={styles.title}>DailyRocket Transactions</h5>
+      </Title>
       <Table striped hover responsive className={styles.table}>
-  <thead>
-    <tr className={styles.tr}>
+        <thead>
+          <tr className={styles.tr}>
             {/* <th className={styles.th}>Asset</th> */}
             {/* <th className={styles.th}>Hash</th> */}
             <th className={styles.th}>Status</th>
             <th className={styles.th}>Prediction</th>
             <th className={styles.th}>Date</th>
-           
-    </tr>
-  </thead>
-  <tbody className={styles.tableBody}>
-  { transactions.map(row => (
+          </tr>
+        </thead>
+        <tbody className={styles.tableBody}>
+          {transactions.map((row) => (
             <tr className={styles.tr} key={row.id}>
-              {/* <td className={styles.td}>{row.asset}</td> */}
-              {/* <td className={styles.td}>{row.hash}</td> */}
-              <td className={styles.td}>{row.isWinner ? 'Won' : 'Lost'}</td>
+              <td
+                onClick={
+                  row.isWinner && !row.isPaid
+                    ? () =>
+                        showClaimModal(
+                          row.isWinner,
+                          row.isRoundOver,
+                          row.betId,
+                          row.dayCount,
+                          row.assetName,
+                          row.DailyRocket
+                        )
+                    : null
+                }
+                style={{
+                  cursor: "pointer",
+                }}
+                className={styles.td}
+              >
+                {row.isWinner && row.isPaid
+                  ? "Paid"
+                  : row.isWinner && row.isRoundOver
+                  ? "Won"
+                  : !row.isWinner && !row.isRoundOver
+                  ? "Pending"
+                  : "Lost"}
+              </td>
               <td className={styles.td}>{row.prediction}</td>
-              <td className={styles.td}>{row.date}</td>         
+              <td className={styles.td}>{row.date}</td>
             </tr>
          ))}   
       <div className={styles.pagination}>
@@ -66,7 +113,6 @@ export default function DailyData() {
         
         </TableBody>
       </Table> */}
-      
     </React.Fragment>
   );
 }

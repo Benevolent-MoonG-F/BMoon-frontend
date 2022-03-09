@@ -2,8 +2,9 @@ import React, { useMemo, useState } from "react";
 import { useMoralis } from "react-moralis";
 import daiabi from "../abis/dai.json";
 import { useMoralisDapp } from "../../providers/MoralisDappProvider/MoralisDappProvider";
+import { BMSADDRESS, DAILYROCKETADDRESS } from "../constants";
 
-export const useAllowance = (reload) => {
+export const useAllowance = (reload, bmsaddress, dailyrocketbms) => {
   const { Moralis } = useMoralis();
   const [isDailyApproved, setisdailyApproved] = useState(false);
   const [isBmsApproved, setisBMSApproved] = useState(false);
@@ -16,19 +17,13 @@ export const useAllowance = (reload) => {
         const web3 = await Moralis.enableWeb3();
         const contract = new web3.eth.Contract(
           daiabi,
-          "0xff795577d9ac8bd7d90ee22b6c1703490b6512fd"
+          "0x001B3B4d0F3714Ca98ba10F6042DaEbF0B1B7b6F"
         );
         const dailyallowance = await contract.methods
-          .allowance(
-            walletAddress,
-            "0xb0A1157854279D0f309Df6a92486293B3B899330"
-          )
+          .allowance(walletAddress, dailyrocketbms)
           .call();
         const bmsallowance = await contract.methods
-          .allowance(
-            walletAddress,
-            "0x982F0f5e1192A4627d6a1acF4e151497253819Af"
-          )
+          .allowance(walletAddress, bmsaddress)
           .call();
         const dailyapproval =
           dailyallowance >= minimum.toString() ? true : false;
