@@ -50,7 +50,7 @@ export default function DailyData() {
           </tr>
         </thead>
         <tbody className={styles.tableBody}>
-          {isLoading  === false ?(
+          {!isLoading ? (
             <tr>
             <td className={styles.loadingContainer}></td>
             <td className={styles.loadingContainer}>
