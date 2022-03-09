@@ -14,9 +14,6 @@ import ClaimModal from "./modals/ClaimModal";
 import TransactionStateModal from "../TransactionModal/TransactionStateModal";
 
 
-
-
-
 export default function Dashboard() {
   const [coins, setCoins] = useState([]);
 
