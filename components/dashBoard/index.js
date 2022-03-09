@@ -15,8 +15,12 @@ import TransactionStateModal from "../TransactionModal/TransactionStateModal";
 
 
 export default function Dashboard() {
-  const [coins, setCoins] = useState([]);
+  const claimStatus = useSelector((state) => {
+    return state.claim.open;
+  });
+  console.log("claim", claimStatus);
 
+  const [coins, setCoins] = useState([]);
   useEffect(() => {
     axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cone%2Cmatic-network%2Cchainlink%2Cterra-luna%2Ccardano%2Cavalanche-2&vs_currencies=usd').then(res => {
       setCoins(res.data);
