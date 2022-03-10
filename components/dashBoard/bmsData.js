@@ -5,6 +5,8 @@ import styles from "./dashBoard.module.css";
 import { Table } from "react-bootstrap";
 import { useBMStransaction } from "../../utils/hooks/useGetTransactions";
 import {useState } from 'react';
+import { FaAngleLeft, FaAngleRight} from 'react-icons/fa';
+
 
 export default function BMSData() {
   // const {bmsdata} = useAccountHistoryForBMS();
@@ -28,7 +30,7 @@ export default function BMSData() {
             <th className={styles.th}>Start Time</th>
             <th className={styles.th}>End Time</th>
                 <div className={styles.pagination}>
-                <a href="#">Prev</a> <a href="#">next</a>
+                <a href="#"> <FaAngleLeft className={styles.icon} /></a> <a href="#"> <FaAngleRight className={styles.icon} /></a>
               </div>
            
           </tr>

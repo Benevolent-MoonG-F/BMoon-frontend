@@ -7,6 +7,8 @@ import { Table } from "react-bootstrap";
 import ClaimModal from "./modals/ClaimModal";
 import { addClaim } from "../../state/claim/action";
 import { useDispatch } from "react-redux";
+import { FaAngleLeft, FaAngleRight} from 'react-icons/fa';
+
 
 
 export default function DailyData() {
@@ -48,9 +50,9 @@ export default function DailyData() {
             <th className={styles.th}>Prediction</th>
             <th className={styles.th}>Date</th>
              
-              <div className={styles.pagination}>
-              <a href="#">Prev</a> <a href="#">next</a>
-            </div>
+            <div className={styles.pagination}>
+                <a href="#"> <FaAngleLeft className={styles.icon} /></a> <a href="#"> <FaAngleRight className={styles.icon} /></a>
+              </div>
     
           </tr>
         </thead>

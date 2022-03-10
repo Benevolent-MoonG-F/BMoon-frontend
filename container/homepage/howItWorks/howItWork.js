@@ -51,7 +51,7 @@ export function HowItWorkSection(props) {
                         <div className={`${styles.gameCard}`}>
                         <h5>02</h5>
                         <h6>Select benevolent organization</h6>
-                        <p>When entering a game, users also select the benevolent organization that they want to receive a donation on behalf of the winner.</p> 
+                        <p>When entering a game, users also select the benevolent organization that they want to receive a donation on behalf of the winner. <br/> <b className={styles.charities}>Angel, Unicef, The Water Project, Lustgarten, Free Code Camp, Fleming Protocol.</b></p> 
                     </div>
                     </div>
                 </div><br/><br/>
