@@ -27,19 +27,21 @@ export default function BMSData() {
             <th className={styles.th}>Time</th>
             <th className={styles.th}>Start Time</th>
             <th className={styles.th}>End Time</th>
+                <div className={styles.pagination}>
+                <a href="#">Prev</a> <a href="#">next</a>
+              </div>
+           
           </tr>
         </thead>
         <tbody className={styles.tableBody}>
           
           {!isLoading ? (
-            <tr>
-              <td className={styles.loadingContainer}></td>
-              <td className={styles.loadingContainer}>
-              <div className={styles.loading}><div></div><div></div><div></div><div></div></div>
-              </td>
-              <td className={styles.loadingContainer}></td>
-              <td className={styles.loadingContainer}></td>
-            </tr>
+             <tr>
+             <td className={styles.loadingContainer} colSpan="5">
+             <div className={styles.loading}><div></div><div></div><div></div><div></div></div>
+             </td>
+             
+           </tr>
           ) : 
           (transactionInfo.map((row) => (
             <tr className={styles.tr} key={row.id}>
@@ -58,9 +60,7 @@ export default function BMSData() {
             </tr>
          
           )))}   
-     <div className={styles.pagination}>
-       <a href="#">Prev</a> <a href="#">next</a>
-     </div>
+    
   </tbody>
 </Table>
     </React.Fragment>
