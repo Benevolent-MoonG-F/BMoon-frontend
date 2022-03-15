@@ -1,5 +1,29 @@
 @import url('http://fonts.cdnfonts.com/css/nasalization-2');
 
+.charityOrganization{
+    /* border: 1px solid white; */
+    background-color: transparent;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(15px);
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+    z-index: 0;
+    padding-top: 50px;
+    /* border: 3px solid rgba(255, 255, 255, 0.479); */
+    height: 100%;  
+}
+
+.charityOrganization .tokenImg{
+    border-radius: 100%;
+}
+
+.games .charityOrganization figure{
+    padding-bottom: 50px !important;
+}
+
+
 .games h3{
     font-family: 'Nasalization', sans-serif;
     font-size: 2.5rem;

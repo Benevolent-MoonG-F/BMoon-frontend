@@ -12,6 +12,11 @@ import AVAX from "../../public/images/avax.png";
 import ONE from "../../public/images/one.png";
 import LUNA from "../../public/images/luna.png";
 import MATIC from "../../public/images/matic.png";
+import UNICEF from "../../public/images/unicef.png";
+import FLEM from "../../public/images/fleming.png";
+import LUST from "../../public/images/lustgarteen.jpeg";
+import WATER from "../../public/images/The_Water_Project_Logo.png";
+import FREE from "../../public/images/free.png";
 
 export function Games() {
   return (
@@ -28,6 +33,7 @@ export function Games() {
             <DailyRocket />
           </div>
         </div>
+
         <div className='row mt-5 pt-5'>
           <div className='col-12'>
             <h3 className='text-white text-center pt-2'>Tokens</h3>
@@ -127,6 +133,78 @@ export function Games() {
           </div>
         </div>
       </div>
+
+     <div className="container-fluid">
+         {/* Benovelent organisations */}
+
+         <div className='row mt-5 pt-3'>
+          <div className='col-12'>
+            <h3 className='text-white text-center pt-2'>Benevolent Organizations</h3>
+            {/* <p className='text-white text-center'>
+              Tokens users can prognosticate in BMS and Daily Rocket.
+            </p> */}
+          </div>
+
+          <div className='col-12 text-center'>
+              <div className={styles.charityOrganization}>
+            <figure className=' pb-5'>
+              <Image
+                alt='UNICEF'
+                src={UNICEF}
+                className={`${styles.tokenImg1} img-fluid`}
+                height='200px'
+                width='200px'
+              />
+              {/* <figcaption>BTC</figcaption> */}
+            </figure>
+
+            <figure className='pb-5'>
+              <Image
+                alt='FREECODE-CAMP'
+                src={FREE}
+                className={`${styles.tokenImg} img-fluid`}
+                height='180px'
+                width='200px'
+              />
+              {/* <figcaption>ETH</figcaption> */}
+            </figure>
+
+            <figure className=' pb-5'>
+              <Image
+                alt='LUSTGARTEN'
+                src={LUST}
+                className={`${styles.tokenImg} img-fluid`}
+                height='180px'
+                width='200px'
+              />
+              {/* <figcaption>LINK</figcaption> */}
+            </figure>
+
+            <figure className=' pb-5'>
+              <Image
+                alt='FLEMMING-PROTOCOL'
+                src={FLEM}
+                className={`${styles.tokenImg} img-fluid`}
+                height='180px'
+                width='200px'
+              />
+              {/* <figcaption>ADA</figcaption> */}
+            </figure>
+
+            <figure className='pb-5'>
+              <Image
+                alt='THE-WATER-PROJECT'
+                src={WATER}
+                className={`${styles.tokenImg} img-fluid`}
+                height='180px'
+                width='200px'
+              />
+         
+            </figure> 
+            </div>
+          </div>
+        </div>
+     </div>
     </Element>
   );
 }
