@@ -155,7 +155,7 @@ export function Games() {
                 src={UNICEF}
                 className={`${styles.tokenImg1} img-fluid`}
                 height='150px'
-                width='200px' 
+                width='180px' 
               />
               </a>
               {/* <figcaption>BTC</figcaption> */}
@@ -173,6 +173,31 @@ export function Games() {
               </a>
               {/* <figcaption>ETH</figcaption> */}
             </figure>
+            <figure className='pb-5'>
+            <a href="https://thewaterproject.org" target="blank">
+              <Image
+                alt='THE-WATER-PROJECT'
+                src={WATER}
+                className={`${styles.tokenImg} img-fluid`}
+                height='100px'
+                width='200px'
+              />
+            </a>
+            </figure> 
+          
+
+            {/* <figure className=' pb-5'>
+            <a href="https://flemingprotocol.io/" target="blank">
+              <Image
+                alt='FLEMMING-PROTOCOL'
+                src={FLEM}
+                className={`${styles.tokenImg} img-fluid`}
+                height='180px'
+                width='200px'
+              />
+              </a>
+            
+            </figure> */}
 
             <figure className=' pb-5'>
             <a href="https://lustgarten.org" target="blank">
@@ -187,30 +212,7 @@ export function Games() {
               {/* <figcaption>LINK</figcaption> */}
             </figure>
 
-            <figure className=' pb-5'>
-            <a href="https://flemingprotocol.io/" target="blank">
-              <Image
-                alt='FLEMMING-PROTOCOL'
-                src={FLEM}
-                className={`${styles.tokenImg} img-fluid`}
-                height='180px'
-                width='200px'
-              />
-              </a>
-              {/* <figcaption>ADA</figcaption> */}
-            </figure>
-
-            <figure className='pb-5'>
-            <a href="https://thewaterproject.org" target="blank">
-              <Image
-                alt='THE-WATER-PROJECT'
-                src={WATER}
-                className={`${styles.tokenImg} img-fluid`}
-                height='100px'
-                width='200px'
-              />
-            </a>
-            </figure> 
+           
             <figure className='pb-5'>
             <a href="https://www.angelprotocol.io/" target="blank">
               <Image

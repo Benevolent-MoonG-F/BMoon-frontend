@@ -61,7 +61,7 @@
    margin: auto;
    text-align: justify;
    margin-bottom: -50PX;
-   margin-left: -60px;
+   margin-left: -67px;
 }
 
 
@@ -79,6 +79,14 @@
 
     .games h3{
         font-size: 1.8rem;
+    }
+
+    .games figcaption{
+        color: white;
+       margin: auto;
+       text-align: justify;
+       margin-bottom: -50PX;
+       margin-left: -60px;
     }
 }
 
