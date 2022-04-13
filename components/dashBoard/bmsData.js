@@ -4,13 +4,15 @@ import { useAccountHistoryForBMS } from "../../utils/hooks/useAccountHistory";
 import styles from "./dashBoard.module.css";
 import { Table } from "react-bootstrap";
 import { useBMStransaction } from "../../utils/hooks/useGetTransactions";
-import {useState } from 'react';
-import { FaAngleLeft, FaAngleRight} from 'react-icons/fa';
+import { useState } from "react";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { topAssets } from "../multiStepForm/assetData";
 import Image from "next/image";
+import { useState } from "react";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 export default function BMSData() {
   // const {bmsdata} = useAccountHistoryForBMS();
@@ -18,7 +20,7 @@ export default function BMSData() {
   const [isLoading, setIsLoading] = useState(false);
   // console.log('bmsdata -',bmsdata);
   console.log("transdata -", transactionInfo);
-  
+
   // Define components
   const assetComponent = (
     <div className={`${styles.assetWrapper} container-fluid`}>
@@ -29,7 +31,6 @@ export default function BMSData() {
         <Autocomplete
           className={`${styles.box1} mx-auto`}
           value={topAssets[0]}
-          
           id='asset-select'
           sx={{ width: "200px", mx: "20px" }}
           // autoHighlight
@@ -60,14 +61,12 @@ export default function BMSData() {
     </div>
   );
 
-  return  (
+  return (
     <React.Fragment>
-        <Title>
-        <div className="asset-data">
-       {assetComponent}
-         </div>
+      <Title>
+        <div className='asset-data'>{assetComponent}</div>
         <h5 className={styles.title}>BMS Transactions</h5>
-        </Title>
+      </Title>
       <Table striped hover responsive className={styles.table}>
         <thead>
           <tr className={styles.tr}>
@@ -77,42 +76,40 @@ export default function BMSData() {
             <th className={styles.th}>Time</th>
             <th className={styles.th}>Start Time</th>
             <th className={styles.th}>End Time</th>
-                <div className={styles.pagination}>
-                <a href="#"> <FaAngleLeft className={styles.icon} /></a> <a href="#"> <FaAngleRight className={styles.icon} /></a>
-              </div>
-           
           </tr>
         </thead>
         <tbody className={styles.tableBody}>
-          
           {!isLoading ? (
-             <tr>
-             <td className={styles.loadingContainer} colSpan="5">
-             <div className={styles.loading}><div></div><div></div><div></div><div></div></div>
-             </td>
-             
-           </tr>
-          ) : 
-          (transactionInfo.map((row) => (
-            <tr className={styles.tr} key={row.id}>
-              {/* <td className={styles.td}>{row.market}</td>
-              <td className={styles.td}>{row.hash}</td> */}
-              <td className={styles.td}>
-                {row.isWinnner && row.isRoundOver
-                  ? "Won"
-                  : !row.isWinnner && !row.isRoundOver
-                  ? "Pending"
-                  : "Lost"}
+            <tr>
+              <td className={styles.loadingContainer} colSpan='5'>
+                <div className={styles.loading}>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
               </td>
-              <td className={styles.td}>{row.date}</td>
-              <td className={styles.td}>{row.starttime}</td>
-              <td className={styles.td}>{row.endtime}</td>
             </tr>
-         
-          )))}   
-    
-  </tbody>
-</Table>
+          ) : (
+            transactionInfo.map((row) => (
+              <tr className={styles.tr} key={row.id}>
+                {/* <td className={styles.td}>{row.market}</td>
+              <td className={styles.td}>{row.hash}</td> */}
+                <td className={styles.td}>
+                  {row.isWinnner && row.isRoundOver
+                    ? "Won"
+                    : !row.isWinnner && !row.isRoundOver
+                    ? "Pending"
+                    : "Lost"}
+                </td>
+                <td className={styles.td}>{row.date}</td>
+                <td className={styles.td}>{row.starttime}</td>
+                <td className={styles.td}>{row.endtime}</td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </Table>
     </React.Fragment>
   );
 }

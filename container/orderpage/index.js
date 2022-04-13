@@ -8,8 +8,13 @@ import { SwitchButton } from "../../components/switch";
 import { useMoralis } from "react-moralis";
 import daiabi from "../../utils/abis/dai.json";
 import dailyrocket from "../../utils/abis/dailyrocket.json";
+import factory from "../../utils/abis/factory.json";
 import bms from "../../utils/abis/bms.json";
-import { getERC20Token, useContract } from "../../utils/hooks/useContract";
+import {
+  getERC20Token,
+  useContract,
+  useLoneContract,
+} from "../../utils/hooks/useContract";
 import TransactionStateModal from "../../components/TransactionModal/TransactionStateModal";
 import { useAllowance } from "../../utils/hooks/useAllowance";
 import { useMoralisDapp } from "../../providers/MoralisDappProvider/MoralisDappProvider";
@@ -27,6 +32,7 @@ import {
   closeTransaction,
 } from "../../state/transaction/action";
 import { useRouter } from "next/router";
+import { useFactoryForDaily } from "../../utils/hooks/useFactory";
 // import { ethers } from 'ethers';
 
 export function OrderPage(props) {
@@ -54,6 +60,13 @@ export function OrderPage(props) {
   const [show, setShow] = useState(false);
   const [txstate, settxstate] = useState("failed");
   const [reload, setReload] = useState(false);
+  const [currentDailyAssetAddress, setCurrentDailyAssetAddress] = useState("");
+  const [currentMsAssetAddress, setCurrentMsAssetAddress] = useState("");
+
+  const { Contract } = useLoneContract(
+    factory,
+    "0xF4448B8DdB375774BEC412C47624EC0C4CCBC202"
+  );
   const { isDailyApproved, isBmsApproved } = useAllowance(
     reload,
     BMSADDRESSES[order.asset.symbol],
@@ -66,6 +79,10 @@ export function OrderPage(props) {
     bms,
     BMSADDRESSES[order.asset.symbol]
   );
+
+  useFactoryForDaily(order.asset.symbol);
+
+  console.log(order.asset.symbol);
 
   const dispatch = useDispatch();
 

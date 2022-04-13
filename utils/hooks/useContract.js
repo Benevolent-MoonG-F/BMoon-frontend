@@ -23,6 +23,22 @@ export const useContract = (abi, address, bmsabi, bmsaddress) => {
   return { contract, bmscontract };
 };
 
+export const useLoneContract = (factoryabi, address) => {
+  const { Moralis } = useMoralis();
+  const [Contract, setContract] = useState(null);
+  useMemo(async () => {
+    try {
+      const web3 = await Moralis.enableWeb3();
+      const contract = new web3.eth.Contract(factoryabi, address);
+      setContract(contract);
+    } catch (err) {
+      console.log(err);
+    }
+  }, [Moralis, factoryabi, address]);
+
+  return { Contract };
+};
+
 export const getERC20Token = async (address) => {
   const web3 = await Moralis.enableWeb3();
   const token = new web3.eth.Contract(daiabi, address);

@@ -6,9 +6,15 @@ import { DAILYROCKETADDRESS, BMSADDRESS } from "../constants";
 import { useMoralisDapp } from "../../providers/MoralisDappProvider/MoralisDappProvider";
 import { timeConverter } from "./useAccountHistory";
 
-export const useDailyTransactions = () => {
+export const useDailyTransactions = (
+  dailyCountNumber,
+  dailyClicked,
+  setDailyCount,
+  setCount
+) => {
   const { Moralis } = useMoralis();
   const [transactions, setTransactions] = useState([]);
+  // const [dayCount, setDayCount] = useState(0);
   const { walletAddress } = useMoralisDapp();
 
   const formatData = (transaction, dayInfo) => {
@@ -76,8 +82,24 @@ export const useDailyTransactions = () => {
     return bets;
   };
 
+  // const handleDayCount = (dayCount, dayCountNumber) => {
+  //   const newdaycount = dayCount + dayCountNumber;
+  //   const dayCountForFetch =
+  //     newdaycount < 0 ? 0 : newdaycount > dayCount ? dayCount : newdaycount;
+
+  //   setDailyCount((state) =>
+  //     newdaycount < 0
+  //       ? 0
+  //       : newdaycount > dayCount
+  //       ? newdaycount - 1
+  //       : newdaycount + 0
+  //   );
+  //   return dayCountForFetch;
+  // };
+
   useMemo(async () => {
     let arrayLength = 5;
+    console.log("forward clicked");
     if (walletAddress) {
       try {
         const web3 = await Moralis.enableWeb3();
@@ -86,6 +108,12 @@ export const useDailyTransactions = () => {
           DAILYROCKETADDRESS
         );
         const daycount = await contract.methods.dayCount().call();
+
+        // const newDayCount = handleDayCount(
+        //   parseInt(daycount),
+        //   dailyCountNumber
+        // );
+        // console.log("new", newDayCount);
         // const daycount = 0;
         const assetName = await contract.methods.assetName().call();
         const dayInfo = await contract.methods.dayAssetInfo(daycount).call();
@@ -95,7 +123,7 @@ export const useDailyTransactions = () => {
           daycount
         );
 
-        console.log("assetName", assetName);
+        console.log("assetName", dayInfo);
 
         const bets = await loopId(daycount, betIdArray, contract, assetName);
 
@@ -108,8 +136,8 @@ export const useDailyTransactions = () => {
         console.log("transaction error", error);
       }
     }
-  }, [walletAddress]);
-  return transactions;
+  }, [walletAddress, dailyClicked, dailyCountNumber]);
+  return { transactions };
 };
 
 export const useBMStransaction = () => {
@@ -199,5 +227,5 @@ export const useBMStransaction = () => {
       }
     }
   }, [walletAddress]);
-  return transactions;
+  return { transactions };
 };

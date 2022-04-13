@@ -17,8 +17,23 @@ import Image from "next/image";
 
 export default function DailyData() {
   const transactions = useDailyTransactions();
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+
+export default function DailyData({
+  dailyCountNumber,
+  setDailyCount,
+  setDailyClicked,
+  dailyClicked,
+}) {
+  const { transactions, dayCount } = useDailyTransactions(
+    dailyCountNumber,
+    dailyClicked,
+    setDailyCount,
+    setCount
+  );
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [count, setCount] = useState(0);
 
   console.log("dailydata -", transactions);
   const dispatch = useDispatch();
@@ -64,6 +79,16 @@ export default function DailyData() {
     </div>
   );
 
+  const handleForwardButton = () => {
+    // if(dayCount + 1 > )
+    setDailyCount((state) => state + 1);
+    setDailyClicked("forward");
+  };
+
+  const handleBackwardButton = () => {
+    setDailyCount((state) => state - 1);
+    setDailyClicked("backward");
+  };
 
   const showClaimModal = useCallback(
     (isWinner, isRoundOver, betId, dayCount, assetName, DailyRocket) => {
@@ -98,60 +123,57 @@ export default function DailyData() {
             <th className={styles.th}>Status</th>
             <th className={styles.th}>Prediction</th>
             <th className={styles.th}>Date</th>
-             
-            <div className={styles.pagination}>
-                <a href="#"> <FaAngleLeft className={styles.icon} /></a> <a href="#"> <FaAngleRight className={styles.icon} /></a>
-              </div>
-    
           </tr>
         </thead>
         <tbody className={styles.tableBody}>
           {!isLoading ? (
             <tr>
-            <td className={styles.loadingContainer} colSpan="4">
-            <div className={styles.loading}><div></div><div></div><div></div><div></div></div>
-          
-            </td>
-            
-          </tr>
-          )
-          :
-          (transactions.map((row) => (
-            <tr className={styles.tr} key={row.id}>
-              <td
-                onClick={
-                  row.isWinner && !row.isPaid
-                    ? () =>
-                        showClaimModal(
-                          row.isWinner,
-                          row.isRoundOver,
-                          row.betId,
-                          row.dayCount,
-                          row.assetName,
-                          row.DailyRocket
-                        )
-                    : null
-                }
-                style={{
-                  cursor: "pointer",
-                }}
-                className={styles.td}
-              >
-                {row.isWinner && row.isPaid
-                  ? "Paid"
-                  : row.isWinner && row.isRoundOver
-                  ? "Won"
-                  : !row.isWinner && !row.isRoundOver
-                  ? "Pending"
-                  : "Lost"}
+              <td className={styles.loadingContainer} colSpan='4'>
+                <div className={styles.loading}>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
               </td>
-              <td className={styles.td}>{row.prediction}</td>
-              <td className={styles.td}>{row.date}</td>
             </tr>
-          )))}   
-  </tbody>
-</Table>
-
+          ) : (
+            transactions.map((row) => (
+              <tr className={styles.tr} key={row.id}>
+                <td
+                  onClick={
+                    row.isWinner && !row.isPaid
+                      ? () =>
+                          showClaimModal(
+                            row.isWinner,
+                            row.isRoundOver,
+                            row.betId,
+                            row.dayCount,
+                            row.assetName,
+                            row.DailyRocket
+                          )
+                      : null
+                  }
+                  style={{
+                    cursor: "pointer",
+                  }}
+                  className={styles.td}
+                >
+                  {row.isWinner && row.isPaid
+                    ? "Paid"
+                    : row.isWinner && row.isRoundOver
+                    ? "Won"
+                    : !row.isWinner && !row.isRoundOver
+                    ? "Pending"
+                    : "Lost"}
+                </td>
+                <td className={styles.td}>{row.prediction}</td>
+                <td className={styles.td}>{row.date}</td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </Table>
 
       {/* <Table size="small" className={styles.table}>
         <TableHead>
@@ -181,4 +203,4 @@ export default function DailyData() {
       </Table> */}
     </React.Fragment>
   );
-}
+}}
