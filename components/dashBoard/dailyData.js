@@ -8,7 +8,11 @@ import ClaimModal from "./modals/ClaimModal";
 import { addClaim } from "../../state/claim/action";
 import { useDispatch } from "react-redux";
 import { FaAngleLeft, FaAngleRight} from 'react-icons/fa';
-
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import { topAssets } from "../multiStepForm/assetData";
+import Image from "next/image";
 
 
 export default function DailyData() {
@@ -18,6 +22,48 @@ export default function DailyData() {
 
   console.log("dailydata -", transactions);
   const dispatch = useDispatch();
+
+  // Define components
+  const assetComponent = (
+    <div className={`${styles.assetWrapper} container-fluid`}>
+      <div className={`${styles.assetWrapper}`}>
+        <h5>
+          <b>Select Asset</b>
+        </h5>
+        <Autocomplete
+          className={`${styles.box1} mx-auto`}
+          value={topAssets[0]}
+          
+          id='asset-select'
+          sx={{ width: "200px", mx: "20px" }}
+          // autoHighlight
+          options={topAssets}
+          getOptionLabel={(option) => option.label}
+          renderOption={(props, option) => (
+            <Box
+              component='li'
+              sx={{ "& > div": { mr: 3, flexShrink: 0 } }}
+              {...props}
+            >
+              <div>
+                <Image
+                  //   loading="lazy"
+                  width={20}
+                  height={20}
+                  src={option.logo}
+                  srcSet={option.logo}
+                  alt=''
+                />
+              </div>
+              {option.label}
+            </Box>
+          )}
+          renderInput={(params) => <TextField {...params} />}
+        />
+      </div>
+    </div>
+  );
+
 
   const showClaimModal = useCallback(
     (isWinner, isRoundOver, betId, dayCount, assetName, DailyRocket) => {
@@ -39,8 +85,11 @@ export default function DailyData() {
   return (
     <React.Fragment className={styles.divide}>
       <Title>
-        <h5 className={styles.title}>DailyRocket Transactions</h5>
-      </Title>
+        <div className="asset-data">
+       {assetComponent}
+         </div>
+        <h5 className={styles.title}>BMS Transactions</h5>
+        </Title>
       <Table striped hover responsive className={styles.table}>
         <thead>
           <tr className={styles.tr}>

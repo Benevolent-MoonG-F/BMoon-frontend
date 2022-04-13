@@ -6,7 +6,11 @@ import { Table } from "react-bootstrap";
 import { useBMStransaction } from "../../utils/hooks/useGetTransactions";
 import {useState } from 'react';
 import { FaAngleLeft, FaAngleRight} from 'react-icons/fa';
-
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import { topAssets } from "../multiStepForm/assetData";
+import Image from "next/image";
 
 export default function BMSData() {
   // const {bmsdata} = useAccountHistoryForBMS();
@@ -14,12 +18,56 @@ export default function BMSData() {
   const [isLoading, setIsLoading] = useState(false);
   // console.log('bmsdata -',bmsdata);
   console.log("transdata -", transactionInfo);
+  
+  // Define components
+  const assetComponent = (
+    <div className={`${styles.assetWrapper} container-fluid`}>
+      <div className={`${styles.assetWrapper}`}>
+        <h5>
+          <b>Select Asset</b>
+        </h5>
+        <Autocomplete
+          className={`${styles.box1} mx-auto`}
+          value={topAssets[0]}
+          
+          id='asset-select'
+          sx={{ width: "200px", mx: "20px" }}
+          // autoHighlight
+          options={topAssets}
+          getOptionLabel={(option) => option.label}
+          renderOption={(props, option) => (
+            <Box
+              component='li'
+              sx={{ "& > div": { mr: 3, flexShrink: 0 } }}
+              {...props}
+            >
+              <div>
+                <Image
+                  //   loading="lazy"
+                  width={20}
+                  height={20}
+                  src={option.logo}
+                  srcSet={option.logo}
+                  alt=''
+                />
+              </div>
+              {option.label}
+            </Box>
+          )}
+          renderInput={(params) => <TextField {...params} />}
+        />
+      </div>
+    </div>
+  );
 
   return  (
     <React.Fragment>
-      <Title>
+        <Title>
+        <div className="asset-data">
+       {assetComponent}
+         </div>
         <h5 className={styles.title}>BMS Transactions</h5>
-      </Title>
+        </Title>
       <Table striped hover responsive className={styles.table}>
         <thead>
           <tr className={styles.tr}>
