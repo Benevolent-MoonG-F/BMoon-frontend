@@ -18,18 +18,20 @@ export default function BMSData() {
   const [isLoading, setIsLoading] = useState(false);
   // console.log('bmsdata -',bmsdata);
   console.log("transdata -", transactionInfo);
+ 
   
   // Define components
-  const assetComponent = (
-    <div className={`${styles.assetWrapper} container-fluid`}>
-      <div className={`${styles.assetWrapper}`}>
-        <h5>
-          <b>Select Asset</b>
-        </h5>
+  
+
+  return  (
+    <React.Fragment>
+        <Title>
+        <div className="asset-data">
         <Autocomplete
           className={`${styles.box1} mx-auto`}
           value={topAssets[0]}
           
+          // onChange={updateAsset}
           id='asset-select'
           sx={{ width: "200px", mx: "20px" }}
           // autoHighlight
@@ -56,15 +58,7 @@ export default function BMSData() {
           )}
           renderInput={(params) => <TextField {...params} />}
         />
-      </div>
-    </div>
-  );
-
-  return  (
-    <React.Fragment>
-        <Title>
-        <div className="asset-data">
-       {assetComponent}
+        
          </div>
         <h5 className={styles.title}>BMS Transactions</h5>
         </Title>

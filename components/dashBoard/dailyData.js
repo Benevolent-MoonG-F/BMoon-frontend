@@ -24,16 +24,35 @@ export default function DailyData() {
   const dispatch = useDispatch();
 
   // Define components
-  const assetComponent = (
-    <div className={`${styles.assetWrapper} container-fluid`}>
-      <div className={`${styles.assetWrapper}`}>
-        <h5>
-          <b>Select Asset</b>
-        </h5>
+
+
+
+  const showClaimModal = useCallback(
+    (isWinner, isRoundOver, betId, dayCount, assetName, DailyRocket) => {
+      if (isWinner && isRoundOver) {
+        dispatch(
+          addClaim({
+            open: true,
+            betId: betId,
+            dayCount,
+            assetName,
+            DailyRocket,
+          })
+        );
+      }
+    },
+    [dispatch]
+  );
+
+  return (
+    <React.Fragment className={styles.divide}>
+      <Title>
+        <div className="asset-data">
         <Autocomplete
           className={`${styles.box1} mx-auto`}
           value={topAssets[0]}
           
+          // onChange={updateAsset}
           id='asset-select'
           sx={{ width: "200px", mx: "20px" }}
           // autoHighlight
@@ -60,33 +79,6 @@ export default function DailyData() {
           )}
           renderInput={(params) => <TextField {...params} />}
         />
-      </div>
-    </div>
-  );
-
-
-  const showClaimModal = useCallback(
-    (isWinner, isRoundOver, betId, dayCount, assetName, DailyRocket) => {
-      if (isWinner && isRoundOver) {
-        dispatch(
-          addClaim({
-            open: true,
-            betId: betId,
-            dayCount,
-            assetName,
-            DailyRocket,
-          })
-        );
-      }
-    },
-    [dispatch]
-  );
-
-  return (
-    <React.Fragment className={styles.divide}>
-      <Title>
-        <div className="asset-data">
-       {assetComponent}
          </div>
         <h5 className={styles.title}>BMS Transactions</h5>
         </Title>
