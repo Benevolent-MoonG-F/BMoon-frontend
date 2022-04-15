@@ -9,13 +9,14 @@ import { timeConverter } from "./useAccountHistory";
 export const useDailyTransactions = (
   dailyCountNumber,
   dailyClicked,
-  setDailyCount,
-  setCount
+  DayCount,
+  countToBeSubtracted
 ) => {
   const { Moralis } = useMoralis();
   const [transactions, setTransactions] = useState([]);
   // const [dayCount, setDayCount] = useState(0);
   const { walletAddress } = useMoralisDapp();
+  const [loading, setLoading] = useState(true);
 
   const formatData = (transaction, dayInfo) => {
     let bets = [];
@@ -82,39 +83,20 @@ export const useDailyTransactions = (
     return bets;
   };
 
-  // const handleDayCount = (dayCount, dayCountNumber) => {
-  //   const newdaycount = dayCount + dayCountNumber;
-  //   const dayCountForFetch =
-  //     newdaycount < 0 ? 0 : newdaycount > dayCount ? dayCount : newdaycount;
-
-  //   setDailyCount((state) =>
-  //     newdaycount < 0
-  //       ? 0
-  //       : newdaycount > dayCount
-  //       ? newdaycount - 1
-  //       : newdaycount + 0
-  //   );
-  //   return dayCountForFetch;
-  // };
-
   useMemo(async () => {
     let arrayLength = 5;
     console.log("forward clicked");
     if (walletAddress) {
       try {
+        // setIsLoading(true);
+        setLoading(true);
+        console.log("to-be-sub", countToBeSubtracted);
         const web3 = await Moralis.enableWeb3();
         const contract = new web3.eth.Contract(
           DAILYROCKETABI,
           DAILYROCKETADDRESS
         );
         const daycount = await contract.methods.dayCount().call();
-
-        // const newDayCount = handleDayCount(
-        //   parseInt(daycount),
-        //   dailyCountNumber
-        // );
-        // console.log("new", newDayCount);
-        // const daycount = 0;
         const assetName = await contract.methods.assetName().call();
         const dayInfo = await contract.methods.dayAssetInfo(daycount).call();
         const betIdArray = await loopTransactions(
@@ -132,15 +114,23 @@ export const useDailyTransactions = (
         console.log(bets);
 
         setTransactions(formattedData);
+        setLoading(false);
       } catch (error) {
         console.log("transaction error", error);
+        setLoading(false);
       }
     }
-  }, [walletAddress, dailyClicked, dailyCountNumber]);
-  return { transactions };
+  }, [
+    walletAddress,
+    dailyClicked,
+    dailyCountNumber,
+    DayCount,
+    countToBeSubtracted,
+  ]);
+  return { transactions, loading };
 };
 
-export const useBMStransaction = () => {
+export const useBMStransaction = (setLoading) => {
   const { Moralis } = useMoralis();
   const [transactions, setTransactions] = useState([]);
   const { walletAddress } = useMoralisDapp();
@@ -203,6 +193,7 @@ export const useBMStransaction = () => {
     let arrayLength = 5;
     if (walletAddress) {
       try {
+        setLoading(true);
         const web3 = await Moralis.enableWeb3();
         const contract = new web3.eth.Contract(BMSABI, BMSADDRESS);
         const coinRound = await contract.methods.coinRound().call();
@@ -222,8 +213,10 @@ export const useBMStransaction = () => {
         console.log("formatted data", formattedData);
 
         setTransactions(formattedData);
+        setLoading(false);
       } catch (error) {
         console.log("transaction error", error);
+        setLoading(false);
       }
     }
   }, [walletAddress]);

@@ -11,15 +11,19 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { topAssets } from "../multiStepForm/assetData";
 import Image from "next/image";
-import { useState } from "react";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+// import { useState } from "react";
+// import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 export default function BMSData() {
   // const {bmsdata} = useAccountHistoryForBMS();
-  const transactionInfo = useBMStransaction();
-  const [isLoading, setIsLoading] = useState(false);
+
+  const [isLoading, setLoading] = useState(false);
+
+  const transactionInfo = useBMStransaction(setLoading);
   // console.log('bmsdata -',bmsdata);
   console.log("transdata -", transactionInfo);
+
+  console.log("isLoadinggg", isLoading);
 
   // Define components
   const assetComponent = (
@@ -65,7 +69,19 @@ export default function BMSData() {
     <React.Fragment>
       <Title>
         <div className='asset-data'>{assetComponent}</div>
-        <h5 className={styles.title}>BMS Transactions</h5>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <h5 className={styles.title}>BMS Transactions</h5>
+          <div className={styles.pagination}>
+            <a href='#'>
+              {" "}
+              <FaAngleLeft className={styles.icon} />
+            </a>{" "}
+            <a href='#'>
+              {" "}
+              <FaAngleRight className={styles.icon} />
+            </a>
+          </div>
+        </div>
       </Title>
       <Table striped hover responsive className={styles.table}>
         <thead>
@@ -79,7 +95,7 @@ export default function BMSData() {
           </tr>
         </thead>
         <tbody className={styles.tableBody}>
-          {!isLoading ? (
+          {isLoading ? (
             <tr>
               <td className={styles.loadingContainer} colSpan='5'>
                 <div className={styles.loading}>
@@ -91,7 +107,7 @@ export default function BMSData() {
               </td>
             </tr>
           ) : (
-            transactionInfo.map((row) => (
+            transactionInfo.transactions.map((row) => (
               <tr className={styles.tr} key={row.id}>
                 {/* <td className={styles.td}>{row.market}</td>
               <td className={styles.td}>{row.hash}</td> */}
