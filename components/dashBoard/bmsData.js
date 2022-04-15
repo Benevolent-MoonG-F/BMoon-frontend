@@ -32,35 +32,11 @@ export default function BMSData() {
         <h5>
           <b>Select Asset</b>
         </h5>
-        <Autocomplete
-          className={`${styles.box1} mx-auto`}
-          value={topAssets[0]}
-          id='asset-select'
-          sx={{ width: "200px", mx: "20px" }}
-          // autoHighlight
-          options={topAssets}
-          getOptionLabel={(option) => option.label}
-          renderOption={(props, option) => (
-            <Box
-              component='li'
-              sx={{ "& > div": { mr: 3, flexShrink: 0 } }}
-              {...props}
-            >
-              <div>
-                <Image
-                  //   loading="lazy"
-                  width={20}
-                  height={20}
-                  src={option.logo}
-                  srcSet={option.logo}
-                  alt=''
-                />
-              </div>
-              {option.label}
-            </Box>
-          )}
-          renderInput={(params) => <TextField {...params} />}
-        />
+        <select>
+          {topAssets.map((asset) => (
+            <option value={asset.symbol}>{asset.label}</option>
+          ))}
+        </select>
       </div>
     </div>
   );
@@ -69,6 +45,7 @@ export default function BMSData() {
     <React.Fragment>
       <Title>
         <div className='asset-data'>{assetComponent}</div>
+
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <h5 className={styles.title}>BMS Transactions</h5>
           <div className={styles.pagination}>

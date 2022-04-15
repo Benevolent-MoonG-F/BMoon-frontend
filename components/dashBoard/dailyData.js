@@ -57,57 +57,13 @@ export default function DailyData({
         <h5>
           <b>Select Asset</b>
         </h5>
-        <Autocomplete
-          className={`${styles.box1} mx-auto`}
-          value={topAssets[0]}
-          onChange={(e) => setValue(e.target.value)}
-          id='asset-select'
-          sx={{ width: "200px", mx: "20px" }}
-          // autoHighlight
-          options={topAssets}
-          getOptionLabel={(option) => option.label}
-          renderOption={(props, option) => (
-            <Box
-              component='li'
-              sx={{ "& > div": { mr: 3, flexShrink: 0 } }}
-              {...props}
-            >
-              <div>
-                <Image
-                  //   loading="lazy"
-                  width={20}
-                  height={20}
-                  src={option.logo}
-                  srcSet={option.logo}
-                  alt=''
-                />
-              </div>
-              {option.label}
-            </Box>
-          )}
-          renderInput={(params) => <TextField {...params} />}
-        />
+        <select>
+          {topAssets.map((asset) => (
+            <option value={asset.symbol}>{asset.label}</option>
+          ))}
+        </select>
       </div>
     </div>
-  );
-
-  const selectAsset = (
-    <FormControl fullWidth>
-      <InputLabel variant='standard' htmlFor='uncontrolled-native'>
-        Age
-      </InputLabel>
-      <NativeSelect
-        defaultValue={""}
-        inputProps={{
-          name: "Assets",
-          id: "uncontrolled-native",
-        }}
-      >
-        {topAssets.map((item) => (
-          <option value={item.symbol}>{item.label}</option>
-        ))}
-      </NativeSelect>
-    </FormControl>
   );
 
   const handleForwardButton = () => {
