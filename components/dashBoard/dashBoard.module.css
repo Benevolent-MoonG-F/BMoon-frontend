@@ -1,5 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
+
+
+
+
+
+
+.selectBtn{
+  background: rgba(240, 235, 235, 0.18);
+  padding: 13px;
+  width: 200px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+
 .tr {
   height: 40px !important;
 }

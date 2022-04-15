@@ -32,9 +32,9 @@ export default function BMSData() {
         <h5>
           <b>Select Asset</b>
         </h5>
-        <select>
+        <select className={styles.selectBtn} >
           {topAssets.map((asset) => (
-            <option value={asset.symbol}>{asset.label}</option>
+            <option key={asset.label} value={asset.symbol}>{asset.label}</option>
           ))}
         </select>
       </div>

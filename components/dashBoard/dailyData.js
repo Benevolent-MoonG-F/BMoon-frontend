@@ -57,9 +57,9 @@ export default function DailyData({
         <h5>
           <b>Select Asset</b>
         </h5>
-        <select>
+        <select className={styles.selectBtn}>
           {topAssets.map((asset) => (
-            <option value={asset.symbol}>{asset.label}</option>
+            <option key={asset.label} value={asset.symbol}>{asset.label}</option>
           ))}
         </select>
       </div>
@@ -104,38 +104,7 @@ export default function DailyData({
     <React.Fragment className={styles.divide}>
       <Title>
         <div className='asset-data'>{assetComponent}</div>
-        {/* <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            color: "#fff",
-            // backgroundColor: "#fff",
-          }}
-        >
-          <FormControl style={{ color: "red" }}>
-            <InputLabel
-              color='#ffffff'
-              variant='standard'
-              htmlFor='uncontrolled-native'
-            >
-              Assets
-            </InputLabel>
-            <NativeSelect
-              defaultValue={""}
-              inputProps={{
-                name: "Assets",
-                id: "uncontrolled-native",
-              }}
-              color='white'
-            >
-              {topAssets.map((item) => (
-                <option style={{ color: "red" }} value={item.symbol}>
-                  {item.label}
-                </option>
-              ))}
-            </NativeSelect>
-          </FormControl>
-        </div> */}
+
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <h5 className={styles.title}>DailyRocket Transactions</h5>
           <div className={styles.pagination}>
