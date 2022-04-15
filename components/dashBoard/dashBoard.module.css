@@ -186,6 +186,12 @@
   height: 100px;
 }
 
+.assetdata {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 .icon {
   font-size: 20px;
 }
