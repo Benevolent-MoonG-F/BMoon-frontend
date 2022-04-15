@@ -1,133 +1,142 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
 .tr {
-    height: 40px !important;
-  }
-  
-  .th {
-    max-width: 125px;
-    min-width: 125px;
-    padding: 10 !important;
-    /* overflow-x: auto; */
-    white-space: nowrap;
-    text-align: center !important;
-    font-weight: bold !important;
-    color: white !important;
-    font-family: 'Raleway' !important;
-  }
-  
-  .td {
-    height: 40px !important;
-    padding: 20px !important;
-    text-align: center !important;
-    color: white !important;
-    font-family: 'Raleway' !important;
-  }
-  
-  .carousel{
-      width: 100%;
-     padding-top: 80px;
-     padding-bottom: 80px;
-     border-radius: 30px;
-     margin-left: auto;
-     margin-right: auto;
-     /* border: 1px solid rgb(235, 233, 233); */
-     background: #00000ac4;
-    box-shadow: 0 3px 10px rgba(196, 192, 192, 0.2);
-    backdrop-filter: blur(70px);
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    margin-bottom: 100px;
-    font-family: 'Raleway';
-  }
-
-  .main{
-        padding-top: 150px;
-        backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
-        background-color: rgba(17, 25, 40, 0.75);
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.125);
-        font-family: 'Raleway' !important;
-        padding-bottom: 100px;
-        min-height: 100vh;
-  }
-
-  .assetWrapper {
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-    text-transform: uppercase;
-    font-size: 20px;
-    
-  }
-  .assets{
-   display: flex;
-   align-items: center;
-  }
-
-  .title{
-    color: rgb(255, 254, 116);
-}
-  
-
-  .assetWrapper h5{
-    color: rgb(255, 254, 116);
-  }
-
-  .box1 {
-    background: rgba(240, 235, 235, 0.18);
-    border-radius: 4px;
-    /* margin-bottom: 30px; */
-    width: 400px;
-    text-align: center;
-  }
-
-  .clock{
-      background: white;
-      border-radius: 30px;
-      margin-bottom: 50px;
-      /* border: 1px solid rgb(235, 233, 233); */
-      background: #00000ac4;
-      box-shadow: 0 3px 10px rgba(196, 192, 192, 0.2);
-     
-        border-top-left-radius: 40px;
-        border-top-right-radius: 40px;
-        border-bottom-left-radius: 40px;
-        border-bottom-right-radius: 40px;
-  
-  }
-
-  .carouselText1{
-    color: rgb(255, 254, 116);
-      font-size: 24px; 
-  }
-
-  .carouselText2{
-    color: white;
-    font-size: 18px; 
+  height: 40px !important;
 }
 
-.table{
-    background: #00000ac4;
-    /* margin-bottom: 100px; */
-    border-radius: 10px;
+.th {
+  max-width: 125px;
+  min-width: 125px;
+  padding: 10 !important;
+  /* overflow-x: auto; */
+  white-space: nowrap;
+  text-align: center !important;
+  font-weight: bold !important;
+  color: white !important;
+  font-family: "Raleway" !important;
 }
 
+.td {
+  height: 40px !important;
+  padding: 20px !important;
+  text-align: center !important;
+  color: white !important;
+  font-family: "Raleway" !important;
+}
 
-.pagination{
+.carousel {
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  /* border: 1px solid rgb(235, 233, 233); */
+  background: #00000ac4;
+  box-shadow: 0 3px 10px rgba(196, 192, 192, 0.2);
+  backdrop-filter: blur(70px);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  margin-bottom: 100px;
+  font-family: "Raleway";
+}
+
+.main {
+  padding-top: 150px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  font-family: "Raleway" !important;
+  padding-bottom: 100px;
+  min-height: 100vh;
+}
+
+.assetWrapper {
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.assets {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  color: rgb(255, 254, 116);
+}
+
+.assetWrapper h5 {
+  color: rgb(255, 254, 116);
+}
+
+.box1 {
+  background: rgba(240, 235, 235, 0.18);
+  border-radius: 4px;
+  /* margin-bottom: 30px; */
+  width: 400px;
+  text-align: center;
+}
+
+.clock {
+  background: white;
+  border-radius: 30px;
+  margin-bottom: 50px;
+  /* border: 1px solid rgb(235, 233, 233); */
+  background: #00000ac4;
+  box-shadow: 0 3px 10px rgba(196, 192, 192, 0.2);
+
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.carouselText1 {
+  color: rgb(255, 254, 116);
+  font-size: 24px;
+}
+
+.carouselText2 {
+  color: white;
+  font-size: 18px;
+}
+
+.table {
+  background: #00000ac4;
+  /* margin-bottom: 100px; */
+  border-radius: 10px;
+}
+
+.pagination {
   margin-top: 20px;
   float: right;
- 
 }
 
-.pagination a{
+.pagination div {
   color: #000 !important;
   background: rgb(255, 254, 116);
+  /* background: rgb(145, 145, 78); */
   margin-right: 20px;
+  /* margin-left: 10px; */
+  border-radius: 5px;
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.disabled {
+  color: #000 !important;
+  /* background: rgb(255, 254, 116); */
+  background: rgb(145, 145, 78);
+  cursor: not-allowed;
+  font-size: 20px;
+  /* margin-right: 20px; */
   /* margin-left: 10px; */
   border-radius: 5px;
   display: inline-flex;
@@ -139,7 +148,6 @@
   width: 30px;
   height: 30px;
   margin: auto;
-  
 }
 
 .loading div {
@@ -173,32 +181,27 @@
   }
 }
 
-.loadingContainer{
+.loadingContainer {
   border-bottom: none;
   height: 100px;
 }
 
-.icon{
+.icon {
   font-size: 20px;
 }
 
-
-
-@media (max-width: 575.98px){
-    .main{
-        margin: 0;
-    }
-    .pagination a{
-      margin-right: 5px;
-      margin-left: 5px;
-    }
-    .pagination{
-      display: inline-flex;
-    }
-    .loading{
-      margin-left: 150px !important;
-    }
+@media (max-width: 575.98px) {
+  .main {
+    margin: 0;
+  }
+  .pagination a {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .pagination {
+    display: inline-flex;
+  }
+  .loading {
+    margin-left: 150px !important;
+  }
 }
-
-
-
