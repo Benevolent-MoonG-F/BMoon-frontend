@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { MultiStepForm } from "../../components/multiStepForm";
 import { PrizesBanner } from "../../components/prizesBanner";
 import { FormStepper } from "../../components/formStepper";
@@ -33,6 +33,7 @@ import {
 } from "../../state/transaction/action";
 import { useRouter } from "next/router";
 import { useFactoryForDaily } from "../../utils/hooks/useFactory";
+import { FACTORYADDRESS } from "../../utils/constants";
 // import { ethers } from 'ethers';
 
 export function OrderPage(props) {
@@ -53,6 +54,25 @@ export function OrderPage(props) {
         }
   );
 
+  const [stepBMS, setStepBMS] = useState(
+    // NextJS will render the component on server side first and window.localStorage is only defined on client side
+    // Need to check if browser has been rendered on client side in order to access localStorage
+    typeof window !== "undefined" && localStorage.getItem("stepBMS")
+      ? Number(localStorage.getItem("stepBMS"))
+      : 0
+  );
+  const [orderBMS, setOrderBMS] = useState(
+    typeof window !== "undefined" && localStorage.getItem("orderBMS")
+      ? JSON.parse(localStorage.getItem("orderBMS"))
+      : {
+          asset: topAssets[0],
+          price: null,
+          payment: null,
+          time1: new Date(),
+          time2: "",
+        }
+  );
+
   const router = useRouter();
   const { Moralis } = useMoralis();
   const { walletAddress } = useMoralisDapp();
@@ -63,24 +83,62 @@ export function OrderPage(props) {
   const [currentDailyAssetAddress, setCurrentDailyAssetAddress] = useState("");
   const [currentMsAssetAddress, setCurrentMsAssetAddress] = useState("");
 
-  const { Contract } = useLoneContract(
-    factory,
-    "0xF4448B8DdB375774BEC412C47624EC0C4CCBC202"
-  );
+  const { Contract } = useLoneContract(factory, FACTORYADDRESS);
+
+  console.log("both", order, orderBMS);
+
+  const DailyassetAddress = useMemo(async () => {
+    try {
+      console.log("contract2", Contract);
+      const address = await Contract.methods
+        .getDRAddress(order.asset.symbol)
+        .call();
+
+      console.log("contract2", address);
+
+      setCurrentDailyAssetAddress(
+        address === "0x0000000000000000000000000000000000000000" ? "" : address
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  }, [Contract, order]);
+
+  console.log("both", currentDailyAssetAddress);
+
+  const BMSassetAddress = useMemo(async () => {
+    try {
+      // console.log("contract2", value);
+      const address = await Contract.methods
+        .getMSAddress(orderBMS.asset.symbol)
+        .call();
+
+      console.log("contract2", address);
+
+      setCurrentMsAssetAddress(
+        address === "0x0000000000000000000000000000000000000000" ? "" : address
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  }, [Contract, orderBMS]);
+
+  console.log("contract2", orderBMS);
+
   const { isDailyApproved, isBmsApproved } = useAllowance(
     reload,
-    BMSADDRESSES[order.asset.symbol],
-    DAILYADDRESSES[order.asset.symbol]
+    currentMsAssetAddress,
+    currentDailyAssetAddress
   );
 
   const { contract, bmscontract } = useContract(
     dailyrocket,
-    DAILYADDRESSES[order.asset.symbol],
+    currentDailyAssetAddress,
     bms,
-    BMSADDRESSES[order.asset.symbol]
+    currentMsAssetAddress
   );
 
-  useFactoryForDaily(order.asset.symbol);
+  // useFactoryForDaily(order.asset.symbol);
 
   console.log(order.asset.symbol);
 
@@ -140,6 +198,8 @@ export function OrderPage(props) {
     }
   };
 
+  console.log("isDailyApproved", isDailyApproved);
+
   const handleSubmit = async () => {
     // console.log(order);
     const formatPrice = parseFloat(order.price) * 10 ** 8;
@@ -167,7 +227,7 @@ export function OrderPage(props) {
         console.log(err);
       }
     } else {
-      approveDai(DAILYADDRESSES[order.asset.symbol]);
+      approveDai(currentDailyAssetAddress);
     }
   };
 
@@ -192,28 +252,9 @@ export function OrderPage(props) {
         settxstate("failed", true);
       }
     } else {
-      approveDai(BMSADDRESSES[order.asset.symbol]);
+      approveDai(currentMsAssetAddress);
     }
   };
-
-  const [stepBMS, setStepBMS] = useState(
-    // NextJS will render the component on server side first and window.localStorage is only defined on client side
-    // Need to check if browser has been rendered on client side in order to access localStorage
-    typeof window !== "undefined" && localStorage.getItem("stepBMS")
-      ? Number(localStorage.getItem("stepBMS"))
-      : 0
-  );
-  const [orderBMS, setOrderBMS] = useState(
-    typeof window !== "undefined" && localStorage.getItem("orderBMS")
-      ? JSON.parse(localStorage.getItem("orderBMS"))
-      : {
-          asset: topAssets[0],
-          price: null,
-          payment: null,
-          time1: new Date(),
-          time2: "",
-        }
-  );
 
   const [isBMS, setIsBMS] = useState(false);
 
@@ -296,11 +337,13 @@ export function OrderPage(props) {
               {...propsBMS}
               isBMS={isBMS}
               className={styles.formContainer}
+              assetAddress={currentMsAssetAddress}
             />
           ) : (
             <MultiStepForm
               {...props}
               isBMS={isBMS}
+              assetAddress={currentDailyAssetAddress}
               className={styles.formContainer}
             />
           )}

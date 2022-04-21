@@ -6,12 +6,17 @@ import { CarouselCard } from "../carouselCard";
 import { AnalogClock } from "../analogClock";
 import DailyData from "./dailyData";
 import BMSData from "./bmsData";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import ClaimModal from "./modals/ClaimModal";
 import TransactionStateModal from "../TransactionModal/TransactionStateModal";
+import { useGetAssetAddress } from "../../utils/hooks/useGetAssetAddress";
+import { FACTORYADDRESS } from "../../utils/constants";
+import { useLoneContract } from "../../utils/hooks/useContract";
+import factoryabi from "../../utils/abis/factory.json";
+import { updateDayCount } from "../../state/app/action";
 
 export default function Dashboard() {
   const claimStatus = useSelector((state) => {
@@ -33,6 +38,11 @@ export default function Dashboard() {
       })
       .catch((error) => console.log(error));
   }, []);
+
+  const { Contract } = useLoneContract(factoryabi, FACTORYADDRESS);
+  const dispatch = useDispatch();
+
+  // useGetAssetAddress("");
 
   return (
     <main className={styles.main}>
@@ -80,13 +90,18 @@ export default function Dashboard() {
               setDailyClicked={setDailyClicked}
               dailyCountNumber={dailyCountNumber}
               setDailyCount={setDailyCount}
+              Contract={Contract}
             />
           </div>
 
           <div className='col-12'>
             {/* BMS rocket */}
 
-            <BMSData bmsCount={bmsCount} setBmsCount={setBmsCount} />
+            <BMSData
+              bmsCount={bmsCount}
+              setBmsCount={setBmsCount}
+              Contract={Contract}
+            />
           </div>
         </div>
         <ClaimModal open={claimStatus} />

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useMemo, useEffect } from "react";
 import Link from "@material-ui/core/Link";
 import Title from "./Title";
 import { useDailyTransactions } from "../../utils/hooks/useGetTransactions";
@@ -6,7 +6,7 @@ import styles from "./dashBoard.module.css";
 import { Table } from "react-bootstrap";
 import ClaimModal from "./modals/ClaimModal";
 import { addClaim } from "../../state/claim/action";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -20,6 +20,16 @@ import {
   styled,
   InputBase,
 } from "@material-ui/core";
+import { useLoneContract } from "../../utils/hooks/useContract";
+import { useGetAssetAddress } from "../../utils/hooks/useGetAssetAddress";
+import { FACTORYADDRESS } from "../../utils/constants";
+import factoryabi from "../../utils/abis/factory.json";
+import { load } from "redux-localstorage-simple";
+import { addDay, removeDay, updateDayCount } from "../../state/app/action";
+import { useMoralis } from "react-moralis";
+import dailyrocketabi from "../../utils/abis/dailyrocket.json";
+
+// import Moralis from "moralis/types";
 
 // export default function DailyData() {
 //   const transactions = useDailyTransactions();
@@ -30,25 +40,63 @@ export default function DailyData({
   setDailyCount,
   setDailyClicked,
   dailyClicked,
+  Contract,
 }) {
   const [open, setOpen] = useState(false);
 
   const [count, setCount] = useState(0);
   const [DayCount, setDayCount] = useState(5);
   const [countToBeSubtracted, setCountToBeSubtrated] = useState(0);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("BTC");
+  const [AssetAddress, setAssetAddress] = useState("");
+  const [assetChanged, setAssetChanged] = useState(false);
 
   const { transactions, loading } = useDailyTransactions(
     dailyCountNumber,
     dailyClicked,
     DayCount,
-    countToBeSubtracted
+    countToBeSubtracted,
+    AssetAddress,
+    assetChanged
   );
 
-  console.log("dailydata -", transactions);
   const dispatch = useDispatch();
+  const { Moralis } = useMoralis();
+
+  const DAYCOUNT = useSelector((state) => state.app.dayCount);
+  const MAXDAYCOUNT = useSelector((state) => state.app.MaxDayCount);
+
+  console.log("DAYCOUNT", DAYCOUNT);
+
+  useEffect(() => {
+    const update = async () => {
+      try {
+        console.log("assetChanged");
+        const web3 = await Moralis.enableWeb3();
+        const contract = new web3.eth.Contract(dailyrocketabi, AssetAddress);
+        const daycount = await contract.methods.dayCount().call();
+        console.log("assetChanged", daycount);
+        dispatch(updateDayCount({ dayCount: parseInt(daycount) }));
+        setAssetChanged(false);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    update();
+  }, [AssetAddress, assetChanged]);
 
   console.log("value", value);
+
+  const assetAddress = useMemo(async () => {
+    try {
+      console.log("contract2", value);
+      const address = await Contract.methods.getDRAddress(value).call();
+
+      setAssetAddress(address);
+    } catch (err) {
+      console.log(err);
+    }
+  }, [Contract, value]);
 
   // Define components
   const assetComponent = (
@@ -57,9 +105,17 @@ export default function DailyData({
         <h5>
           <b>Select Asset</b>
         </h5>
-        <select className={styles.selectBtn}>
+        <select
+          onChange={(e) => {
+            setAssetChanged(true);
+            setValue(e.target.value);
+          }}
+          className={styles.selectBtn}
+        >
           {topAssets.map((asset) => (
-            <option key={asset.label} value={asset.symbol}>{asset.label}</option>
+            <option key={asset.label} value={asset.symbol}>
+              {asset.label}
+            </option>
           ))}
         </select>
       </div>
@@ -68,20 +124,16 @@ export default function DailyData({
 
   const handleForwardButton = () => {
     // if(dayCount + 1 > )
-    if (DayCount <= 5) {
-      setDayCount((state) => state + 1);
-      setCountToBeSubtrated((state) => state - 1);
-      setDailyClicked("forward");
+    if (DAYCOUNT < MAXDAYCOUNT) {
+      dispatch(addDay({}));
     }
   };
 
-  const handleBackwardButton = () => {
-    if (DayCount !== 0) {
-      setDayCount((state) => state - 1);
-      setCountToBeSubtrated((state) => state + 1);
-      setDailyClicked("backward");
+  const handleBackwardButton = useCallback(() => {
+    if (DAYCOUNT !== 0) {
+      dispatch(removeDay({}));
     }
-  };
+  }, [dispatch]);
 
   const showClaimModal = useCallback(
     (isWinner, isRoundOver, betId, dayCount, assetName, DailyRocket) => {
@@ -112,14 +164,16 @@ export default function DailyData({
               {" "}
               <FaAngleLeft
                 onClick={() => handleBackwardButton()}
-                className={DayCount === 0 ? styles.disabled : styles.icon}
+                className={DAYCOUNT === 0 ? styles.disabled : styles.icon}
               />
             </div>
             <div>
               {" "}
               <FaAngleRight
                 onClick={() => handleForwardButton()}
-                className={DayCount === 5 ? styles.disabled : styles.icon}
+                className={
+                  DAYCOUNT === MAXDAYCOUNT ? styles.disabled : styles.icon
+                }
               />
             </div>
           </div>
