@@ -34,7 +34,7 @@ export const useLoneContract = (abi, address) => {
     } catch (err) {
       console.log(err);
     }
-  }, [Moralis, factoryabi, address]);
+  }, [Moralis, abi, address]);
 
   return { Contract };
 };

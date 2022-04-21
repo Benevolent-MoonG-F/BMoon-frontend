@@ -1,7 +1,11 @@
 [
   {
     "inputs": [
-      { "internalType": "string", "name": "_asset", "type": "string" },
+      {
+        "internalType": "string",
+        "name": "_asset",
+        "type": "string"
+      },
       {
         "internalType": "contract AggregatorV3Interface",
         "name": "agg",
@@ -11,6 +15,11 @@
         "internalType": "contract IHandler",
         "name": "_handler",
         "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "midnight_",
+        "type": "uint256"
       }
     ],
     "stateMutability": "nonpayable",
@@ -87,37 +96,87 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "", "type": "uint256" },
-      { "internalType": "address", "name": "", "type": "address" },
-      { "internalType": "uint256", "name": "", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
     "name": "addressBets",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "assetName",
-    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "bytes", "name": "", "type": "bytes" }],
-    "name": "checkUpkeep",
     "outputs": [
-      { "internalType": "bool", "name": "upkeepNeeded", "type": "bool" },
-      { "internalType": "bytes", "name": "performData", "type": "bytes" }
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint128", "name": "_day", "type": "uint128" },
-      { "internalType": "uint256", "name": "betId", "type": "uint256" },
-      { "internalType": "bytes8", "name": "_charity", "type": "bytes8" }
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      }
+    ],
+    "name": "checkUpkeep",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "upkeepNeeded",
+        "type": "bool"
+      },
+      {
+        "internalType": "bytes",
+        "name": "performData",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint128",
+        "name": "_day",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint256",
+        "name": "betId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_charity",
+        "type": "string"
+      }
     ],
     "name": "claimWinnings",
     "outputs": [],
@@ -127,35 +186,114 @@
   {
     "inputs": [],
     "name": "contractStartTime",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "name": "dayAssetInfo",
     "outputs": [
-      { "internalType": "int256", "name": "closePrice", "type": "int256" },
-      { "internalType": "uint256", "name": "noOfWinners", "type": "uint256" },
-      { "internalType": "uint256", "name": "totalAmount", "type": "uint256" },
-      { "internalType": "uint256", "name": "totalBets", "type": "uint256" },
-      { "internalType": "int256", "name": "leastDifference", "type": "int256" }
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint128", "name": "", "type": "uint128" },
-      { "internalType": "uint256", "name": "", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "dayAssetInfo",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "closePrice",
+        "type": "int256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "noOfWinners",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalBets",
+        "type": "uint256"
+      },
+      {
+        "internalType": "int256",
+        "name": "leastDifference",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint128",
+        "name": "",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
     "name": "dayBetIdInfo",
     "outputs": [
-      { "internalType": "address", "name": "owner", "type": "address" },
-      { "internalType": "int256", "name": "prediction", "type": "int256" },
-      { "internalType": "uint256", "name": "time", "type": "uint256" },
-      { "internalType": "bool", "name": "isWinner", "type": "bool" },
-      { "internalType": "bool", "name": "paid", "type": "bool" }
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "internalType": "int256",
+        "name": "prediction",
+        "type": "int256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "time",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isWinner",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "paid",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "dayCloseTime",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
@@ -163,44 +301,123 @@
   {
     "inputs": [],
     "name": "dayCount",
-    "outputs": [{ "internalType": "uint128", "name": "", "type": "uint128" }],
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "",
+        "type": "uint128"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "day_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "user_",
+        "type": "address"
+      }
+    ],
+    "name": "getAddressTotoalBets",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getDay",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "getPrice",
-    "outputs": [{ "internalType": "int256", "name": "", "type": "int256" }],
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "",
+        "type": "int256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "getTime",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint128", "name": "_day", "type": "uint128" },
-      { "internalType": "uint256", "name": "checked", "type": "uint256" }
+      {
+        "internalType": "uint128",
+        "name": "_day",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint256",
+        "name": "checked",
+        "type": "uint256"
+      }
     ],
     "name": "isAwinner",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "owner",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "bytes", "name": "performData", "type": "bytes" }
+      {
+        "internalType": "bytes",
+        "name": "performData",
+        "type": "bytes"
+      }
     ],
     "name": "performUpkeep",
     "outputs": [],
@@ -209,7 +426,11 @@
   },
   {
     "inputs": [
-      { "internalType": "int256", "name": "_prediction", "type": "int256" }
+      {
+        "internalType": "int256",
+        "name": "_prediction",
+        "type": "int256"
+      }
     ],
     "name": "predictClosePrice",
     "outputs": [],
@@ -224,22 +445,12 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "sendToIba",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "int256", "name": "price", "type": "int256" }],
-    "name": "setClosingPrice",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "inputs": [
-      { "internalType": "address", "name": "newOwner", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
     ],
     "name": "transferOwnership",
     "outputs": [],
