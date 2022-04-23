@@ -5,6 +5,12 @@ padding-top: 5rem;
 text-align: center;
 }
 
+
+
+.paragraph2{
+    color: #fff;
+}
+
 .footer ul{
     display: inline-flex;
     list-style-type: none;
