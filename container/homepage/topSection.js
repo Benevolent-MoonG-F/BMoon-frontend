@@ -33,7 +33,7 @@ export function TopSection(props) {
                             <span style={{color: theme.green}}>Benevolent Moon Gaming & Decentralized Finance</span> 
                         </h1>
                         <span style={{color: theme.yellow, marginLeft: marginLeft}}><TypeIt className={styles.typedCursor} options={{
-                            strings: ["A Mission-Driven Decentralized Cryptocurrency Prediction Marketplace focusing on Social Impact. Built with Moralis, Superfluid, Polygon & ChainLnk"],
+                            strings: ["A Mission-Driven Decentralized Cryptocurrency Prediction Marketplace focusing on Social Impact."],
                             speed: 100,
                             waitUntilVisible: true,
                             }}/></span> <br/><br/><br/>

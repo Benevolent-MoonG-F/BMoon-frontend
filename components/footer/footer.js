@@ -14,8 +14,11 @@ export function Footer() {
                 </div>
                 </div>
                 <div className="row text-secondary">
-                <div className="col-md-3 text-lg-right order-md-2"></div>
-                <div className="col-md-6 text-center order-md-2 mx-auto">
+                <div className="col-md-4 text-lg-right order-md-2">
+                <p className={styles.paragraph2}>Built with Moralis, Superfluid, Polygon & ChainLink</p>
+          
+                </div>
+                <div className="col-md-4 text-center order-md-2 mx-auto">
                     <ul className="text-center">
                     <li className="nav-item">
                         <a className="nav-link text-black" href="#">
@@ -35,9 +38,11 @@ export function Footer() {
                     </ul>
                 </div>
                
-                <div className="col-md-3 order-md-1 text-white">
-                    <p>Copyrights © 2021</p>
-                </div>
+                <div className="col-md-4 order-md-1 text-white">
+                   
+                    <p>Copyrights © 2022</p>
+                   
+                    </div>
                 </div>
             </div>
 </footer>
