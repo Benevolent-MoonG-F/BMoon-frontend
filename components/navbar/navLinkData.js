@@ -11,6 +11,15 @@ const landingPagelinks = [
     title: 'DAO',
     href: '/comingSoon',
   },
+  {
+    title: 'Whitepaper',
+    href: '/comingSoon',
+    whitepaper: true,
+  },
+  {
+    title: 'Developers',
+    href: '/comingSoon',
+  }
   
 ];
 const appLinks = [
@@ -35,16 +44,9 @@ const menuLinks = [
     href: '#',
     wallet: true,
   },
-  {
-    title: 'Whitepaper',
-    href: '/comingSoon',
-    whitepaper: true,
-  },
-  {
-    title: 'Developers',
-    href: '/comingSoon',
-  },
+  
 ];
-const mobileLandingPageLinks = [...menuLinks, ...landingPagelinks];
+const mobileConnectBtn = [...menuLinks];
+const mobileLandingPageLinks = [ ...landingPagelinks];
 
 export { landingPagelinks, appLinks, menuLinks, mobileLandingPageLinks };

@@ -48,6 +48,7 @@ export function MultiStepForm(props) {
               color='primary'
               style={{ margin: "15px" }}
               onClick={nextStep}
+              disabled={!props.assetAddress}
             >
               {" "}
               Next{" "}

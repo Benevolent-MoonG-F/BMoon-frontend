@@ -37,6 +37,6 @@ export const useAllowance = (reload, bmsaddress, dailyrocketbms) => {
     } else {
       console.log("not running");
     }
-  }, [walletAddress, reload]);
+  }, [walletAddress, reload, bmsaddress, dailyrocketbms]);
   return { isDailyApproved, isBmsApproved };
 };
