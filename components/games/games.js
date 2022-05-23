@@ -3,6 +3,7 @@ import styles from "./games.module.css";
 import { BMS } from "../../components/BMS/bms";
 import { Element } from "react-scroll";
 import { DailyRocket } from "../../components/daily-rocket/dailyRocket";
+import {Sprint} from "../../components/69Sprint/index"
 import Image from "next/image";
 import BTC from "../../public/images/btc.png";
 import ETH from "../../public/images/eth.png";
@@ -27,11 +28,14 @@ export function Games() {
           <h3 className='text-white text-center pb-5'>Game Basics</h3>
         </div>
         <div className='row '>
-          <div className='col-md-6 mb-5'>
+          <div className='col-md-4 mb-5'>
             <BMS />
           </div>
-          <div className='col-md-6 mb-5'>
+          <div className='col-md-4 mb-5'>
             <DailyRocket />
+          </div>
+          <div className='col-md-4 mb-5'>
+            <Sprint />
           </div>
         </div>
 
