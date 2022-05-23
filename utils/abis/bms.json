@@ -1,7 +1,11 @@
 [
   {
     "inputs": [
-      { "internalType": "string", "name": "_asset", "type": "string" },
+      {
+        "internalType": "string",
+        "name": "_asset",
+        "type": "string"
+      },
       {
         "internalType": "contract AggregatorV3Interface",
         "name": "feed_",
@@ -10,6 +14,11 @@
       {
         "internalType": "contract IHandler",
         "name": "handler_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "factory_",
         "type": "address"
       }
     ],
@@ -63,16 +72,36 @@
   {
     "inputs": [],
     "name": "assetName",
-    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "bytes", "name": "", "type": "bytes" }],
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      }
+    ],
     "name": "checkUpkeep",
     "outputs": [
-      { "internalType": "bool", "name": "upkeepNeeded", "type": "bool" },
-      { "internalType": "bytes", "name": "performData", "type": "bytes" }
+      {
+        "internalType": "bool",
+        "name": "upkeepNeeded",
+        "type": "bool"
+      },
+      {
+        "internalType": "bytes",
+        "name": "performData",
+        "type": "bytes"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
@@ -80,21 +109,63 @@
   {
     "inputs": [],
     "name": "coinRound",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "getPrice",
-    "outputs": [{ "internalType": "int256", "name": "", "type": "int256" }],
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "round_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "sender_",
+        "type": "address"
+      }
+    ],
+    "name": "getRoundbets",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "getTime",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -102,31 +173,59 @@
     "inputs": [],
     "name": "handler",
     "outputs": [
-      { "internalType": "contract IHandler", "name": "", "type": "address" }
+      {
+        "internalType": "contract IHandler",
+        "name": "",
+        "type": "address"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_round", "type": "uint256" },
-      { "internalType": "uint256", "name": "checkedId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_round",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "checkedId",
+        "type": "uint256"
+      }
     ],
     "name": "isAwiner",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "owner",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "bytes", "name": "performData", "type": "bytes" }
+      {
+        "internalType": "bytes",
+        "name": "performData",
+        "type": "bytes"
+      }
     ],
     "name": "performUpkeep",
     "outputs": [],
@@ -135,7 +234,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_start", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_start",
+        "type": "uint256"
+      }
     ],
     "name": "predictAsset",
     "outputs": [],
@@ -151,47 +254,127 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "", "type": "uint256" },
-      { "internalType": "address", "name": "", "type": "address" },
-      { "internalType": "uint256", "name": "", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
     "name": "roundAddressBetIds",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "", "type": "uint256" },
-      { "internalType": "uint256", "name": "", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
     "name": "roundIdBetInfo",
     "outputs": [
-      { "internalType": "uint256", "name": "timePlaced", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "timePlaced",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "squareStartTime",
         "type": "uint256"
       },
-      { "internalType": "uint256", "name": "squareEndTime", "type": "uint256" },
-      { "internalType": "address", "name": "owner", "type": "address" },
-      { "internalType": "bool", "name": "isWinner", "type": "bool" },
-      { "internalType": "bool", "name": "paid", "type": "bool" }
+      {
+        "internalType": "uint256",
+        "name": "squareEndTime",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "isWinner",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "paid",
+        "type": "bool"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "name": "roundInfo",
     "outputs": [
-      { "internalType": "int256", "name": "moonPrice", "type": "int256" },
-      { "internalType": "uint256", "name": "winnings", "type": "uint256" },
-      { "internalType": "int256", "name": "startPrice", "type": "int256" },
-      { "internalType": "uint256", "name": "totalStaked", "type": "uint256" },
-      { "internalType": "uint256", "name": "startTime", "type": "uint256" },
-      { "internalType": "uint256", "name": "winningTime", "type": "uint256" },
-      { "internalType": "uint256", "name": "totalBets", "type": "uint256" },
+      {
+        "internalType": "int256",
+        "name": "moonPrice",
+        "type": "int256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "winnings",
+        "type": "uint256"
+      },
+      {
+        "internalType": "int256",
+        "name": "startPrice",
+        "type": "int256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalStaked",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "startTime",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "winningTime",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalBets",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "numberOfWinners",
@@ -202,24 +385,35 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "int256", "name": "price", "type": "int256" }],
+    "inputs": [
+      {
+        "internalType": "int256",
+        "name": "price",
+        "type": "int256"
+      }
+    ],
     "name": "setMoonPrice",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "setTime",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "inputs": [
-      { "internalType": "uint256", "name": "round", "type": "uint256" },
-      { "internalType": "uint256", "name": "betId", "type": "uint256" },
-      { "internalType": "bytes8", "name": "charity", "type": "bytes8" }
+      {
+        "internalType": "uint256",
+        "name": "round",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "betId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "charity",
+        "type": "string"
+      }
     ],
     "name": "takePrize",
     "outputs": [],
@@ -229,20 +423,36 @@
   {
     "inputs": [],
     "name": "totalPaid",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "totalStaked",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "newOwner", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
     ],
     "name": "transferOwnership",
     "outputs": [],

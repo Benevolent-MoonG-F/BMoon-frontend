@@ -15,15 +15,20 @@ import moneyhandlerabi from "../../../utils/abis/moneyhandler.json";
 import dailyrocketabi from "../../../utils/abis/dailyrocket.json";
 import { DAILYADDRESSES } from "../../../utils/constants";
 import { addCharity } from "../../../state/claim/action";
-import { ethers } from "ethers";
+import { Contract, ethers } from "ethers";
 import Web3 from "web3";
 import { useMoralisDapp } from "../../../providers/MoralisDappProvider/MoralisDappProvider";
 import { addTransaction } from "../../../state/transaction/action";
+import { useMoralis } from "react-moralis";
+import { FACTORYADDRESS } from "../../../utils/constants";
+import factoryabi from "../../../utils/abis/factory.json";
+import msabi from "../../../utils/abis/bms.json";
 
 const ClaimModal = ({ open, setOpen }) => {
   const dispatch = useDispatch();
   const [charity, setCharity] = useState("");
   const { walletAddress } = useMoralisDapp();
+  const { Moralis } = useMoralis();
 
   const AddCharity = useCallback(
     (charityName) => {
@@ -49,19 +54,47 @@ const ClaimModal = ({ open, setOpen }) => {
     return state.claim;
   });
 
-  const { contract, bmscontract } = useContract(
-    dailyrocketabi,
-    DAILYADDRESSES[claimState.assetName]
-  );
+  // const { contract, bmscontract } = useContract(
+  //   dailyrocketabi,
+  //   DAILYADDRESSES[claimState.assetName]
+  // );
 
   const claimWinnings = async () => {
     try {
       if (claimState.DailyRocket === true) {
         hideClaimModal();
         setTxState("loading");
+        const web3 = await Moralis.enableWeb3();
+        const factoryContract = new web3.eth.Contract(
+          factoryabi,
+          FACTORYADDRESS
+        );
+        const dailyAddress = await factoryContract.methods
+          .getDRAddress(claimState.assetName)
+          .call();
+        const contract = new web3.eth.Contract(dailyrocketabi, dailyAddress);
         const hexValue = Web3.utils.stringToHex(claimState.charity);
         const claimtx = await contract.methods
           .claimWinnings(claimState.dayCount, claimState.betId, hexValue)
+          .send({
+            from: walletAddress,
+          });
+        setTxState("success");
+      } else {
+        hideClaimModal();
+        setTxState("loading");
+        const web3 = await Moralis.enableWeb3();
+        const factoryContract = new web3.eth.Contract(
+          factoryabi,
+          FACTORYADDRESS
+        );
+        const msAddress = await factoryContract.methods
+          .getMSAddress(claimState.assetName)
+          .call();
+        const contract = new web3.eth.Contract(msabi, msAddress);
+        const hexValue = Web3.utils.stringToHex(claimState.charity);
+        const claimtx = await contract.methods
+          .takePrize(claimState.dayCount, claimState.betId, hexValue)
           .send({
             from: walletAddress,
           });

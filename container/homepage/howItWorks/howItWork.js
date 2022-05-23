@@ -50,8 +50,8 @@ export function HowItWorkSection(props) {
                     <div className="col-md-6 order-md-1">
                         <div className={`${styles.gameCard}`}>
                         <h5>02</h5>
-                        <h6>Select benevolent organization</h6>
-                        <p>When entering a game, users also select the benevolent organization that they want to receive a donation on behalf of the winner.</p> 
+                        <h6>Vote for Benevolent Organization</h6>
+                        <p>Each winner will get a button on their dashboard when they win to cast a vote for the monthly benevolent recipient of the whole charitable pot for the month.</p> 
                     </div>
                     </div>
                 </div><br/><br/>
@@ -62,7 +62,7 @@ export function HowItWorkSection(props) {
                         <div className={`${styles.gameCard}`}>
                         <h5>03</h5>
                         <h6>Receive payment</h6>
-                        <p>When a user wins, they get their winnings sent to their wallet, and the charity they chose receives the donation. <br/>This is a permissionless and trustless process. </p> 
+                        <p>When a user wins, they get their winnings sent to their wallet, and they get to vote for the charity of their choice for the monthly donation. <br/>This is a permissionless and trustless process. </p> 
                     </div>
                     </div>
                     <div className=" col-md-6">
