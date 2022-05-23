@@ -64,7 +64,7 @@
 .header img{
     height: 100px !important;
     width: 100px !important;
-    border-radius: 100px;
+    border-radius: 100%;
 }
 
 @media (min-width: 768px) and (max-width: 990px){

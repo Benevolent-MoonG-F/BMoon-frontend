@@ -24,6 +24,7 @@ export function Print69(){
             <h1>69 Sprint</h1>
         <Image alt="logo" src={logo}/>
         <h5>Put your predictive market prognostication skills to the test with Benevolent Moon’s newest charity generating fun game. </h5>
+        <h6> Correctly predict the order of tokens in the 6-9 slots of the CoinMarketCap top 10 rankings and win.</h6>
         </div>
     </div>
 
@@ -32,7 +33,7 @@ export function Print69(){
                  <div className="col-md-4 text-center">
                  <select className={styles.selectBtn} >
                     {Assets.map((asset) => (
-                        <option key={asset.label} value={asset.symbol}>{asset.label}</option>
+                        <option  key={asset.label} value={asset.symbol}>{asset.label}</option>
                     ))}
                     </select>
                  </div>

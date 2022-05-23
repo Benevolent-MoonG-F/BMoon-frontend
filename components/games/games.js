@@ -23,18 +23,18 @@ import ANGEL from "../../public/images/angel.png";
 export function Games() {
   return (
     <Element name='games' className={styles.games}>
-      <div className='container'>
+      <div className='container-fluid'>
         <div className='row'>
           <h3 className='text-white text-center pb-5'>Game Basics</h3>
         </div>
         <div className='row '>
-          <div className='col-md-4 mb-5'>
+          <div className='col-xl-4 col-md-6 mb-5'>
             <BMS />
           </div>
-          <div className='col-md-4 mb-5'>
+          <div className='col-xl-4 col-md-6 mb-5'>
             <DailyRocket />
           </div>
-          <div className='col-md-4 mb-5'>
+          <div className='col-xl-4 col-md-6 mb-5 mx-auto'>
             <Sprint />
           </div>
         </div>

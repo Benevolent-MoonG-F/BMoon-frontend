@@ -1,11 +1,13 @@
 .main{
-    margin-top: 100px;
-    padding-bottom: 100px;
-  
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    width: 100%;
 }
 
 .selectBtn{
-    padding: 13px 60px;
+    padding: 13px 50px;
     outline: none;
     cursor: pointer;
     background-color: #79FFF6;
@@ -19,15 +21,30 @@
 }
 .header h5{
     color: white;
-    margin-bottom: 70px;
+   
+}
+.header h6{
+    color: yellow;
+    margin-bottom: 60px;
 }
 .header h1{
     margin-bottom: 20px;
     color: yellow !important;
 }
 
+
 @media (max-width: 575.98px){
   .main{
       margin-top: 100px;
+      position: relative;
+      top: 0%;
+      -ms-transform: translateY(0%);
+      transform: translateY(0%);
   }
+}
+
+@media (min-width: 768px) and (max-width: 990px){
+    .selectBtn{
+        padding: 13px 30px;
+    }
 }

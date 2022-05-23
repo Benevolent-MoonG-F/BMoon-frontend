@@ -3,7 +3,7 @@ import {Button} from '../../components/button/index';
 import styles from './index.module.css';
 import Image from 'next/image';
 import Logo from '../../public/images/69print.png';
-const appLink = '/app/new-game';
+const appLink = '/app/69Sprint';
 import {Element} from 'react-scroll';
 
 export function Sprint(){
