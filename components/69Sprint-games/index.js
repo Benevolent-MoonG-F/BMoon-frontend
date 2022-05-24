@@ -18,61 +18,53 @@ export function Print69(){
                 </div>
             </div> */}
 
-<div className="row">
-    <div className="text-center">
-        <div className={styles.header}>
-            <h1>69 Sprint</h1>
-        <Image alt="logo" src={logo}/>
-        <h5>Put your predictive market prognostication skills to the test with Benevolent Moon’s newest charity generating fun game. </h5>
-        <h6> Correctly predict the order of tokens in the 6-9 slots of the CoinMarketCap top 10 rankings and win.</h6>
-        </div>
-    </div>
+        <div className="row">
+            <div className="text-center">
+                <div className={styles.header}>
+                    <h1>69 Sprint</h1>
+                <Image alt="logo" src={logo}/>
+                <h5>Put your predictive market prognostication skills to the test with Benevolent Moon’s newest charity generating fun game. </h5>
+                <h6> Correctly predict the order of tokens in the 6-9 slots of the CoinMarketCap top 10 rankings and win.</h6>
+                </div>
+            </div>
 
-         <div className="col-md-7">
-             <div className="row">
-                 <div className="col-md-4 text-center">
+       
+           
+                 <div className="col-md-3 text-center">
                  <select className={styles.selectBtn} >
                     {Assets.map((asset) => (
                         <option  key={asset.label} value={asset.symbol}>{asset.label}</option>
                     ))}
                     </select>
                  </div>
-                 <div className="col-md-4 text-center">
+                 <div className="col-md-3 text-center">
                  <select className={styles.selectBtn} >
                     {Assets.map((asset) => (
                         <option key={asset.label} value={asset.symbol}>{asset.label}</option>
                     ))}
                     </select>
                  </div>
-                 <div className="col-md-4 text-center">
+                 <div className="col-md-3 text-center">
                  <select className={styles.selectBtn} >
                     {Assets.map((asset) => (
                         <option key={asset.label} value={asset.symbol}>{asset.label}</option>
                     ))}
                     </select>
                  </div>
-             </div>
-         </div>
-         <div className="col-md-5">
-                <div className="row">
-                        <div className="col-md-6 text-center">
+           
+       
+               
+                        <div className="col-md-3 text-center">
                         <select className={styles.selectBtn} >
                     {Assets.map((asset) => (
                         <option key={asset.label} value={asset.symbol}>{asset.label}</option>
                     ))}
                     </select>
                         </div>
-                        <div className="col-md-6 text-center">
-                        <select className={styles.selectBtn} >
-                    {Assets.map((asset) => (
-                        <option key={asset.label} value={asset.symbol}>{asset.label}</option>
-                    ))}
-                    </select>
                         </div>
-                    </div>
-         </div>
+                  
+       
      </div>
-        </div>
         </div>
        
     )
