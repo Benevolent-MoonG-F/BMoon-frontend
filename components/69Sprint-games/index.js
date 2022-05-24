@@ -6,17 +6,6 @@ export function Print69(){
     return(
         <div className={styles.main}>
         <div className="container">
-            {/* <div className="row">
-                <div className="col-md-12">
-                 <div className={styles.main}>69 Print
-                 <select className={styles.selectBtn} >
-                    {Assets.map((asset) => (
-                        <option key={asset.label} value={asset.symbol}>{asset.label}</option>
-                    ))}
-                    </select>
-                 </div>
-                </div>
-            </div> */}
 
         <div className="row">
             <div className="text-center">
