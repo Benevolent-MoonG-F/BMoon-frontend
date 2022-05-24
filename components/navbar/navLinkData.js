@@ -8,8 +8,8 @@ const landingPagelinks = [
     href: '/about',
   },
   {
-    title: 'DAO',
-    href: '/comingSoon',
+    title: '69Sprint',
+    href: '/app/69Sprint',
   },
   {
     title: 'Whitepaper',

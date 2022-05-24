@@ -31,6 +31,7 @@ export const SwitchButton = ({ isBMS, setIsBMS }) => {
         >
           <p style={{ fontSize: '17px', fontWeight: 'bold' }}>BMS</p>
         </button>
+        
       </div>
     </div>
   );
