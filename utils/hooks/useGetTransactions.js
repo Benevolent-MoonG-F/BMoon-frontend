@@ -2,11 +2,13 @@ import { useMemo, useState } from "react";
 import { useMoralis } from "react-moralis";
 import DAILYROCKETABI from "../abis/dailyrocket.json";
 import BMSABI from "../abis/bms.json";
-import { DAILYROCKETADDRESS, BMSADDRESS } from "../constants";
+import { DAILYROCKETADDRESS, BMSADDRESS, SPRINT69 } from "../constants";
 import { useMoralisDapp } from "../../providers/MoralisDappProvider/MoralisDappProvider";
 import { timeConverter } from "./useAccountHistory";
 import { useGetAssetAddress } from "./useGetAssetAddress";
 import { useSelector } from "react-redux";
+import SPRINT69ABI from "../abis/69sprint.json";
+import { useLoneContract } from "./useContract";
 
 export const useDailyTransactions = (
   dailyCountNumber,
@@ -251,4 +253,65 @@ export const useBMStransaction = (
     }
   }, [walletAddress, countToBeSubtracted, AssetAddress]);
   return { transactions };
+};
+
+export const useSprintTransactions = () => {
+  const { Moralis } = useMoralis();
+  const [transactions, setTransactions] = useState({});
+  const { walletAddress } = useMoralisDapp();
+  const [loading, setLoading] = useState(false);
+  const { Contract } = useLoneContract(SPRINT69ABI, SPRINT69);
+
+  const loopAssetPicks = async (round) => {
+    const assets = [];
+
+    for (let i = 0; i < 4; i++) {
+      const asset = await Contract.methods
+        .s_addressPicks(round, walletAddress, i)
+        .call();
+      assets.push(asset);
+    }
+
+    return assets;
+  };
+
+  const winningOrder = async (round) => {
+    const assets = [];
+    try {
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const identifyAssets = async (assets) => {
+    const identifiedAssets = [];
+
+    for (let i = 0; i < 4; i++) {
+      const identifiedAsset = await Contract.methods
+        .s_assetIdentifier(assets[i])
+        .call();
+      identifiedAssets.push(identifiedAsset);
+    }
+
+    return identifiedAssets;
+  };
+
+  useMemo(async () => {
+    if (walletAddress) {
+      setLoading(true);
+      try {
+        const round = await Contract.methods.round().call();
+        console.log(round);
+        const assets = await loopAssetPicks(round);
+        const identifiedAssets = await identifyAssets(assets);
+        setTransactions({ assets: identifiedAssets, status: "pending" });
+        console.log("68", identifiedAssets);
+        setLoading(false);
+      } catch (err) {
+        console.log(err);
+        setLoading(false);
+      }
+    }
+  }, [walletAddress, Contract]);
+  return { transactions, loading };
 };

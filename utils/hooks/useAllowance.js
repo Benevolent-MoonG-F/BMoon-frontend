@@ -3,6 +3,8 @@ import { useMoralis } from "react-moralis";
 import daiabi from "../abis/dai.json";
 import { useMoralisDapp } from "../../providers/MoralisDappProvider/MoralisDappProvider";
 import { BMSADDRESS, DAILYROCKETADDRESS } from "../constants";
+import { useLoneContract } from "./useContract";
+import { ethers } from "ethers";
 
 export const useAllowance = (reload, bmsaddress, dailyrocketbms) => {
   const { Moralis } = useMoralis();
@@ -39,4 +41,29 @@ export const useAllowance = (reload, bmsaddress, dailyrocketbms) => {
     }
   }, [walletAddress, reload, bmsaddress, dailyrocketbms]);
   return { isDailyApproved, isBmsApproved };
+};
+
+export const useTokenAllowance = (address, abi, spender, reload, setReload) => {
+  const { Contract } = useLoneContract(abi, address);
+  const { walletAddress } = useMoralisDapp();
+  const [enoughAllowance, setEnoughAllowance] = useState(false);
+
+  useMemo(async () => {
+    try {
+      const minimumTokenAmount = ethers.utils.parseEther("10");
+      const allowance = await Contract.methods
+        .allowance(walletAddress, spender)
+        .call();
+      console.log(allowance.toString());
+      const isEnough =
+        ethers.utils.formatEther(allowance.toString()) < "10" ? false : true;
+
+      setEnoughAllowance(isEnough);
+      setReload(false);
+    } catch (err) {
+      console.log(err);
+    }
+  }, [Contract, walletAddress, reload]);
+
+  return { enoughAllowance };
 };

@@ -1,50 +1,68 @@
-.main{
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    position: absolute;
-    width: 100%;
+.main {
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  width: 100%;
 }
 
-.selectBtn{
-    padding: 13px 50px;
-    outline: none;
-    cursor: pointer;
-    background-color: #79FFF6;
-    margin-bottom: 50px;
-   
+.selectBtn {
+  padding: 13px 50px;
+  outline: none;
+  cursor: pointer;
+  background-color: #79fff6;
+  margin-bottom: 50px;
 }
-.header img{
-    height: 150px !important;
-    width: 150px !important;
-    border-radius: 100px;
+.header img {
+  height: 150px !important;
+  width: 150px !important;
+  border-radius: 100px;
 }
-.header h5{
-    color: white;
-   
+.header h5 {
+  color: white;
 }
-.header h6{
-    color: yellow;
-    margin-bottom: 60px;
+.header h6 {
+  color: yellow;
+  margin-bottom: 60px;
 }
-.header h1{
-    margin-bottom: 20px;
-    color: yellow !important;
+.header h1 {
+  margin-bottom: 20px;
+  color: yellow !important;
 }
 
+.selectContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
-@media (max-width: 575.98px){
-  .main{
-      margin-top: 100px;
-      position: relative;
-      top: 0%;
-      -ms-transform: translateY(0%);
-      transform: translateY(0%);
+.select {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 6px;
+  width: 200px;
+
+  outline: none;
+  cursor: pointer;
+  background-color: #79fff6;
+}
+
+@media (max-width: 575.98px) {
+  .main {
+    margin-top: 100px;
+    position: relative;
+    top: 0%;
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
   }
 }
 
-@media (min-width: 768px) and (max-width: 990px){
-    .selectBtn{
-        padding: 13px 30px;
-    }
+@media (min-width: 768px) and (max-width: 990px) {
+  .selectBtn {
+    padding: 13px 30px;
+  }
 }
