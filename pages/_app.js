@@ -7,6 +7,8 @@ import { Provider } from "react-redux";
 import store from "../state";
 import dynamic from "next/dynamic";
 import { InitializeMoralis } from "../utils/hooks/initialize";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const MoralisDappProvider = dynamic(
   () => {
@@ -34,6 +36,7 @@ export default function MyApp({ Component, pageProps }) {
       >
         <MoralisDappProvider>
           <Provider store={store}>
+            <ToastContainer />
             <Component {...pageProps} />
           </Provider>
         </MoralisDappProvider>

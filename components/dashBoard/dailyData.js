@@ -182,8 +182,6 @@ export default function DailyData({
       <Table striped hover responsive className={styles.table}>
         <thead>
           <tr className={styles.tr}>
-            {/* <th className={styles.th}>Asset</th> */}
-            {/* <th className={styles.th}>Hash</th> */}
             <th className={styles.th}>Status</th>
             <th className={styles.th}>Prediction</th>
             <th className={styles.th}>Date</th>

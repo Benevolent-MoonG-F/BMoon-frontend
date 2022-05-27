@@ -48,6 +48,7 @@
     "react-responsive": "^9.0.0-beta.4",
     "react-scroll": "^1.8.4",
     "react-slick": "^0.28.1",
+    "react-toastify": "^9.0.1",
     "recharts": "^2.1.6",
     "redux-localstorage-simple": "^2.4.1",
     "typeit-react": "^2.0.8",
