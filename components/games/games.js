@@ -3,7 +3,7 @@ import styles from "./games.module.css";
 import { BMS } from "../BMS/bms";
 import { Element } from "react-scroll";
 import { DailyRocket } from "../daily-rocket/dailyRocket";
-import { Sprint } from "../69Sprint/index";
+import { Sprint } from "../69sprint/index";
 import Image from "next/image";
 import BTC from "../../public/images/btc.png";
 import ETH from "../../public/images/eth.png";
