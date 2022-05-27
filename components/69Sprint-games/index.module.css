@@ -6,13 +6,7 @@
   width: 100%;
 }
 
-.selectBtn {
-  padding: 13px 50px;
-  outline: none;
-  cursor: pointer;
-  background-color: #79fff6;
-  margin-bottom: 50px;
-}
+
 .header img {
   height: 150px !important;
   width: 150px !important;
@@ -30,25 +24,18 @@
   color: yellow !important;
 }
 
-.selectContainer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.approveButton{
+  background: transparent linear-gradient(109deg, #79fff6 0%, #d0f741 100%) !important;
+  color: black !important; ;
 }
 
 .select {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 6px;
-  width: 200px;
-
+  padding: 17px 30px;
   outline: none;
   cursor: pointer;
   background-color: #79fff6;
+  margin-bottom: 50px;
+  border-radius: 6px;
 }
 
 @media (max-width: 575.98px) {
@@ -59,10 +46,30 @@
     -ms-transform: translateY(0%);
     transform: translateY(0%);
   }
+  .select{
+    margin-bottom: 30px;
+    padding: 13px 20px;
+  }
+  .main{
+    padding-bottom:50px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 990px) {
-  .selectBtn {
-    padding: 13px 30px;
+  .select {
+    padding: 13px 7px;
+    
   }
+}
+
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .select {
+      padding: 13px 22px;
+      
+    }
+
 }
