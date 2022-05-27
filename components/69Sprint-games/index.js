@@ -142,131 +142,146 @@ export function Print69() {
               </h6>
             </div>
           </div>
+          <div className="col-md-7 text-center">
+             <div className="row">
+                 <div className="col-md-4">
+                      <div>
+                        <select
+                          onChange={(e) =>
+                            setSelectedOptions(
+                              e.target.value !== "Select crypto"
+                                ? {
+                                    ...selectOptions,
+                                    index0: e.target.value,
+                                  }
+                                : {
+                                    ...selectOptions,
+                                  }
+                            )
+                          }
+                          className={styles.select}
+                        >
+                          <option>{loading ? "Loading..." : "Select crypto"}</option>
+                          {assets?.map((asset) => (
+                            <>
+                              <option key={asset.assetNumber} value={asset.assetNumber}>
+                                {asset.asset}
+                              </option>
+                            </>
+                          ))}
+                        </select>
+                      </div>
+                 </div>
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              flexWrap: "wrap",
-            }}
-          >
-            <div>
-              <select
-                onChange={(e) =>
-                  setSelectedOptions(
-                    e.target.value !== "Select crypto"
-                      ? {
-                          ...selectOptions,
-                          index0: e.target.value,
-                        }
-                      : {
-                          ...selectOptions,
-                        }
-                  )
-                }
-                className={styles.select}
-              >
-                <option>{loading ? "Loading..." : "Select crypto"}</option>
-                {assets?.map((asset) => (
-                  <>
-                    <option key={asset.assetNumber} value={asset.assetNumber}>
-                      {asset.asset}
-                    </option>
-                  </>
-                ))}
-              </select>
-            </div>
 
-            <div>
-              <select
-                onChange={(e) =>
-                  setSelectedOptions({
-                    ...selectOptions,
-                    index1: e.target.value,
-                  })
-                }
-                className={styles.select}
-              >
-                <option>{loading ? "Loading..." : "Select crypto"}</option>
-                {assets?.map((asset) => (
-                  <option key={asset.assetNumber} value={asset.assetNumber}>
-                    {asset.asset}
-                  </option>
-                ))}
-              </select>
-            </div>
+                 <div className="col-md-4">
+                      <div>
+                          <select
+                            onChange={(e) =>
+                              setSelectedOptions({
+                                ...selectOptions,
+                                index1: e.target.value,
+                              })
+                            }
+                            className={styles.select}
+                          >
+                            <option>{loading ? "Loading..." : "Select crypto"}</option>
+                            {assets?.map((asset) => (
+                              <option key={asset.assetNumber} value={asset.assetNumber}>
+                                {asset.asset}
+                              </option>
+                            ))}
+                          </select>
+                      </div>
+                 </div>
 
-            <div>
-              <select
-                onChange={(e) =>
-                  setSelectedOptions({
-                    ...selectOptions,
-                    index2: e.target.value,
-                  })
-                }
-                className={styles.select}
-              >
-                <option>{loading ? "Loading..." : "Select crypto"}</option>
-                {assets?.map((asset) => (
-                  <option key={asset.assetNumber} value={asset.assetNumber}>
-                    {asset.asset}
-                  </option>
-                ))}
-              </select>
-            </div>
 
-            <div>
-              <select
-                onChange={(e) =>
-                  setSelectedOptions({
-                    ...selectOptions,
-                    index3: e.target.value,
-                  })
-                }
-                className={styles.select}
-              >
-                <option>{loading ? "Loading..." : "Select crypto"}</option>
-                {assets?.map((asset) => (
-                  <option key={asset.assetNumber} value={asset.assetNumber}>
-                    {asset.asset}
-                  </option>
-                ))}
-              </select>
-            </div>
+                 <div className="col-md-4 ">
+                      <div>
+                        <select
+                          onChange={(e) =>
+                            setSelectedOptions({
+                              ...selectOptions,
+                              index2: e.target.value,
+                            })
+                          }
+                          className={styles.select}
+                        >
+                          <option>{loading ? "Loading..." : "Select crypto"}</option>
+                          {assets?.map((asset) => (
+                            <option key={asset.assetNumber} value={asset.assetNumber}>
+                              {asset.asset}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                 </div>
 
-            <div>
-              <select
-                onChange={(e) =>
-                  setSelectedOptions({
-                    ...selectOptions,
-                    index4: e.target.value,
-                  })
-                }
-                className={styles.select}
-              >
-                <option>{loading ? "Loading..." : "Select crypto"}</option>
-                {assets?.map((asset) => (
-                  <option key={asset.assetNumber} value={asset.assetNumber}>
-                    {asset.asset}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-        </div>
+             </div>
+         </div>
+
+
+         <div className="col-md-5 text-center">
+                <div className="row">
+                    <div className="col-md-6">
+                          <div>
+                            <select
+                              onChange={(e) =>
+                                setSelectedOptions({
+                                  ...selectOptions,
+                                  index3: e.target.value,
+                                })
+                              }
+                              className={styles.select}
+                            >
+                              <option>{loading ? "Loading..." : "Select crypto"}</option>
+                              {assets?.map((asset) => (
+                                <option key={asset.assetNumber} value={asset.assetNumber}>
+                                  {asset.asset}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+
+                        <div className="col-md-6">
+                              <div>
+                                <select
+                                  onChange={(e) =>
+                                    setSelectedOptions({
+                                      ...selectOptions,
+                                      index4: e.target.value,
+                                    })
+                                  }
+                                  className={styles.select}
+                                >
+                                  <option>{loading ? "Loading..." : "Select crypto"}</option>
+                                  {assets?.map((asset) => (
+                                    <option key={asset.assetNumber} value={asset.assetNumber}>
+                                      {asset.asset}
+                                    </option>
+                                  ))}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                   </div> 
+                </div>
+                
         <div
           style={{
             display: "flex",
             justifyContent: "center",
-            marginTop: "60px",
+            marginTop: "40px",
           }}
         >
           <Button
             onClick={
               enoughAllowance ? () => placeOrder() : () => approveTransactions()
             }
+            className={styles.approveButton}
             variant='contained'
-            color='primary'
+           
             style={{
               paddingTop: "16px",
               paddingBottom: "16px",
