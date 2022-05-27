@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./games.module.css";
-import { BMS } from "../../components/BMS/bms";
+import { BMS } from "../BMS/bms";
 import { Element } from "react-scroll";
-import { DailyRocket } from "../../components/daily-rocket/dailyRocket";
+import { DailyRocket } from "../daily-rocket/dailyRocket";
+import { Sprint } from "../69sprint/index";
 import Image from "next/image";
 import BTC from "../../public/images/btc.png";
 import ETH from "../../public/images/eth.png";
@@ -22,16 +23,19 @@ import ANGEL from "../../public/images/angel.png";
 export function Games() {
   return (
     <Element name='games' className={styles.games}>
-      <div className='container'>
+      <div className='container-fluid'>
         <div className='row'>
           <h3 className='text-white text-center pb-5'>Game Basics</h3>
         </div>
         <div className='row '>
-          <div className='col-md-6 mb-5'>
+          <div className='col-xl-4 col-md-6 mb-5'>
             <BMS />
           </div>
-          <div className='col-md-6 mb-5'>
+          <div className='col-xl-4 col-md-6 mb-5'>
             <DailyRocket />
+          </div>
+          <div className='col-xl-4 col-md-6 mb-5 mx-auto'>
+            <Sprint />
           </div>
         </div>
 
@@ -135,58 +139,59 @@ export function Games() {
         </div>
       </div>
 
-     <div className="container-fluid">
-         {/* Benovelent organisations */}
+      <div className='container-fluid'>
+        {/* Benovelent organisations */}
 
-         <div className='row mt-5 pt-3'>
+        <div className='row mt-5 pt-3'>
           <div className='col-12'>
-            <h3 className='text-white text-center pt-2'>Benevolent Organizations</h3>
+            <h3 className='text-white text-center pt-2'>
+              Benevolent Organizations
+            </h3>
             {/* <p className='text-white text-center'>
               Tokens users can prognosticate in BMS and Daily Rocket.
             </p> */}
           </div>
 
           <div className='col-12 text-center'>
-              <div className={styles.charityOrganization}>
-            <figure className=' pb-5'>
-                <a href="https://www.unicefusa.org/" target="blank">
-              <Image
-                alt='UNICEF'
-                src={UNICEF}
-                className={`${styles.tokenImg1} img-fluid`}
-                height='150px'
-                width='180px' 
-              />
-              </a>
-              {/* <figcaption>BTC</figcaption> */}
-            </figure>
+            <div className={styles.charityOrganization}>
+              <figure className=' pb-5'>
+                <a href='https://www.unicefusa.org/' target='blank'>
+                  <Image
+                    alt='UNICEF'
+                    src={UNICEF}
+                    className={`${styles.tokenImg1} img-fluid`}
+                    height='150px'
+                    width='180px'
+                  />
+                </a>
+                {/* <figcaption>BTC</figcaption> */}
+              </figure>
 
-            <figure className='pb-5'>
-            <a href="https://www.freecodecamp.org/" target="blank">
-              <Image
-                alt='FREECODE-CAMP'
-                src={FREE}
-                className={`${styles.tokenImg} img-fluid`}
-                height='100px'
-                width='200px'
-              />
-              </a>
-              {/* <figcaption>ETH</figcaption> */}
-            </figure>
-            <figure className='pb-5'>
-            <a href="https://thewaterproject.org" target="blank">
-              <Image
-                alt='THE-WATER-PROJECT'
-                src={WATER}
-                className={`${styles.tokenImg} img-fluid`}
-                height='100px'
-                width='200px'
-              />
-            </a>
-            </figure> 
-          
+              <figure className='pb-5'>
+                <a href='https://www.freecodecamp.org/' target='blank'>
+                  <Image
+                    alt='FREECODE-CAMP'
+                    src={FREE}
+                    className={`${styles.tokenImg} img-fluid`}
+                    height='100px'
+                    width='200px'
+                  />
+                </a>
+                {/* <figcaption>ETH</figcaption> */}
+              </figure>
+              <figure className='pb-5'>
+                <a href='https://thewaterproject.org' target='blank'>
+                  <Image
+                    alt='THE-WATER-PROJECT'
+                    src={WATER}
+                    className={`${styles.tokenImg} img-fluid`}
+                    height='100px'
+                    width='200px'
+                  />
+                </a>
+              </figure>
 
-            {/* <figure className=' pb-5'>
+              {/* <figure className=' pb-5'>
             <a href="https://flemingprotocol.io/" target="blank">
               <Image
                 alt='FLEMMING-PROTOCOL'
@@ -199,35 +204,34 @@ export function Games() {
             
             </figure> */}
 
-            <figure className=' pb-5'>
-            <a href="https://lustgarten.org" target="blank">
-              <Image
-                alt='LUSTGARTEN'
-                src={LUST}
-                className={`${styles.tokenImg} img-fluid`}
-                height='100px'
-                width='200px'
-              />
-              </a>
-              {/* <figcaption>LINK</figcaption> */}
-            </figure>
-
-           
-            <figure className='pb-5'>
-            <a href="https://www.angelprotocol.io/" target="blank">
-              <Image
-                alt='Angel-Protocol'
-                src={ANGEL}
-                className={`${styles.tokenImg} img-fluid`}
-                height='100px'
-                width='200px'
-              />
+              <figure className=' pb-5'>
+                <a href='https://lustgarten.org' target='blank'>
+                  <Image
+                    alt='LUSTGARTEN'
+                    src={LUST}
+                    className={`${styles.tokenImg} img-fluid`}
+                    height='100px'
+                    width='200px'
+                  />
                 </a>
-            </figure> 
+                {/* <figcaption>LINK</figcaption> */}
+              </figure>
+
+              <figure className='pb-5'>
+                <a href='https://www.angelprotocol.io/' target='blank'>
+                  <Image
+                    alt='Angel-Protocol'
+                    src={ANGEL}
+                    className={`${styles.tokenImg} img-fluid`}
+                    height='100px'
+                    width='200px'
+                  />
+                </a>
+              </figure>
             </div>
           </div>
         </div>
-     </div>
+      </div>
     </Element>
   );
 }

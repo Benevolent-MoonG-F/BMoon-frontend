@@ -17,6 +17,7 @@ import { FACTORYADDRESS } from "../../utils/constants";
 import { useLoneContract } from "../../utils/hooks/useContract";
 import factoryabi from "../../utils/abis/factory.json";
 import { updateDayCount } from "../../state/app/action";
+import Sprint from "./sprint69";
 
 export default function Dashboard() {
   const claimStatus = useSelector((state) => {
@@ -83,6 +84,11 @@ export default function Dashboard() {
           </div>
         </div>
         <div className='row'>
+          <div className='col-12 mb-5 pb-5'>
+            {/* BMS rocket */}
+
+            <Sprint />
+          </div>
           <div className='col-12 mb-5 pb-5'>
             {/* Daily rocket */}
             <DailyData

@@ -1,0 +1,75 @@
+.main {
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  width: 100%;
+}
+
+
+.header img {
+  height: 150px !important;
+  width: 150px !important;
+  border-radius: 100px;
+}
+.header h5 {
+  color: white;
+}
+.header h6 {
+  color: yellow;
+  margin-bottom: 60px;
+}
+.header h1 {
+  margin-bottom: 20px;
+  color: yellow !important;
+}
+
+.approveButton{
+  background: transparent linear-gradient(109deg, #79fff6 0%, #d0f741 100%) !important;
+  color: black !important; ;
+}
+
+.select {
+  padding: 17px 30px;
+  outline: none;
+  cursor: pointer;
+  background-color: #79fff6;
+  margin-bottom: 50px;
+  border-radius: 6px;
+}
+
+@media (max-width: 575.98px) {
+  .main {
+    margin-top: 100px;
+    position: relative;
+    top: 0%;
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  .select{
+    margin-bottom: 30px;
+    padding: 13px 20px;
+  }
+  .main{
+    padding-bottom:50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+  .select {
+    padding: 13px 7px;
+    
+  }
+}
+
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .select {
+      padding: 13px 22px;
+      
+    }
+
+}

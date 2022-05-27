@@ -1,26 +1,26 @@
 import React from "react";
 import { Button } from "../button/index";
-import styles from "./bms.module.css";
+import styles from "./index.module.css";
 import Image from "next/image";
-import Logo from "../../public/images/bmslogo.png";
-const appLink = "/app/new-game";
+import Logo from "../../public/images/69print.png";
+const appLink = "/app/69Sprint";
 import { Element } from "react-scroll";
 
-export function BMS() {
+export function Sprint() {
   return (
-    <Element className={styles.bms}>
+    <Element className={styles.print}>
       <div className='card text-center bg-transparent'>
         <div className='card-body'>
           <div className={`${styles.header}`}>
             <Image alt='logo' src={Logo} />
-            <h5 className='text-white'>BMS</h5>
+            <h5 className='text-white'>69 Sprint</h5>
           </div>
 
           <p className='card-text text-white'>
-            Benevolent Moon Squares(BMS) is a fun crypto prognostication game
-            that takes predictive markets to a more exciting level. Call the
-            date and time of your favorite token doing a Moon Shot, win the pot
-            while also donating to charity.
+            Correctly predict the order of tokens in the 6-9 slots of the
+            CoinMarketCap top 10 rankings at the close of a 72 hour window, and
+            not only win the pot, but also help direct the charitable pot funds
+            to the charity you vote for.
           </p>
           <Button
             href={appLink}
