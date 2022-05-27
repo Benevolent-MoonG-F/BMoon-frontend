@@ -278,9 +278,28 @@ export const useSprintTransactions = () => {
   const winningOrder = async (round) => {
     const assets = [];
     try {
+      for (let i = 0; i < 4; i++) {
+        const asset = await Contract.methods
+          .s_roundWinningOrder(round, assets[i])
+          .call();
+        assets.push(asset);
+      }
     } catch (err) {
       console.log(err);
     }
+    return assets;
+  };
+
+  const comparePicks = (winningPick, userPick) => {
+    const isEqual =
+      winningPick[0] === userPick[0] &&
+      winningPick[1] === userPick[1] &&
+      winningPick[2] === userPick[2] &&
+      winningPick[3] === userPick[3] &&
+      winningPick[4] === userPick[4]
+        ? true
+        : false;
+    return isEqual;
   };
 
   const identifyAssets = async (assets) => {
@@ -304,7 +323,13 @@ export const useSprintTransactions = () => {
         console.log(round);
         const assets = await loopAssetPicks(round);
         const identifiedAssets = await identifyAssets(assets);
-        setTransactions({ assets: identifiedAssets, status: "pending" });
+        const winningPicks = await winningOrder(round);
+        const isWinner = comparePicks(winningPicks, assets);
+        setTransactions({
+          assets: identifiedAssets,
+          status: isWinner ? "Won" : "pending",
+          round: round,
+        });
         console.log("68", identifiedAssets);
         setLoading(false);
       } catch (err) {

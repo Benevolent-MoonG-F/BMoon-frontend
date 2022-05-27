@@ -7,6 +7,8 @@ import {
   useBMStransaction,
   useSprintTransactions,
 } from "../../utils/hooks/useGetTransactions";
+import { SPRINT69, SPRINTTOKEN } from "../../utils/constants";
+import { SPRINT69ABI } from "../../utils/abis/69sprint.json";
 
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import Box from "@mui/material/Box";
@@ -19,15 +21,19 @@ import msabi from "../../utils/abis/bms.json";
 import { updateMsCount, addRound, removeRound } from "../../state/app/action";
 import { useDispatch, useSelector } from "react-redux";
 import { addClaim } from "../../state/claim/action";
+import { useLoneContract } from "../../utils/hooks/useContract";
+import { useMoralisDapp } from "../../providers/MoralisDappProvider/MoralisDappProvider";
 // import { useState } from "react";
 // import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-export default function Sprint({ Contract }) {
+export default function Sprint() {
   // const {bmsdata} = useAccountHistoryForBMS();
   const [AssetAddress, setAssetAddress] = useState("");
   const [value, setValue] = useState("BTC");
   const [countToBeSubtracted, setCountToBeSubtrated] = useState(0);
   const [BmsCount, setBmsCount] = useState(5);
+  const { Contract } = useLoneContract(SPRINT69ABI, SPRINT69);
+  const { walletAddress } = useMoralisDapp();
 
   const [isLoading, setLoading] = useState(false);
 
@@ -35,6 +41,13 @@ export default function Sprint({ Contract }) {
   const { Moralis } = useMoralis();
 
   const { transactions, loading } = useSprintTransactions();
+
+  const claim = async (round) => {
+    const tx = await Contract.methods.claimWinning(round).send({
+      from: walletAddress,
+    });
+    location.reload();
+  };
 
   console.log("69t", transactions);
 
@@ -154,6 +167,11 @@ export default function Sprint({ Contract }) {
                   cursor: "pointer",
                 }}
                 className={styles.td}
+                onClick={
+                  transactions.status === "Won"
+                    ? () => claim(transactions.round)
+                    : null
+                }
               >
                 {transactions.status === "pending" ? "pending" : "Won"}
               </td>
