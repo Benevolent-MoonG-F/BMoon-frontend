@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./games.module.css";
-import { BMS } from "../components/BMS/bms";
+import { BMS } from "../BMS/bms";
 import { Element } from "react-scroll";
-import { DailyRocket } from "../components/daily-rocket/dailyRocket";
-import { Sprint } from "../components/69Sprint/index";
+import { DailyRocket } from "../daily-rocket/dailyRocket";
+import { Sprint } from "../69Sprint/index";
 import Image from "next/image";
 import BTC from "../../public/images/btc.png";
 import ETH from "../../public/images/eth.png";

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../components/button/index";
+import { Button } from "../button/index";
 import styles from "./index.module.css";
 import Image from "next/image";
 import Logo from "../../public/images/69print.png";
