@@ -23,7 +23,7 @@ import ANGEL from "../../public/images/angel.png";
 export function Games() {
   return (
     <Element name='games' className={styles.games}>
-      <div className='container-fluid'>
+      <div className='container'>
         <div className='row'>
           <h3 className='text-white text-center pb-5'>Game Basics</h3>
         </div>

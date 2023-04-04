@@ -45,3 +45,47 @@ a {
   min-height: 100vh;
 }
 
+
+@media all and (min-width: 992px){
+  .container, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 2.5) !important;
+    padding-left: calc(var(--bs-gutter-x) * 2.5) !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
+ 
+}
+
+
+
+
+
+@media (max-width: 767.98px) { 
+  .container, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 1.5) !important;
+    padding-left: calc(var(--bs-gutter-x) * 1.5) !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+ 
+}
+
+@media (max-width: 575.98px){
+.container, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 1.8) !important;
+  padding-left: calc(var(--bs-gutter-x) * 1.8) !important;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+}

@@ -59,13 +59,24 @@
 .header img{
     height: 100px !important;
     width: 100px !important;
-    border-radius: 100px;
+    border-radius: 100%;
 }
 
 @media (min-width: 768px) and (max-width: 990px){
     .dao p{
     font-size: 20px ;
     line-height: 30px;
+    }
+    .btnWrapper {
+        border: 1px solid #79FFF6;
+        padding: 0.5rem 1.5em;
+        border-radius: 10px;
+        background-color: #000;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        margin: auto;
+        font-size: 13px;
+        
     }
 }
 
@@ -77,6 +88,17 @@
 .dao p {
     font-size: 16px;
     line-height: 29px;
+}
+.btnWrapper {
+    border: 1px solid #79FFF6;
+    padding: 0.5rem 1.5em;
+    border-radius: 10px;
+    background-color: #000;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    margin: auto;
+    font-size: 13px;
+    
 }
 
 }

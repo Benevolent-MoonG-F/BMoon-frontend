@@ -17,7 +17,7 @@ export function KeypointSection(props) {
             {/* <PartnerList /> */}
           
   
-            <div className={`${styles.container2} container-fluid`}>           
+            <div className={`${styles.container2} container`}>           
                     <div className="row">
             
                         <div className="col-md-6 mb-5">
