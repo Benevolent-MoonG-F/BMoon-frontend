@@ -8,7 +8,7 @@ body {
    background-color: #222831; */
    background: linear-gradient(0deg, rgba(7, 7, 7, 0.603), rgba(7, 7, 7, 0.603)) ,url(../public/images/bg-img.jpg);
    background: -moz-linear-gradient(0deg, rgba(7, 7, 7, 0.603), rgba(7, 7, 7, 0.603)) ,url(../public/images/bg-img.jpg); /* FF3.6+ */
-   background: -webkit-gradient(0deg, rgba(7, 7, 7, 0.603), rgba(7, 7, 7, 0.603)) ,url(../public/images/bg-img.jpg); /* Chrome,Safari4+ */
+   background: -webkit-gradient-(0deg, rgba(7, 7, 7, 0.603), rgba(7, 7, 7, 0.603)) ,url(../public/images/bg-img.jpg); /* Chrome,Safari4+ */
    background: -webkit-linear-gradient(0deg, rgba(7, 7, 7, 0.603), rgba(7, 7, 7, 0.603)) ,url(../public/images/bg-img.jpg); /* Chrome10+,Safari5.1+ */
    background: -o-linear-gradient(0deg, rgba(7, 7, 7, 0.603), rgba(7, 7, 7, 0.603)) ,url(../public/images/bg-img.jpg); /* Opera 11.10+ */
    background: -ms-linear-gradient(0deg, rgba(7, 7, 7, 0.603), rgba(7, 7, 7, 0.603)) ,url(../public/images/bg-img.jpg); /* IE10+ */

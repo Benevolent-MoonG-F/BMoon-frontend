@@ -30,7 +30,7 @@ export function TopSection(props) {
 
                     <div className={`${styles.header} col-md-8 order-1`}>
                         <h1> 
-                            <span style={{color: theme.green}}>Benevolent Moon Gaming & Decentralized Finance</span> 
+                            <span style={{color: theme.green}}>Benevolent Moon</span> 
                         </h1>
                         <span style={{color: theme.yellow, marginLeft: marginLeft}}><TypeIt className={styles.typedCursor} options={{
                             strings: ["A Mission-Driven Decentralized Cryptocurrency Prediction Marketplace focusing on Social Impact."],

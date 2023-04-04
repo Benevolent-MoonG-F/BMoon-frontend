@@ -6,10 +6,10 @@ import Router from 'next/router';
 export function ComingSoon(){
     return(
         <Element className={styles.comingSoon}>
-            <duiv>
+            <div>
                 <h1>COMING SOON</h1>
                 <div onClick={() => Router.back()}>Go Back</div>
-                </duiv>
+                </div>
         </Element>
     )
 }

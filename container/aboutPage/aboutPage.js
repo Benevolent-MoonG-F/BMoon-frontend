@@ -11,7 +11,7 @@ export function AboutPage(){
             <div className="container">
                 <div className="row">
                     <div className="col-12 text-center">
-                        <h1>Benevolent Moon Gaming and Finance</h1>                                          
+                        <h1>Benevolent Moon</h1>                                          
                     </div>           
                 </div>
                 <div className="row">
