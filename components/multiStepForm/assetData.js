@@ -6,6 +6,7 @@ import LinkLogo from '../../public/images/link.png';
 import LunaLogo from '../../public/images/luna.png';
 import AdaLogo from '../../public/images/ada.png';
 import AvaxLogo from '../../public/images/avax.png';
+import SolanaLogo from "../../public/images/solana.svg"
 
 
 const topAssets = [
@@ -30,41 +31,48 @@ const topAssets = [
     currentPrice: 3800.33,
     symbol: 'MATIC',
   },
-  {
-    label: 'One',
-    id: 4,
-    logo: OneLogo,
-    currentPrice: 100,
-    symbol: 'ONE',
-  },
+  // {
+  //   label: 'One',
+  //   id: 4,
+  //   logo: OneLogo,
+  //   currentPrice: 100,
+  //   symbol: 'ONE',
+  // },
   {
     label: 'Link',
-    id: 5,
+    id: 4,
     logo: LinkLogo,
     currentPrice: 200,
     symbol: 'LINK',
   },
   {
-    label: 'Luna',
-    id: 6,
-    logo: LunaLogo,
-    currentPrice: 300,
-    symbol: 'LUNA',
+    label: 'Solana',
+    id: 5,
+    logo: SolanaLogo,
+    currentPrice: 30,
+    symbol: 'SOL',
   },
-  {
-    label: 'Ada',
-    id: 7,
-    logo: AdaLogo,
-    currentPrice: 200,
-    symbol: 'ADA',
-  },
-  {
-    label: 'Avax',
-    id: 8,
-    logo: AvaxLogo,
-    currentPrice: 300,
-    symbol: 'AVAX',
-  },
+  // {
+  //   label: 'Luna',
+  //   id: 6,
+  //   logo: LunaLogo,
+  //   currentPrice: 300,
+  //   symbol: 'LUNA',
+  // },
+  // {
+  //   label: 'Ada',
+  //   id: 7,
+  //   logo: AdaLogo,
+  //   currentPrice: 200,
+  //   symbol: 'ADA',
+  // },
+  // {
+  //   label: 'Avax',
+  //   id: 8,
+  //   logo: AvaxLogo,
+  //   currentPrice: 300,
+  //   symbol: 'AVAX',
+  // },
 ];
 
 

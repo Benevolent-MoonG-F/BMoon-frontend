@@ -9,7 +9,7 @@ const landingPagelinks = [
   },
   {
     title: '69Sprint',
-    href: '/app/69Sprint',
+    href: '/comingSoon',
   },
   {
     title: 'Whitepaper',
